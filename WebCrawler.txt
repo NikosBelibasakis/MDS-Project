@@ -1,0 +1,35 @@
+#version2
+
+from bs4 import BeautifulSoup
+import requests
+
+
+href_obj = []  #a list where the hrefs will be stored
+links = []  #a list where the links of the computer scientists' pages will be stored
+html_text = requests.get('https://en.wikipedia.org/wiki/List_of_computer_scientists').text
+soup = BeautifulSoup(html_text, 'lxml')
+list_items = soup.find_all('li',class_='')   #get the <li>s that have no class
+for l in list_items:          #for each <li> tag
+     a_tag = l.find('a')   #find the first <a> tag
+     if a_tag is not None:     #if <a> tag exists
+       a_tag_href = a_tag['href']  #get the href (link) of the <a> tag
+       href_obj.append(a_tag_href) #add the href in the list
+     else:
+        a_tag_text = None
+
+del href_obj[685:]   #delete the hrefs that don't refer to computer scientists
+
+for h in href_obj:                  #we store the links of the computer scientists' pages in the "links" list
+   temp_link = "https://en.wikipedia.org" + str(h)
+   links.append(temp_link)
+
+
+#print the links
+i = 0
+
+for lin in links:
+    print(f'{lin} : {i} \n\n')
+    i = i + 1
+
+
+
