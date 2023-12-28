@@ -1,11 +1,26 @@
-#version2
+#version3
 
 from bs4 import BeautifulSoup
 import requests
 
 
+# Function which returns last word
+def lastWord(string):
+    # split by space and converting
+    # string to list and
+    lis = list(string.split(" "))
+
+    # length of list
+    length = len(lis)
+
+    # returning last element in list
+    return lis[length - 1]
+
+
+
 href_obj = []  #a list where the hrefs will be stored
 links = []  #a list where the links of the computer scientists' pages will be stored
+surnames = [] #a list where the surnames of the computer scientists' pages will be stored
 html_text = requests.get('https://en.wikipedia.org/wiki/List_of_computer_scientists').text
 soup = BeautifulSoup(html_text, 'lxml')
 list_items = soup.find_all('li',class_='')   #get the <li>s that have no class
@@ -23,13 +38,61 @@ for h in href_obj:                  #we store the links of the computer scientis
    temp_link = "https://en.wikipedia.org" + str(h)
    links.append(temp_link)
 
+g = 0
 
-#print the links
+for link in links:             #visiting each scientist's page
+    html_text = requests.get(link).text
+    soup = BeautifulSoup(html_text, 'lxml')
+    temp_html = soup.find('div',class_='mw-content-ltr mw-parser-output')  #get each scientist's name
+    name = temp_html.find('p',class_='').b
+
+    z = 1
+
+    if name is None:
+        while name is None:
+           name = temp_html.find_all('p',class_='')
+           name = name[z].b
+           z = z + 1
+
+
+
+    name = name.text
+
+    name = lastWord(name)  #get the surname
+    surnames.append(name)  #store the surname
+    print(g)
+    g = g + 1
+
+ #Changing some elements in the surname list, because some surnames have peculiarities
+surnames[24] = 'Bachman'
+surnames[26] = 'Backus'
+surnames[72] = 'Brooks'
+surnames[83] = 'Carmack'
+surnames[95] = 'Clarke'
+surnames[141] = 'Dix'
+surnames[153] = 'Eckert'
+surnames[157] = 'Emerson'
+surnames[179] = 'Forbus'
+surnames[200] = 'Gates'
+surnames[287] = 'Ingalls'
+surnames[334] = 'Kruskal'
+surnames[403] = 'Moore'
+surnames[473] = 'Pieraccini'
+surnames[509] = 'Royce'
+surnames[566] = 'Steele'
+
+
 i = 0
 
-for lin in links:
-    print(f'{lin} : {i} \n\n')
-    i = i + 1
+for s in surnames:
+ print(f'Scientist: {s}, and index number: {i} \n')
+ i = i + 1
+
+
+
+
+
+
 
 
 
