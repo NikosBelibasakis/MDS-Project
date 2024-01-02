@@ -46,7 +46,8 @@ def extract_education(soup):
     headlines = soup.find_all('h2', class_='')  # Get all the headlines of the page
     for headline in headlines:
         span_tag = headline.find('span', class_='mw-headline')
-        if span_tag and "education" in span_tag.get_text().lower():
+        title=span_tag.get_text().lower()
+        if "education" in title:
             # If "education" is found in the headline
             next_tag = headline.find_next('h2')  # Find the next h2 tag after the headline
             if next_tag:
@@ -59,20 +60,28 @@ def extract_education(soup):
                     elif element.name == 'ul':
                         education += element.get_text(separator='\n') + "\n"
                     if element.find_next('h2') == next_tag:
+                        education_found=True #we found education so we set it true!
                         break  # Exit loop when the next h2 tag is encountered
                 break  # Exit the loop after processing the education section
-            
-    if not education_found:
-        # If "Education" section doesn't exist, try to get education from the "Biography" section
-        biography_headline = soup.find('span', {'id': 'Biography'})
-        if biography_headline:
-            # Find the <h2> tag with "Biography" section and get the first <p> tag as education
-            biography_next_tag = biography_headline.parent.find_next('h2')
-            if biography_next_tag:
-                education_paragraph = biography_headline.parent.find_next('p')
-                if education_paragraph:
-                    education += education_paragraph.get_text() + "\n"
+        elif "biography" in title or "life"in title or "career" in title:
+            # If "Education" section doesn't exist, try to get education from the "Biography" section
+            education_paragraph = span_tag.parent.find_next('p')
+            if education_paragraph:
+                education += education_paragraph.get_text() + "\n"
+                education_found=True #we found education so we set it true!
+                break  # Exit loop when the next h2 tag is encountered
 
+    if not education_found:
+        target_labels = ['Alma mater', 'Education']
+        for label in target_labels:
+            label_element = soup.find('th',class_='infobox-label', string=label)
+            if label_element:
+                # Get the corresponding <td> tag containing educational information
+                data = label_element.find_next('td', class_='infobox-data')
+                if data:
+                    # Extract text from <a> tags inside the <td> element
+                    education_list = [a.text for a in data.find_all('a')]
+                    education = ', '.join(education_list)  # Convert list to text
     return education
 
        
@@ -130,28 +139,28 @@ async def main():
         scientist_info_list[24]['surname'] = 'Bachman'
         scientist_info_list[26]['surname'] = 'Backus'
         scientist_info_list[33]['surname'] = 'Bauer'
-        scientist_info_list[43]['surname'] = 'Blaauw'
-        scientist_info_list[61]['surname'] = 'Bourne'
-        scientist_info_list[62]['surname'] = 'Bouwman'
-        scientist_info_list[70]['surname'] = 'Brinch Hansen'
-        scientist_info_list[72]['surname'] = 'Brooks'
-        scientist_info_list[76]['surname'] = 'Caballero Gil'
-        scientist_info_list[83]['surname'] = 'Carmack'
-        scientist_info_list[95]['surname'] = 'Clarke'
-        scientist_info_list[97]['surname'] = 'Codd'
-        scientist_info_list[109]['surname'] = 'Corbató'
-        scientist_info_list[141]['surname'] = 'Dix'
-        scientist_info_list[145]['surname'] = 'Draper'
-        scientist_info_list[153]['surname'] = 'Eckert'
-        scientist_info_list[157]['surname'] = 'Emerson'
-        scientist_info_list[180]['surname'] = 'Ford' #Ford Jr. 
-        scientist_info_list[179]['surname'] = 'Forbus'
-        scientist_info_list[200]['surname'] = 'Gates'
-        scientist_info_list[203]['surname'] = 'Geschke'
-        scientist_info_list[256]['surname'] = 'Hehner'
-        scientist_info_list[287]['surname'] = 'Ingalls'
-        scientist_info_list[334]['surname'] = 'Kruskal'
-        scientist_info_list[403]['surname'] = 'Moore'
+        scientist_info_list[44]['surname'] = 'Blaauw'
+        scientist_info_list[62]['surname'] = 'Bourne'
+        scientist_info_list[63]['surname'] = 'Bouwman'
+        scientist_info_list[71]['surname'] = 'Brinch Hansen'
+        scientist_info_list[73]['surname'] = 'Brooks'
+        scientist_info_list[77]['surname'] = 'Caballero Gil'
+        scientist_info_list[84]['surname'] = 'Carmack'
+        scientist_info_list[96]['surname'] = 'Clarke'
+        scientist_info_list[98]['surname'] = 'Codd'
+        scientist_info_list[110]['surname'] = 'Corbató'
+        scientist_info_list[142]['surname'] = 'Dix'
+        scientist_info_list[146]['surname'] = 'Draper'
+        scientist_info_list[154]['surname'] = 'Eckert'
+        scientist_info_list[158]['surname'] = 'Emerson'
+        scientist_info_list[181]['surname'] = 'Ford' #Ford Jr. 
+        scientist_info_list[180]['surname'] = 'Forbus'
+        scientist_info_list[201]['surname'] = 'Gates'
+        scientist_info_list[204]['surname'] = 'Geschke'
+        scientist_info_list[257]['surname'] = 'Hehner'
+        scientist_info_list[288]['surname'] = 'Ingalls'
+        scientist_info_list[335]['surname'] = 'Kruskal'
+        scientist_info_list[404]['surname'] = 'Moore'
         scientist_info_list[474]['surname'] = 'Pieraccini'
         scientist_info_list[510]['surname'] = 'Royce'
         scientist_info_list[566]['surname'] = 'Steele'
@@ -166,7 +175,9 @@ async def main():
 
         for scientist_info in scientist_info_list:
             surname = scientist_info.get('surname')
-            print(f'Scientist: {surname}, and index number: {i} \n')
+            if scientist_info.get('education')=='':
+                print(f'Scientist: {surname}, and index number: {i} \n')
+                i=i+1
 
 
 asyncio.run(main())
