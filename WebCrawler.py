@@ -166,11 +166,7 @@ async def main():
 
         for scientist_info in scientist_info_list:
             surname = scientist_info.get('surname')
-            if surname:
-                print(f'Scientist: {surname}, and index number: {i} \n')
-            else: 
-                print(f'Scientist: {scientist_info}, and index number: {i} \n')
-            i = i + 1
+            print(f'Scientist: {surname}, and index number: {i} \n')
 
 
 asyncio.run(main())
