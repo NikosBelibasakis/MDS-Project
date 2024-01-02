@@ -20,21 +20,24 @@ def lastWord(string):
 
 #function for extracting surname of a scientist
 def extract_surname(soup):
-    
-    temp_html = soup.find('div', class_='mw-content-ltr mw-parser-output') #get each scientist's name
-    name = temp_html.find('p', class_='').b
+    try:  
+        temp_html = soup.find('div', class_='mw-content-ltr mw-parser-output') #get each scientist's name
+        name = temp_html.find('p', class_='').b
 
-    z = 1
+        z = 1
 
-    if name is None:
-        while name is None:
-            name = temp_html.find_all('p', class_='')
-            name = name[z].b
-            z = z + 1
+        if name is None:
+            while name is None:
+                name = temp_html.find_all('p', class_='')
+                name = name[z].b
+                z = z + 1
 
-    name = name.text
-    name = lastWord(name)
-    return name
+        name = name.text
+        name = lastWord(name)
+        return name
+    except Exception as e:
+        print(f"Error extracting surname: {e}")
+        return "Unknown"
 
 #extract what education every scientist has had from their wikipedia page
 def extract_education(soup):
@@ -83,6 +86,7 @@ async def fetch_info(session, link):
             awards = ''  # Extract awards from the page
             dblp_record = ''  # Extract DBLP record
             
+            
             # Return a dictionary with extracted information
             return {
                 'surname': extract_surname(soup),
@@ -111,7 +115,7 @@ async def main():
             else:
                 a_tag_text = None
 
-        del href_obj[685:]   #delete the hrefs that don't refer to computer scientists
+        del href_obj[687:]   #delete the hrefs that don't refer to computer scientists
 
         #we store the links of the computer scientists' pages in the "links" list
         links = ["https://en.wikipedia.org" + str(h) for h in href_obj]
@@ -148,8 +152,8 @@ async def main():
         scientist_info_list[287]['surname'] = 'Ingalls'
         scientist_info_list[334]['surname'] = 'Kruskal'
         scientist_info_list[403]['surname'] = 'Moore'
-        scientist_info_list[473]['surname'] = 'Pieraccini'
-        scientist_info_list[509]['surname'] = 'Royce'
+        scientist_info_list[474]['surname'] = 'Pieraccini'
+        scientist_info_list[510]['surname'] = 'Royce'
         scientist_info_list[566]['surname'] = 'Steele'
 
         # Saving scientist info to JSON file
@@ -162,12 +166,11 @@ async def main():
 
         for scientist_info in scientist_info_list:
             surname = scientist_info.get('surname')
-            ed = scientist_info.get('education')
             if surname:
-                if ed=='' :
-                    print(f'Scientist: {surname}, and index number: {i} with no education')
-                i = i + 1
+                print(f'Scientist: {surname}, and index number: {i} \n')
+            else: 
+                print(f'Scientist: {scientist_info}, and index number: {i} \n')
+            i = i + 1
 
 
-loop = asyncio.get_event_loop()
-loop.run_until_complete(main())
+asyncio.run(main())
