@@ -1,4 +1,3 @@
-#version4s
 import aiohttp
 import asyncio
 import json
