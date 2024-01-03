@@ -3,7 +3,6 @@ import aiohttp
 import asyncio
 import json
 from bs4 import BeautifulSoup
-# import requests  not needed now , because we have aiohttp and asyncio
 
 
 # Function which returns last word
@@ -50,38 +49,57 @@ def extract_education(soup):
         if "education" in title:
             # If "education" is found in the headline
             next_tag = headline.find_next('h2')  # Find the next h2 tag after the headline
-            if next_tag:
-                # Collect text from <p> and <ul> elements until the next <h2> tag
-                elements = headline.find_next_siblings(['p', 'ul'])
-                for element in elements:
-                    # Concatenate the text of <p> and <ul> elements until the next <h2> tag
-                    if element.name == 'p':
-                        education += element.get_text() + "\n"
-                    elif element.name == 'ul':
-                        education += element.get_text(separator='\n') + "\n"
-                    if element.find_next('h2') == next_tag:
-                        education_found=True #we found education so we set it true!
-                        break  # Exit loop when the next h2 tag is encountered
-                break  # Exit the loop after processing the education section
-        elif "biography" in title or "life"in title or "career" in title:
-            # If "Education" section doesn't exist, try to get education from the "Biography" section
-            education_paragraph = span_tag.parent.find_next('p')
-            if education_paragraph:
-                education += education_paragraph.get_text() + "\n"
-                education_found=True #we found education so we set it true!
-                break  # Exit loop when the next h2 tag is encountered
+            # Collect text from <p> and <ul> elements until the next <h2> tag
+            elements = headline.find_next_siblings(['p', 'ul'])
+            for element in elements:
+                # Concatenate the text of <p> and <ul> elements until the next <h2> tag
+                if element.name == 'p':
+                    education += element.get_text() + "\n"
+                elif element.name == 'ul':
+                    education += element.get_text(separator='\n') + "\n"
+                if element.find_next('h2') == next_tag:
+                    education_found=True #we found education so we set it true!
+                    break  # Exit loop when the next h2 tag is encountered
+            break  # Exit the loop after processing the education section
 
     if not education_found:
-        target_labels = ['Alma mater', 'Education']
-        for label in target_labels:
-            label_element = soup.find('th',class_='infobox-label', string=label)
+            label_element = soup.find('th',class_='infobox-label', string=lambda text: text and "Alma" in text and "mater" in text)
             if label_element:
                 # Get the corresponding <td> tag containing educational information
                 data = label_element.find_next('td', class_='infobox-data')
                 if data:
                     # Extract text from <a> tags inside the <td> element
                     education_list = [a.text for a in data.find_all('a')]
+
+                    # Extract text separated by <br> tags inside the <td> element
+                    br_text = data.get_text(separator='\n')
+                    if br_text:
+                        education_list.extend(br_text.split('\n'))
+
                     education = ', '.join(education_list)  # Convert list to text
+                    education_found=True
+
+    if not education_found:
+        # Check "Biography", "Life", or "Career" sections
+        for headline in soup.find_all('span', class_='mw-headline'):
+            title = headline.get_text().lower()
+            if "biography" in title or "life" in title or "career" in title:
+                paragraph = headline.parent.find_next('p')
+                if paragraph:
+                    education += paragraph.get_text() + "\n"
+                    education_found = True
+                    break
+
+    if not education_found:
+        # Get the first and second <p> tags on the page
+        paragraphs = soup.find_all('p')
+        for p in paragraphs[:2]:
+            next_tag = p.find_next('h2')
+            education += p.get_text() + "\n"
+            if p.find_next('h2') == next_tag:
+                education_found = True
+                break
+
     return education
 
        

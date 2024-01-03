@@ -44,13 +44,13 @@
     {
         "surname": "Adleman",
         "awards": "",
-        "education": "Leonard M. Adleman was born to a Jewish[2]  family in California. His family had originally immigrated to the United States from modern-day Belarus, from the Minsk area.[2] He grew up in San Francisco and attended the University of California, Berkeley, where he received his B.A. degree in mathematics in 1968 and his Ph.D. degree in EECS in 1976.[1][3] He was also the mathematical consultant on the movie Sneakers.[4] In 1996, he became a member of the National Academy of Engineering[5] for contributions to the theory of computation and cryptography. He is also a member of the National Academy of Sciences.[6]\n\n",
+        "education": "University of California, Berkeley, University of California, Berkeley",
         "dblp_record": ""
     },
     {
         "surname": "Agrawal",
         "awards": "",
-        "education": "He created the AKS primality test with Neeraj Kayal and Nitin Saxena, for which he and his co-authors won the 2006 Fulkerson Prize, and the 2006 Gödel Prize. He was also awarded 2002 Clay Research Award for this work. The test is the first unconditional deterministic algorithm to test an n-digit number for primality in a time that has been proven to be polynomial in n.[5]\n\n",
+        "education": "Indian Institute of Technology Kanpur, Indian Institute of Technology Kanpur",
         "dblp_record": ""
     },
     {
@@ -62,7 +62,7 @@
     {
         "surname": "Aho",
         "awards": "",
-        "education": "Aho received a B.A.Sc. (1963) in Engineering Physics from the University of Toronto, then an M.A. (1965) and Ph.D. (1967) in Electrical Engineering/Computer Science from Princeton University.[6] He conducted research at Bell Labs from 1967 to 1991, and again from 1997 to 2002 as Vice President of the Computing Sciences Research Center.[7]  Since 1995, he has held the Lawrence Gussman Professorship in Computer Science at Columbia University. He served as chair of the department from 1995 to 1997, and again in the spring of 2003.[8]\n\n",
+        "education": "University of Toronto, Princeton University, , , University of Toronto, , , Princeton University, , ",
         "dblp_record": ""
     },
     {
@@ -104,7 +104,7 @@
     {
         "surname": "Arden",
         "awards": "",
-        "education": "Purdue University",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
@@ -116,7 +116,7 @@
     {
         "surname": "Arora",
         "awards": "",
-        "education": "He was a visiting scholar at the Institute for Advanced Study in 2002–03.[2]\n\n",
+        "education": "SB, Massachusetts Institute of Technology, PhD, UC Berkeley, SB, : , Massachusetts Institute of Technology,  , , , PhD, : , UC Berkeley",
         "dblp_record": ""
     },
     {
@@ -140,13 +140,13 @@
     {
         "surname": "Babbage",
         "awards": "",
-        "education": "Babbage's birthplace is disputed, but according to the Oxford Dictionary of National Biography he was most likely born at 44 Crosby Row, Walworth Road, London, England.[8] A blue plaque on the junction of Larcom Street and Walworth Road commemorates the event.[9]\n\n",
+        "education": "Peterhouse, Cambridge, Peterhouse, Cambridge",
         "dblp_record": ""
     },
     {
         "surname": "Bachman",
         "awards": "",
-        "education": "Charles Bachman was born in Manhattan, Kansas, in 1924, where his father, Charles Bachman Jr., was the head football coach at Kansas State College.  He attended high school in East Lansing, Michigan, where his father served as head football coach at Michigan State College from 1933–1946.\n\n",
+        "education": "University of Pennsylvania, Michigan State University, University of Pennsylvania, ,, , Michigan State University",
         "dblp_record": ""
     },
     {
@@ -158,13 +158,13 @@
     {
         "surname": "Backus",
         "awards": "",
-        "education": "Backus was born in Philadelphia and grew up in nearby Wilmington, Delaware.[6] He studied at The Hill School in Pottstown, Pennsylvania, but he was apparently not a diligent student.[5] He entered college at the University of Virginia to study chemistry, but struggled with his classes there, and he was expelled after less than a year for poor attendance.[7] He was subsequently conscripted into the U.S. Army during World War II,[5] and eventually came to hold the rank of corporal, being put in command of an anti-aircraft battery stationed at Fort Stewart, Georgia.[7]\n\n",
+        "education": "University of Virginia, University of Pittsburgh, Haverford College, Columbia University, University of Virginia, University of Pittsburgh, Haverford College, Columbia University,  (B.S. 1949, M.S. 1950)",
         "dblp_record": ""
     },
     {
         "surname": "Bacon",
         "awards": "",
-        "education": "Bacon began working as a programmer at age 16 and worked for a startup during his senior year of high school. At Columbia College, Columbia University, he worked first with David E. Shaw on the\nNON-VON supercomputer,[1] and then on network algorithms and simulation with Yechiam Yemini, creating the NEST Network Simulator,[2]\nwhich served as the basis for a number of other network simulators including Cornell's REAL[3] and thence LBL's ns simulator.\n\n",
+        "education": "U.C. Berkeley, U.C. Berkeley",
         "dblp_record": ""
     },
     {
@@ -176,7 +176,7 @@
     {
         "surname": "Bahl",
         "awards": "",
-        "education": "Bahl began his professional career in 1988 as an engineer in the image processing research group at Digital Equipment Corporation in Maynard, Massachusetts.  In 1990, he developed the computer industry's first video compression and image rendering software library that shipped with every Ultrix and VMS computer.[5]  Between 1990 and 1992, he worked on the Jvideo hardware prototype (and later the J300), a TURBOchannel based multimedia board for manipulating digital video on personal workstations.[6] Following the success of these project, in 1993, he and his group shipped FullVideo and FullVideo Supreme, the IT industry's first multimedia hardware product for VAX-, Alpha-, and Pentium-based workstations.  FullVideo used two C-Cube CL 550 chips for simultaneous compression and decompression of JPEG streams, a Motorola DSP5001 for CD quality audio, and a propriety blue noise based image renderer. In 1994, Bahl was awarded a two-year doctoral fellowship from DEC, which enabled him to complete his PhD degree at the University of Massachusetts, Amherst. In 1997, he joined Microsoft Research in Redmond, Washington and developed the first Wi-Fi based indoor positioning system and the first public area Wi-Fi hot spot. In 2001 he formed the Networking Research Group and in 2010 the Mobility & Networking Research Group. His group is considered one of the strongest and most respected networking research group in the world. Bahl advises Microsoft's CEO and senior leadership team on long-term vision and strategy related to networking technologies.  He and his group execute the strategy through research, technology transfers to product groups, industry partnerships, and associated policy engagement with governments and research institutions around the world.  Over the years his group has developed technologies such as campus-wide white space networking, wireless zero-configuration, Native Wi-Fi, Virtual Wi-Fi, firmware TPM, and the Xbox wireless controller protocol. His group is also known for complete re-design of the Azure global data center network architecture and its foundational components, including Azure’s software load balancer, Azure’s software-defined wide-area network, Data Center TCP, and recently, Azure’s Remote Direct Memory Access network. In 2020, Victor moved to Azure for Operators as CTO. He is a thought leader of Microsoft's Azure for Operators strategy.\n\n",
+        "education": "PhD, Electrical and Computer Engineering, University of Massachusetts, Amherst. Thesis title: \nReal-Time Visual Communications over Narrowband Wireless Radio Networks\n. Doctoral fellow at Digital Equipment Corporation.\n\n\nMaster of Science, Electrical and Computer Engineering, University at Buffalo. Thesis title: \nRecognition of Handwritten Script: A Hidden Markov Model Approach\n.\n\n\nBachelor of Science, Electrical and Computer Engineering, University at Buffalo. Thesis title: \nConic Shape Detection Using a Non-Linearized Iterative Approach\n.\n",
         "dblp_record": ""
     },
     {
@@ -206,7 +206,7 @@
     {
         "surname": "Bayer",
         "awards": "",
-        "education": "",
+        "education": "University of Illinois at Urbana–Champaign, University of Illinois at Urbana–Champaign",
         "dblp_record": ""
     },
     {
@@ -218,7 +218,7 @@
     {
         "surname": "Bellovin",
         "awards": "",
-        "education": "Bellovin received a BA degree from Columbia University,[7] and an MS and PhD in computer science from the University of North Carolina at Chapel Hill.\n\n",
+        "education": "Columbia University",
         "dblp_record": ""
     },
     {
@@ -236,7 +236,7 @@
     {
         "surname": "Bernstein",
         "awards": "",
-        "education": "Bernstein attended Bellport High School, a public high school on Long Island, graduating in 1987 at the age of 15.[3] The same year, he ranked fifth in the Westinghouse Science Talent Search.[4] In 1987 (at the age of 16), he achieved a Top 10 ranking in the William Lowell Putnam Mathematical Competition.[5] Bernstein earned a B.A. in mathematics from New York University (1991) and a Ph.D. in mathematics from the University of California, Berkeley (1995), where he studied under Hendrik Lenstra.[citation needed]\n\n",
+        "education": "University of California, Berkeley, New York University, University of California, Berkeley, New York University",
         "dblp_record": ""
     },
     {
@@ -254,13 +254,13 @@
     {
         "surname": "Bhushan",
         "awards": "",
-        "education": "Abhay Bhushan was born in Allahabad, Uttar Pradesh.[1][6] Bhushan is a graduate of the first batch (1960–65) from the Indian Institute of Technology Kanpur,[7] receiving a B.Tech. in electrical engineering. Subsequently, he studied at the Massachusetts Institute of Technology, where he received a Masters in electrical engineering together with a degree in Management from the MIT Sloan School of Management. At MIT, he drafted the now famous RFC 114 and worked on developing FTP and E-mail protocols for the ARPANet and subsequent Internet. In 1978 he was a Director at the Institute of Engineering and Rural Technology in Allahabad and was also a senior manager in Engineering and Development of Xerox where he was a founder and manager of the Xerox Environmental Leadership. He also was a co-founder of both the YieldUP International which in 1995 went public on NASDAQ and Portola Communications, which was bought by Netscape in 1997.[8]\n\n",
+        "education": "Indian Institute of Technology Kanpur, Massachusetts Institute of Technology, MIT Sloan School of Management, Indian Institute of Technology Kanpur, Massachusetts Institute of Technology, MIT Sloan School of Management",
         "dblp_record": ""
     },
     {
         "surname": "Bjørner",
         "awards": "",
-        "education": "",
+        "education": "Technical University of Denmark, Technical University of Denmark",
         "dblp_record": ""
     },
     {
@@ -278,13 +278,13 @@
     {
         "surname": "Blei",
         "awards": "",
-        "education": "",
+        "education": "Brown University, University of California, Berkeley, Brown University,  B.S. (1997) ,  , University of California, Berkeley,  Ph.D. (2004)",
         "dblp_record": ""
     },
     {
         "surname": "Blum",
         "awards": "",
-        "education": "Dorothy Toplitzky was born in 1924 in New York City to Austro-Hungarian immigrant parents.[2]\n\n",
+        "education": "Brooklyn College, Brooklyn College",
         "dblp_record": ""
     },
     {
@@ -308,19 +308,19 @@
     {
         "surname": "Böhm",
         "awards": "",
-        "education": "",
+        "education": "ETH Zürich, ETH Zürich",
         "dblp_record": ""
     },
     {
         "surname": "Bollacker",
         "awards": "",
-        "education": "",
+        "education": "Kurt Bollacker is an American computer scientist with a research background in the areas of machine learning, digital libraries, semantic networks, and electro-cardiographic modeling.\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Bonwick",
         "awards": "",
-        "education": "",
+        "education": "Jeff Bonwick invented and led development of the ZFS file system,[1] which was used in Oracle Corporation's ZFS storage products as well as startups including Nexenta, Delphix, Joyent, and Datto, Inc.[2][3]  Bonwick is also the inventor of slab allocation,[4]  which is used in many operating systems including MacOS and Linux, and the LZJB compression algorithm.\n\n",
         "dblp_record": ""
     },
     {
@@ -338,7 +338,7 @@
     {
         "surname": "Booth",
         "awards": "",
-        "education": "Andrew Donald Booth was born on February 11, 1918 in East Molesy, Surrey, UK.[4] He was the son of Sidney Booth (died 1955) and a cousin of Sir Felix Booth.\n\n",
+        "education": "Jesus College, Jesus College",
         "dblp_record": ""
     },
     {
@@ -386,13 +386,13 @@
     {
         "surname": "Boyer",
         "awards": "",
-        "education": "Ph.D., Mathematics",
+        "education": "Robert Stephen Boyer is an American retired professor of computer science, mathematics, and philosophy at The University of Texas at Austin. He and J Strother Moore invented the Boyer–Moore string-search algorithm, a particularly efficient string searching algorithm, in 1977. He and Moore also collaborated on the Boyer–Moore automated theorem prover, Nqthm, in 1992.[1] Following this, he worked with Moore and Matt Kaufmann on another theorem prover called ACL2. He was elected AAAI Fellow in 1991.[2]\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Brandenburg",
         "awards": "",
-        "education": "Brandenburg received a Dipl. Ing. degree from Erlangen University in Electrical Engineering (1980) as well as a Dipl. Math. degree in Mathematics (1982). In 1989, he obtained his PhD from the Friedrich-Alexander University Erlangen-Nuremberg in Electrical Engineering for his work on digital audio coding and perceptual measurement techniques. \nBrandenburg's PhD advisor was Professor Dieter Seitzer, an expert in psychoacoustics. In the early 1980s, Seitzer had a pet project that he called a \"digital jukebox.\" He envisioned a system where people could connect to a central server and hear music on demand over ISDN phone lines. But the bandwidth of ISDN is an order of magnitude too narrow for transmission of CD-quality digital audio. A standard compact disc uses linear pulse code modulation (PCM) with 16 bits per sample per channel, at 44,100 samples per second. This means that it takes about 1.4 million bits to encode a single second of stereo audio. To send music over ISDN at playback speed, Seitzer would need to compress the file down by a factor of almost 12-to-1.\n\n",
+        "education": "University of Erlangen-Nuremberg, University of Erlangen-Nuremberg",
         "dblp_record": ""
     },
     {
@@ -428,7 +428,7 @@
     {
         "surname": "Brinch Hansen",
         "awards": "",
-        "education": "Per Brinch Hansen was born in Frederiksberg, an enclave surrounded by Copenhagen, Denmark. His father, Jørgen Brinch Hansen, worked as a civil engineer, becoming a leading expert in soil mechanics, and later accepting a professorship at Technical University of Denmark. His mother, Elsebeth Brinch Hansen (née Ring), was the daughter of Danish composer Oluf Ring and worked as a hairdresser before marrying.[1]\n\n",
+        "education": "Technical University of Denmark, Technical University of Denmark",
         "dblp_record": ""
     },
     {
@@ -446,7 +446,7 @@
     {
         "surname": "Brooks",
         "awards": "",
-        "education": "Brooks received a M.A. in pure mathematics from Flinders University of South Australia.[5] In 1981, he received a PhD in Computer Science from Stanford University under the supervision of Thomas Binford.[6] He has held research positions at Carnegie Mellon University and MIT and a faculty position at Stanford University. He joined the faculty of MIT in 1984. He was Panasonic Professor of Robotics at the Massachusetts Institute of Technology. He was director of the MIT Computer Science and Artificial Intelligence Laboratory (1997–2007), previously the \"Artificial Intelligence Laboratory\".\n\n",
+        "education": "Stanford University, Flinders University, Stanford University, Flinders University",
         "dblp_record": ""
     },
     {
@@ -458,7 +458,7 @@
     {
         "surname": "Butler",
         "awards": "",
-        "education": "Butler was born in Ireland. He received his bachelor's degree in computer science from Trinity College, Dublin in 1988. He then took an MSc (1989) and DPhil (1992) at the Programming Research Group of the University of Oxford,[1] working in the area of communicating sequential processes. He then worked for Broadcom in Dublin and at Åbo Akademi University in Turku, Finland with Ralph-Johan Back on refinement calculus. He joined the University of Southampton in 1995 as a lecturer, rising to reader in 2000 and then professor in the same year. He led the Dependable Systems & Software Engineering group at the School of Electronics and Computer Science, University of Southampton (inactive as of 2022).[2]\n\n",
+        "education": "Trinity College, Dublin, Wolfson College, Oxford, Trinity College, Dublin, Wolfson College, , , Oxford",
         "dblp_record": ""
     },
     {
@@ -470,7 +470,7 @@
     {
         "surname": "Camp",
         "awards": "",
-        "education": "Camp received a B.A. in Mathematics from Kalamazoo College in 1987. She received a M.S. in Computer Science from Michigan State University in 1989 and a Ph.D in Computer Science from  The College of William & Mary in 1993.[2]\n\n",
+        "education": "The College of William and Mary, Michigan State University, Kalamazoo College, The College of William and Mary, Michigan State University, Kalamazoo College",
         "dblp_record": ""
     },
     {
@@ -482,13 +482,13 @@
     {
         "surname": "Candlin",
         "awards": "",
-        "education": "Candlin studied physics as an undergraduate at the University of Cambridge, and continued her studies at the university with a PhD in crystallography. She had a succession of jobs in crystallography: at the Natural History Museum, London, at Princeton, then back to the University of Cambridge as a research assistant to Helen Megaw.[1]\n\n",
+        "education": "University of Cambridge, University of Cambridge,  Ph.D.",
         "dblp_record": ""
     },
     {
         "surname": "Canion",
         "awards": "",
-        "education": "A native of Houston, Canion graduated from the University of Houston in 1966 and 1968 with bachelor's and master's degrees in electrical engineering with an emphasis on computer science.[3]\n\n",
+        "education": "University of Houston",
         "dblp_record": ""
     },
     {
@@ -518,37 +518,37 @@
     {
         "surname": "Catmull",
         "awards": "",
-        "education": "Edwin Catmull was born on March 31, 1945, in Parkersburg, West Virginia.[6] His family later moved to Salt Lake City, Utah, where his father first served as principal of Granite High School and then of Taylorsville High School.[7][8]\n\n",
+        "education": "University of Utah, University of Utah,  (B.S. Physics and Computer Science; Ph.D. Computer Science)",
         "dblp_record": ""
     },
     {
         "surname": "Cerf",
         "awards": "",
-        "education": "Vinton Gray Cerf was born in New Haven, Connecticut, on June 23, 1943, the son of Muriel (née Gray) and Vinton Thruston Cerf.[13][14] Cerf attended Van Nuys High School with Jon Postel and Steve Crocker. While in high school, Cerf worked at Rocketdyne on the Apollo program for six months and helped write statistical analysis software for the non-destructive tests of the F-1 engines.[15][16]\n\n",
+        "education": "Stanford University, BS, University of California, Los Angeles, MS, PhD, Stanford University,  (, BS, ), University of California, Los Angeles,  (, MS, , , PhD, )",
         "dblp_record": ""
     },
     {
         "surname": "Chaitin",
         "awards": "",
-        "education": "",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Cailliau",
         "awards": "",
-        "education": "Cailliau was born in Tongeren, Belgium. In 1958 he moved with his parents to Antwerp. After secondary school he graduated from Ghent University in 1969 as civil engineer in electrical and mechanical engineering (Dutch: Burgerlijk Werktuigkundig en Elektrotechnisch ingenieur). He also has an MSc from the University of Michigan in Computer, Information and Control Engineering, 1972.[4]\n\n",
+        "education": "Ghent University, University of Michigan, Ghent University, University of Michigan",
         "dblp_record": ""
     },
     {
         "surname": "Chaochen",
         "awards": "",
-        "education": "",
+        "education": "Peking University, Chinese Academy of Sciences",
         "dblp_record": ""
     },
     {
         "surname": "Chen",
         "awards": "",
-        "education": "Born 1947 in Taichung, Taiwan,[1] Peter Chen received a B.S. in electrical engineering in 1968 at the National Taiwan University, and a Ph.D. in computer science/applied mathematics at Harvard University in 1973. In 1970, he worked one summer at IBM.  After graduating from Harvard, he spent one year at Honeywell and a summer at Digital Equipment Corporation.\n\n",
+        "education": "National Taiwan University, Harvard University, National Taiwan University, Harvard University",
         "dblp_record": ""
     },
     {
@@ -560,13 +560,13 @@
     {
         "surname": "Chou",
         "awards": "",
-        "education": "Chou is a daughter of computer scientists based in Silicon Valley who immigrated from Taiwan.[7][10] She attended St. Francis High School in Mountain View.\n\n",
+        "education": "Chou studied computer science at Stanford University with a specialization in machine learning and artificial intelligence.[4] During that time, she interned at Google and Facebook, and went on to receive a master's degree in computer science. Describing her undergraduate experience studying computer science, Chou said she felt, \"really out of place\" and less confident than her male colleagues at the beginning and took time to realize that she was outperforming most of them in coursework.[6]\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Church",
         "awards": "",
-        "education": "Alonzo Church was born on June 14, 1903, in Washington, D.C., where his father, Samuel Robbins Church, was a justice of the peace[5] and the judge of the Municipal Court for the District of Columbia. He was the grandson of Alonzo Webster Church (1829-1909), United States Senate Librarian from 1881 to 1901, and great-grandson of Alonzo Church, a professor of Mathematics and Astronomy and 6th President of the University of Georgia.[6] As a young boy, Church was partially blinded by an air gun accident.[7] The family later moved to Virginia after his father lost his position at the university because of failing eyesight. With help from his uncle, also named Alonzo Church, the son attended the private Ridgefield School for Boys in Ridgefield, Connecticut.[8] After graduating from Ridgefield in 1920, Church attended Princeton University, where he was an exceptional student. He published his first paper on Lorentz transformations[9] in 1924 and graduated the same year with a degree in mathematics. He stayed at Princeton for graduate work, earning a Ph.D. in mathematics in three years under Oswald Veblen.\n\n",
+        "education": "Princeton University, BS, PhD, Princeton University,  (, BS, , , PhD, )",
         "dblp_record": ""
     },
     {
@@ -578,19 +578,19 @@
     {
         "surname": "Clarke",
         "awards": "",
-        "education": "Born in Newport News, Virginia, Clarke received a B.A. degree in mathematics from the University of Virginia, Charlottesville, in 1967, an M.A. degree in mathematics from Duke University, Durham NC, in 1968, and a Ph.D. degree in Computer Science from Cornell University, Ithaca NY in 1976. After receiving his Ph.D., he taught in the Department of Computer Science  at Duke University, for two years. In 1978, he moved to Harvard University, Cambridge, MA where he was an assistant professor of Computer Science in the Division of Applied Sciences. He left Harvard in 1982 to join the faculty in the Computer Science Department at Carnegie Mellon University, Pittsburgh, PA. He was appointed Full Professor in 1989. In 1995, he became the first recipient of the FORE Systems Professorship, an endowed chair in the Carnegie Mellon School of Computer Science.  He became a University Professor in 2008 and became an emeritus professor in 2015.[2]\n\n",
+        "education": "Cornell University, Cornell University",
         "dblp_record": ""
     },
     {
         "surname": "Cocke",
         "awards": "",
-        "education": "He was born in Charlotte, North Carolina, US. He attended Duke University, where he received his bachelor's degree in mechanical engineering in 1946 and his Ph.D. in mathematics in 1956. Cocke spent his entire career as an industrial researcher for IBM, from 1956 to 1992.[citation needed]\n\n",
+        "education": "Duke University, Duke University",
         "dblp_record": ""
     },
     {
         "surname": "Codd",
         "awards": "",
-        "education": "Edgar Frank Codd was born in Fortuneswell, on the Isle of Portland in Dorset, England.[7] After attending Poole Grammar School, he studied mathematics and chemistry at Exeter College, Oxford, before serving as a pilot in the RAF Coastal Command during the Second World War, flying Sunderlands.[8]  In 1948, he moved to New York to work for IBM as a mathematical programmer.[9] Codd first worked for the company’s Selective Sequence Electronic (SSEC) project and was later involved in the development of IBM 701 and 702.[9]\n\n",
+        "education": "Exeter College, Oxford, University of Michigan, Exeter College, Oxford, University of Michigan",
         "dblp_record": ""
     },
     {
@@ -638,19 +638,19 @@
     {
         "surname": "Cormack",
         "awards": "",
-        "education": "",
+        "education": "Gordon Villy Cormack is a professor in the David R. Cheriton School of Computer Science at the University of Waterloo and co-inventor of Dynamic Markov Compression.\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Cook",
         "awards": "",
-        "education": "Cook received his bachelor's degree in 1961 from the University of Michigan, and his master's degree and PhD from Harvard University, respectively in 1962 and 1966, from the Mathematics Department.[2] He joined the University of California, Berkeley, mathematics department in 1966 as an assistant professor, and stayed there until 1970 when he was denied reappointment. In a speech celebrating the 30th anniversary of the Berkeley electrical engineering and computer sciences department, fellow Turing Award winner and Berkeley professor Richard Karp said that, \"It is to our everlasting shame that we were unable to persuade the math department to give him tenure.\"[3] Cook joined the faculty of the University of Toronto, Computer Science and Mathematics Departments in 1970 as an associate professor, where he was promoted to professor in 1975 and Distinguished Professor in 1985.\n\n",
+        "education": "Harvard University, University of Michigan, Harvard University,  , University of Michigan",
         "dblp_record": ""
     },
     {
         "surname": "Cooley",
         "awards": "",
-        "education": "",
+        "education": "James William Cooley (1926 – June 29, 2016)[1] was an American mathematician. Cooley received a B.A. degree in 1949 from Manhattan College, Bronx, NY, an M.A. degree in 1951 from Columbia University, New York, NY, and a Ph.D. degree in 1961 in applied mathematics from Columbia University. He was a programmer on John von Neumann's computer at the Institute for Advanced Study, Princeton, NJ, from 1953 to 1956, where he notably programmed the Blackman–Tukey transformation.[2]\n\n",
         "dblp_record": ""
     },
     {
@@ -662,31 +662,31 @@
     {
         "surname": "Corbató",
         "awards": "",
-        "education": "Corbató was born on July 1, 1926, in Oakland, California, to Hermenegildo Corbató, a Spanish literature professor from Villarreal, Spain, and Charlotte (née Carella Jensen) Corbató. In 1930 the Corbató family moved to Los Angeles for Hermenegildo's job at the University of California, Los Angeles.\n\n",
+        "education": "California Institute of Technology, Massachusetts Institute of Technology, California Institute of Technology, Massachusetts Institute of Technology",
         "dblp_record": ""
     },
     {
         "surname": "Cosper",
         "awards": "",
-        "education": "",
+        "education": "James Kitchen ‘Kit’ Cosper (born October 21, 1967) was the sixth employee at Red Hat and one of the founders of Linux Hardware Solutions (LHS) as well as a founding director of Linux International.\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Cousot",
         "awards": "",
-        "education": "",
+        "education": "École Nationale Supérieure des Mines de Nancy, École Nationale Supérieure des Mines de Nancy, ,, Université Joseph Fourier Grenoble I",
         "dblp_record": ""
     },
     {
         "surname": "Cox",
         "awards": "",
-        "education": "",
+        "education": "University College London, Oxford University, University College London, Oxford University",
         "dblp_record": ""
     },
     {
         "surname": "Cray",
         "awards": "",
-        "education": "Cray was born in 1925 in Chippewa Falls, Wisconsin, to Seymour R. and Lillian Cray. His father was a civil engineer who fostered Cray's interest in science and engineering. As early as the age of ten he was able to build a device out of Erector Set components that converted punched paper tape into Morse code signals. The basement of the family home was given over to the young Cray as a \"laboratory\".[6]\n\n",
+        "education": "University of Minnesota, University of Minnesota",
         "dblp_record": ""
     },
     {
@@ -710,25 +710,25 @@
     {
         "surname": "Culler",
         "awards": "",
-        "education": "",
+        "education": "University of California, Berkeley, University of California, Los Angeles, University of California, Berkeley, University of California, Los Angeles",
         "dblp_record": ""
     },
     {
         "surname": "Curry",
         "awards": "",
-        "education": "Curry was born on (1900-09-12)12 September 1900 in Millis, Massachusetts, to Samuel Silas Curry and Anna Baright Curry, who ran a school for elocution. He entered Harvard University in 1916 to study medicine but switched to mathematics before graduating in 1920. After two years of graduate work in electrical engineering at Massachusetts Institute of Technology (MIT), he returned to Harvard to study physics, earning a Master of Arts (M.A.) in 1924. Curry's interest in mathematical logic began during this period when he was introduced to the Principia Mathematica, the attempt by Alfred North Whitehead and Bertrand Russell to ground mathematics in symbolic logic. Remaining at Harvard, Curry pursued a Doctor of Philosophy (Ph.D.) in mathematics. While he was directed by George David Birkhoff to work on differential equations, his interests continued to shift to logic. In 1927, while an instructor at Princeton University, he discovered the work of Moses Schönfinkel in combinatory logic. Schönfinkel's work had anticipated much of Curry's own research, and as a consequence, he moved to University of Göttingen where he could work with Heinrich Behmann and Paul Bernays, who were familiar with Schönfinkel's work. Curry was supervised by David Hilbert and worked closely with Bernays, receiving a Ph.D. in 1930 with a dissertation on combinatory logic.[2]\n\n",
+        "education": "Harvard University, University of Göttingen, Harvard University, University of Göttingen",
         "dblp_record": ""
     },
     {
         "surname": "Dadda",
         "awards": "",
-        "education": "",
+        "education": "Politecnico di Milano, Politecnico di Milano",
         "dblp_record": ""
     },
     {
         "surname": "Dahl",
         "awards": "",
-        "education": "Dahl was born in Mandal, Norway. He was the son of Finn Dahl (1898–1962) and Ingrid Othilie Kathinka Pedersen (1905–80). When he was seven, his family moved to Drammen. When he was thirteen, the whole family fled to Sweden during the German occupation of Norway in World War II. After the war's end, Dahl studied numerical mathematics at the University of Oslo.[1]\n\n",
+        "education": "University of Oslo, University of Oslo",
         "dblp_record": ""
     },
     {
@@ -740,25 +740,25 @@
     {
         "surname": "Dam",
         "awards": "",
-        "education": "",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Das",
         "awards": "",
-        "education": "",
+        "education": "Georgia Tech, Indian Institute of Science, Jadavpur University, Georgia Tech, Indian Institute of Science, Jadavpur University",
         "dblp_record": ""
     },
     {
         "surname": "Daswani",
         "awards": "",
-        "education": "Prior to his roles at Google and Stanford, Daswani served in a variety of research, development, teaching, and managerial roles at Yodlee, Lucent, and Bellcore (now Telcordia Technologies). His additional areas of expertise include wireless data technology, and peer-to-peer systems. He has published extensively in these areas,[1] frequently gives talks at industry and academic conferences, and has been granted several U.S. patents.[2]\n\n",
+        "education": "Stanford University, Columbia University, Stanford University, Columbia University",
         "dblp_record": ""
     },
     {
         "surname": "Date",
         "awards": "",
-        "education": "Chris Date attended High Wycombe Royal Grammar School (U.K.) from 1951 to 1958 and received his BA in Mathematics from Cambridge University (U.K.) in 1962. He entered the computer business as a mathematical programmer at Leo Computers Ltd. (London), where he quickly moved into education and training. In 1966, he earned his master's degree at Cambridge, and, in 1967, he joined IBM Hursley (UK) as a computer programming instructor. Between 1969 and 1974, he was a principal instructor in IBM's European education program.\n\n",
+        "education": "University of Cambridge, University of Cambridge",
         "dblp_record": ""
     },
     {
@@ -812,7 +812,7 @@
     {
         "surname": "Dewdney",
         "awards": "",
-        "education": "",
+        "education": "Alexander Keewatin Dewdney (born August 5, 1941) is a Canadian mathematician, computer scientist, author, filmmaker, and conspiracy theorist. Dewdney is the son of Canadian artist and author Selwyn Dewdney, and brother of poet Christopher Dewdney.\n\n",
         "dblp_record": ""
     },
     {
@@ -824,7 +824,7 @@
     {
         "surname": "Dham",
         "awards": "",
-        "education": "Vinod Dham was born in the 1950s in Pune, India.[9] His father was a member of the army civilian department who had moved from Rawalpindi, Punjab, Pakistan, to India during the Partition of India.[10]\n\n",
+        "education": "Delhi College of Engineering, Delhi Technological University, Delhi University, University of Cincinnati, Delhi College of Engineering,  (, Delhi Technological University, ); , Delhi University,  , , University of Cincinnati",
         "dblp_record": ""
     },
     {
@@ -848,13 +848,13 @@
     {
         "surname": "Dillon",
         "awards": "",
-        "education": "Dillon studied electronic engineering and computer science at the University of California, Berkeley, where he first became involved with BSD in 1985. He also became known for his Amiga programming,[3] his C compiler DICE[2] and his work on the Linux kernel.[8] He founded and worked at Best Internet from 1994 until 1997, contributing to FreeBSD in that time.[9] His \"Diablo\" internet news transit program was very popular with many ISPs.\n\n",
+        "education": "University of California, Berkeley, University of California, Berkeley",
         "dblp_record": ""
     },
     {
         "surname": "Dix",
         "awards": "",
-        "education": "",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
@@ -866,7 +866,7 @@
     {
         "surname": "Dorigo",
         "awards": "",
-        "education": "",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
@@ -884,13 +884,13 @@
     {
         "surname": "Dumais",
         "awards": "",
-        "education": "Susan Dumais is a Technical Fellow at Microsoft and Managing Director of the Microsoft Research Northeast Labs, inclusive of MSR New England, MSR New York and MSR Montreal.  She is also an Affiliate Professor at the University of Washington Information School.\n\n",
+        "education": "Indiana University, Bates College, Indiana University, Bates College",
         "dblp_record": ""
     },
     {
         "surname": "Dunkels",
         "awards": "",
-        "education": "Swedish Institute of Computer Science, B.S., M.S., Ph.D.",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
@@ -902,13 +902,13 @@
     {
         "surname": "Dustdar",
         "awards": "",
-        "education": "",
+        "education": "Schahram Dustdar is an Austrian computer scientist known for his work on distributed systems and elastic computing. Dustdar is a professor of computer science and head of the Distributed Systems Group[1]  at TU Wien. He was named Fellow of the Institute of Electrical and Electronics Engineers (IEEE) in 2016[2] for contributions to elastic computing for cloud applications.\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Eades",
         "awards": "",
-        "education": "",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
@@ -920,7 +920,7 @@
     {
         "surname": "Ebbinkhuijsen",
         "awards": "",
-        "education": "",
+        "education": "Wim Ebbinkhuijsen (born 24 December 1939, Amsterdam) is a retired Dutch computer scientist who is considered to be one of the \"fathers of COBOL\".\n\n",
         "dblp_record": ""
     },
     {
@@ -938,13 +938,13 @@
     {
         "surname": "Eich",
         "awards": "",
-        "education": "Eich grew up in Pittsburgh; Gaithersburg, Maryland; and Palo Alto,[2] where he attended Ellwood P. Cubberley High School, graduating in the class of 1979. He received his bachelor's degree in mathematics and computer science at Santa Clara University,[2] and he received his master's degree in 1985 from the University of Illinois at Urbana–Champaign.[2] Eich is Roman Catholic.[1]\n\n",
+        "education": "University of Illinois Urbana-Champaign, Santa Clara University, University of Illinois Urbana-Champaign, Santa Clara University",
         "dblp_record": ""
     },
     {
         "surname": "Emeagwali",
         "awards": "",
-        "education": "Philip Emeagwali was born in Akure, Nigeria on 23 August 1954.[4] He was raised in Onitsha in the South Eastern part of Nigeria. His early schooling was suspended in 1967 as a result of the Nigerian Civil War. At age 13, he served in the Biafran army. After the war he completed high-school equivalence through self-study.[5]\n\n",
+        "education": "He traveled to the United States to study under a scholarship following completion of a course at the University of London. He received a bachelor's degree in mathematics from Oregon State University in 1977.[7] He later moved to Washington D.C., receiving in 1986 a master's degree from George Washington University in ocean and marine engineering, and a second master's in applied mathematics from the University of Maryland.[8] Next magazine suggested that Emeagwali claimed to have further degrees.[9][10] During this time, he worked as a civil engineer at the Bureau of Land Reclamation in Wyoming.\n\n",
         "dblp_record": ""
     },
     {
@@ -968,19 +968,19 @@
     {
         "surname": "Eppstein",
         "awards": "",
-        "education": "Born in Windsor, England, in 1963, Eppstein received a B.S. in mathematics from Stanford University in 1984, and later an M.S. (1985) and Ph.D. (1989) in computer science from Columbia University, after which he took a postdoctoral position at Xerox's Palo Alto Research Center.[5] He joined the UC Irvine faculty in 1990, and was co-chair of the Computer Science Department there from 2002 to 2005.[6] In 2014, he was named a Chancellor's Professor.[7] In October 2017, Eppstein was one of 396 members elected as fellows of the American Association for the Advancement of Science.[8]\n\n",
+        "education": "Stanford University, Columbia University, Stanford University, Columbia University",
         "dblp_record": ""
     },
     {
         "surname": "Yershov",
         "awards": "",
-        "education": "",
+        "education": "Moscow State University, Moscow State University",
         "dblp_record": ""
     },
     {
         "surname": "Estridge",
         "awards": "",
-        "education": "Estridge was born in Jacksonville, Florida. His father was a professional photographer. He graduated from Bishop Kenny High School in 1955, and from the University of Florida in 1959. He married Mary Ann Hellier in September, 1958, and they had three children: Patricia Ann, Mary Evelyn and Sandra Marie. He completed a bachelor's degree in electrical engineering at the University of Florida and worked at the Army, designing a radar system using computers, IBM and finally NASA's Goddard Space Flight Center until he moved to Boca Raton, Florida, in 1969.\n\n",
+        "education": "University of Florida, University of Florida",
         "dblp_record": ""
     },
     {
@@ -992,19 +992,19 @@
     {
         "surname": "Evans",
         "awards": "",
-        "education": "Born in Aberdyfi, Christopher Evans spent his childhood in Wales and was educated at Christ College, Brecon (1941–49). He spent two years in the RAF (1950–52), and worked as a science journalist and writer until 1957, when he began a B.A. course in Psychology at University College London, graduating with honours in 1960. After a summer fellowship at Duke University in the United States, where he first met his American wife, Nancy Fullmer, he took up a research assistant post in the Physics Laboratory, University of Reading, working on eye movements under Professor R. W. Ditchburn. Upon receiving his PhD (the title of his thesis was \"Pattern Perception and the Stabilised Retinal Image\"), he went to the Division of Computer Science, National Physical Laboratory, Teddington, in 1964, where he remained until his death from cancer in 1979. He had two children, Christopher Samuel Evans and Victoria Evans-Theiler.[citation needed]\n\n",
+        "education": "University College London, University of Reading, University College London, , , University of Reading",
         "dblp_record": ""
     },
     {
         "surname": "Evans",
         "awards": "",
-        "education": "Evans was born in Salt Lake City. He attended the University of Utah and studied electrical engineering; he earned his Bachelor of Science in Physics in 1949 and his Doctorate in Physics in 1953.[3] Evans first worked at the Bendix aviation electronics company, where he acted as project manager in 1955 to develop what some describe as an early personal computer that ran on an interpretive operating system. The Bendix G-15 was a bulky unit about the size of a two-door refrigerator. He stayed with the company just long enough to manage the G-20 project.[4]\n\n",
+        "education": "University of Utah",
         "dblp_record": ""
     },
     {
         "surname": "Even",
         "awards": "",
-        "education": "",
+        "education": "Harvard University, Harvard University",
         "dblp_record": ""
     },
     {
@@ -1040,13 +1040,13 @@
     {
         "surname": "Firesmith",
         "awards": "",
-        "education": "Firesmith received his B.A. in Mathematics and German from Linfield College in 1975 and his M.A. in Mathematics from Arizona State University in 1977. He also studied one year at Ludwig Maximilian University of Munich.\n\n",
+        "education": "Arizona State University, Arizona State University",
         "dblp_record": ""
     },
     {
         "surname": "Flake",
         "awards": "",
-        "education": "",
+        "education": "Gary William Flake (born 1966 or 1967)[1] was most recently the CTO of Search at Salesforce.com, which bought and shuttered Clipboard, Inc.,[2] of which he was the founder and CEO.\n\n",
         "dblp_record": ""
     },
     {
@@ -1064,7 +1064,7 @@
     {
         "surname": "Floyd",
         "awards": "",
-        "education": "Born in Charlottesville, Virginia, Floyd received a BA in Sociology from the University of California - Berkeley in 1971. She received an MS in Computer Science in 1987 and a PhD in 1989, both from UC - Berkeley.[5] Her PhD was completed under the supervision of Richard M. Karp.[1]\n\n",
+        "education": "University of California, Berkeley, University of California, Berkeley",
         "dblp_record": ""
     },
     {
@@ -1088,19 +1088,19 @@
     {
         "surname": "Ford",
         "awards": "",
-        "education": "",
+        "education": "Lester Randolph Ford Jr. (September 23, 1927 – February 26, 2017) was an American mathematician specializing in network flow problems. He was the son of mathematician Lester R. Ford Sr.[1]\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Fortnow",
         "awards": "",
-        "education": "Lance Fortnow received a doctorate in applied mathematics from MIT in 1989,[1] supervised by Michael Sipser. Since graduation, he has been on the faculty of the University of Chicago (1989–1999, 2003–2007), Northwestern University (2008–2012) and the Georgia Institute of Technology (2012–2019) as chair of the School of Computer Science.[2][3]\n\n",
+        "education": "Cornell University, Massachusetts Institute of Technology, Cornell University, Massachusetts Institute of Technology",
         "dblp_record": ""
     },
     {
         "surname": "Fayed",
         "awards": "",
-        "education": "In 2005 Fayed began work on a new visual programming language called PWCT and distributed it as a free-open source project in 2008.[13][14][15]\n\n",
+        "education": "Menoufia University, King Saud University, Menoufia University, (B.Eng., 2008), King Saud University, (M.Sc., 2017)",
         "dblp_record": ""
     },
     {
@@ -1112,7 +1112,7 @@
     {
         "surname": "France",
         "awards": "",
-        "education": "",
+        "education": "University of the West Indies, Trinidad and Tobago, Massey University, New Zealand, University of the West Indies,  (, Trinidad and Tobago, ), , Massey University,  (, New Zealand, )",
         "dblp_record": ""
     },
     {
@@ -1130,19 +1130,19 @@
     {
         "surname": "Freund",
         "awards": "",
-        "education": "",
+        "education": "The Hebrew University of Jerusalem, University of California, Santa Cruz, The Hebrew University of Jerusalem, ,, , University of California, Santa Cruz",
         "dblp_record": ""
     },
     {
         "surname": "Friedman",
         "awards": "",
-        "education": "",
+        "education": "University of Houston, [1], University of Houston, [1]",
         "dblp_record": ""
     },
     {
         "surname": "Fischer",
         "awards": "",
-        "education": "Charlotte Froese was born on September 21, 1929, in the village of Stara Mykolaivka (formerly Pravdivka, and Nikolayevka[5]), in the  Donetsk region, in the present-day Ukraine, to parents of Mennonite descent. Her parents immigrated to Germany in 1929 on the last train allowed to cross the border before its closure by Soviet authorities. After a few months in a refugee camp, her family was allowed to immigrate to Canada, where they eventually established themselves in Chilliwack, British Columbia.\n\n",
+        "education": "She obtained both a B.A. degree, with honors, in Mathematics and Chemistry and an M.A. degree in Applied Mathematics from the University of British Columbia in 1952 and 1954, respectively. She then obtained her Ph.D. in Applied Mathematics and Computing at Cambridge University in 1957, pursuing coursework in quantum theory with Paul Dirac. She worked under the supervision of Douglas Hartree, whom she assisted in programming the Electronic Delay Storage Automatic Calculator (EDSAC) for atomic-structure calculations.\n\n",
         "dblp_record": ""
     },
     {
@@ -1196,13 +1196,13 @@
     {
         "surname": "Garey",
         "awards": "",
-        "education": "",
+        "education": "University of Wisconsin–Madison, University of Wisconsin–Madison",
         "dblp_record": ""
     },
     {
         "surname": "Garis",
         "awards": "",
-        "education": "",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
@@ -1220,7 +1220,7 @@
     {
         "surname": "Gelobter",
         "awards": "",
-        "education": "Her father was a Polish Jew, and her mother was Afro-Caribbean. She graduated from Brown University in 2011[2] with a computer science degree with a concentration in artificial intelligence and machine learning.[1]\n\n",
+        "education": "Brown University, Brown University",
         "dblp_record": ""
     },
     {
@@ -1244,7 +1244,7 @@
     {
         "surname": "Gibbons",
         "awards": "",
-        "education": "University of Edinburgh, B.Sc., University of Oxford, D.Phil.",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
@@ -1256,13 +1256,13 @@
     {
         "surname": "Giles",
         "awards": "",
-        "education": "",
+        "education": "Rhodes College, University of Tennessee, University of Michigan, University of Arizona, Rhodes College, University of Tennessee, University of Michigan, University of Arizona",
         "dblp_record": ""
     },
     {
         "surname": "Ginsburg",
         "awards": "",
-        "education": "Seymour Ginsburg received his B.S. from City College of New York in 1948, where along with fellow student Martin Davis he attended an honors mathematics class taught by Emil Post.[1] He earned a Ph.D. in Mathematics from the University of Michigan in 1952, studying under Ben Dushnik.\n\n",
+        "education": "City College of New York, University of Michigan, City College of New York, ,, University of Michigan",
         "dblp_record": ""
     },
     {
@@ -1280,7 +1280,7 @@
     {
         "surname": "Goel",
         "awards": "",
-        "education": "",
+        "education": "Ohio State University, Ohio State University",
         "dblp_record": ""
     },
     {
@@ -1322,7 +1322,7 @@
     {
         "surname": "Goldreich",
         "awards": "",
-        "education": "Goldreich received a DSc in computer science at Technion in 1983 under Shimon Even.[2][3]\n\n",
+        "education": "Technion, Weizmann Institute, Technion, ,, Weizmann Institute",
         "dblp_record": ""
     },
     {
@@ -1334,7 +1334,7 @@
     {
         "surname": "Golub",
         "awards": "",
-        "education": "Born in Chicago, he was educated at the University of Illinois at Urbana-Champaign, receiving his B.S. (1953), M.A. (1954) and Ph.D. (1959) all in mathematics.[1] His M.A. degree was more specifically in Mathematical Statistics. His PhD dissertation was entitled \"The Use of Chebyshev Matrix Polynomials in the Iterative Solution of Linear Equations Compared to the Method of Successive Overrelaxation\" and his thesis adviser was Abraham Taub. Gene Golub succumbed to acute myeloid leukemia on the morning of 16 November 2007 at the Stanford Hospital.[2]\n\n",
+        "education": "University of Illinois at Urbana-Champaign, University of Illinois at Urbana-Champaign",
         "dblp_record": ""
     },
     {
@@ -1358,7 +1358,7 @@
     {
         "surname": "Gosling",
         "awards": "",
-        "education": "Gosling attended William Aberhart High School in Calgary, Alberta. While in high school, he wrote some of the software to analyze data from the ISIS 2 satellite, working for the University of Calgary physics department.[4]  He received a Bachelor of Science from the University of Calgary[5] and his M.A. and Ph.D. from Carnegie Mellon University, all in computer science.[2][6][7] He wrote a version of Emacs called Gosling Emacs (Gosmacs) while working toward his doctorate. He built a multi-processor version of Unix for a 16-way computer system[8] while at Carnegie Mellon University, before joining Sun Microsystems. He also developed several compilers and mail systems there.\nGosling has two children, Katie and Kelsey, who are half siblings from Gosling's two marriages.\n\n",
+        "education": "University of Calgary, BSc, Carnegie Mellon University, MA, PhD, , , University of Calgary,  , (, BSc, , 1977), , , Carnegie Mellon University,  , (, MA, ; , PhD, , 1983), , ",
         "dblp_record": ""
     },
     {
@@ -1370,7 +1370,7 @@
     {
         "surname": "Graham",
         "awards": "",
-        "education": "",
+        "education": "\nRobert M. Graham (1929 in Michigan, US – January 2, 2020)[1] was a cybersecurity researcher computer scientist and Professor Emeritus of Computer Science at the University of Massachusetts Amherst. He was born to a Scottish emigrant.\n\n",
         "dblp_record": ""
     },
     {
@@ -1382,13 +1382,13 @@
     {
         "surname": "Gray",
         "awards": "",
-        "education": "Gray was born in San Francisco, the second child of Ann Emma Sanbrailo, a teacher, and James Able Gray, who was in the U.S. Army; the family moved to Rome, Italy, where Gray spent most of the first three years of his life; he learned to speak Italian before English. The family then moved to Virginia, spending about four years there, until Gray's parents divorced, after which he returned to San Francisco with his mother. His father, an amateur inventor, patented a design for a ribbon cartridge for typewriters that earned him a substantial royalty stream.[2]\n\n",
+        "education": "University of California, Berkeley, University of California, Berkeley,  (Ph.D.)",
         "dblp_record": ""
     },
     {
         "surname": "Greibach",
         "awards": "",
-        "education": "Greibach earned an A.B. degree (summa cum laude) in Linguistics and Applied Mathematics from Radcliffe College in 1960, and two years after achieved an A.M. degree. In 1963, she was awarded a PhD at Harvard University, advised by Anthony Oettinger[1] with a PhD thesis entitled \"Inverses of Phrase Structure Generators\".\n\n",
+        "education": "Radcliffe College, Harvard University, Radcliffe College,  ,  , Harvard University",
         "dblp_record": ""
     },
     {
@@ -1400,13 +1400,13 @@
     {
         "surname": "Griswold",
         "awards": "",
-        "education": "",
+        "education": "\nRalph E. Griswold (May 19, 1934, Modesto, CA[1] – October 4, 2006, Tucson, AZ) was a computer scientist known for his research into high-level programming languages and symbolic computation. His language credits include the string processing language  SNOBOL,[2] SL5,[3][4] and Icon.[5]\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Gropp",
         "awards": "",
-        "education": "",
+        "education": "Stanford University, Stanford University",
         "dblp_record": ""
     },
     {
@@ -1430,7 +1430,7 @@
     {
         "surname": "Gunther",
         "awards": "",
-        "education": "Gunther is an Australian of German and Scots ancestry, born in Melbourne on 15 August 1950. He attended Preston East Primary School from 1955 to 1956, and Balwyn North Primary School from 1956 until 1962. For his tenth birthday, Gunther received a copy of the now famous book entitled The Golden Book of Chemistry Experiments from an older cousin. Inspired by the book, he started working on various experiments, making use of various chemicals that could be found around in his house. After he spilled some potassium permanganate solution on his bedroom carpet his mother confined him to an alcove in the garage which he turned into a small laboratory, replete with industrial chemicals and second-hand laboratory glassware. Gunther was interested in finding out how things like detergents and oils were composed by cracking them in his fractionating column. He took particular interest in mixing paints for his art classes, as well as his chemistry classes in Balwyn High School. His father, being the Superintendent of Melbourne's electrical power station, borrowed an organic chemistry text from the chemists in the quality control laboratory. This ultimately led to an intense interest in synthesizing Azo dyes. At around age 14, Gunther attempted to predict the color of azo dyes based on the chromophore-auxochrome combination. Apart from drawing up empirical tables, this effort was largely unsuccessful due to his lack of knowledge of quantum theory.\n\n",
+        "education": "La Trobe University, University of Southampton, La Trobe University,  , University of Southampton",
         "dblp_record": ""
     },
     {
@@ -1442,31 +1442,31 @@
     {
         "surname": "Guy",
         "awards": "",
-        "education": "",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Griesemer",
         "awards": "",
-        "education": "",
+        "education": "Robert Griesemer (born 1964) is a Swiss computer scientist. He is best known for his work on the Go programming language. Prior to Go, he worked on Google's V8 JavaScript engine, the Sawzall language, the Java HotSpot virtual machine, and the Strongtalk system.[1][2][3][4]\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Habermann",
         "awards": "",
-        "education": "Free University of Amsterdam, Eindhoven University of Technology",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Hahn",
         "awards": "",
-        "education": "",
+        "education": "Philipp Matthäus Hahn (25 November 1739 in Scharnhausen (today part of Ostfildern), Duchy of Württemberg – 2 May 1790 in Echterdingen (today part of Leinfelden-Echterdingen)) was a German pastor, astronomer and inventor.\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Hall",
         "awards": "",
-        "education": "University of Washington, Rutgers University, Eastern Nazarene College, Boston University, Massachusetts Institute of Technology, Harvard University",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
@@ -1490,19 +1490,19 @@
     {
         "surname": "Hamming",
         "awards": "",
-        "education": "Hamming was born in Chicago, Illinois, on February 11, 1915,[2] the son of Richard J. Hamming, a credit manager, and Mabel G. Redfield.[3] He grew up in Chicago, where he attended Crane Technical High School and Crane Junior College.[3]\n\n",
+        "education": "University of Chicago, University of Nebraska, University of Illinois at Urbana–Champaign, University of Chicago,  (B.S. 1937), University of Nebraska,  (M.A. 1939), University of Illinois at Urbana–Champaign,  (Ph.D. 1942)",
         "dblp_record": ""
     },
     {
         "surname": "Han",
         "awards": "",
-        "education": "Born in Shanghai on 10 August 1949,[3] Han received his BS from University of Science and Technology of China in 1979[4] and earned his PhD from the University of Wisconsin-Madison in Computer Science in 1985.[5]\n\n",
+        "education": "University of Wisconsin - Madison, PhD, University of Science and Technology of China, BSc., University of Wisconsin - Madison,  (, PhD, ), University of Science and Technology of China,  (, BSc., )",
         "dblp_record": ""
     },
     {
         "surname": "Harary",
         "awards": "",
-        "education": "Frank Harary was born in New York City, the oldest child to a family of Jewish immigrants from Syria and Russia. He earned his bachelor's and master's degrees from Brooklyn College in 1941 and 1945 respectively[2] and his Ph.D., with supervisor Alfred L. Foster, from University of California, Berkeley in 1948.\n\n",
+        "education": "Brooklyn College, University of California, Berkeley, Brooklyn College, University of California, Berkeley",
         "dblp_record": ""
     },
     {
@@ -1514,19 +1514,19 @@
     {
         "surname": "Hartmanis",
         "awards": "",
-        "education": "Hartmanis was born in Latvia on July 5, 1928.[2] He was a son of Mārtiņš Hartmanis [lv],[3] a general in the Latvian Army, and Irma Marija Hartmane. He was the younger brother of the poet Astrid Ivask. After the Soviet Union occupied Latvia in 1940, Mārtiņš Hartmanis was arrested by the Soviets and died in a prison. Later in World War II, the wife and children of Mārtiņš Hartmanis left Latvia in 1944 as refugees, fearing for their safety if the Soviet Union took over Latvia again.[6][7]\n\n",
+        "education": "University of Marburg, University of Kansas City, Caltech, , , University of Marburg, , , University of Kansas City, , , Caltech, , ",
         "dblp_record": ""
     },
     {
         "surname": "Håstad",
         "awards": "",
-        "education": "",
+        "education": "Massachusetts Institute of Technology, Uppsala University, Stockholm University, , , Massachusetts Institute of Technology, , , Uppsala University, , , Stockholm University, , ",
         "dblp_record": ""
     },
     {
         "surname": "Hatton",
         "awards": "",
-        "education": "",
+        "education": "King's College, Cambridge, King's College, Cambridge",
         "dblp_record": ""
     },
     {
@@ -1538,19 +1538,19 @@
     {
         "surname": "Jifeng",
         "awards": "",
-        "education": "",
+        "education": "Fudan University, Fudan University",
         "dblp_record": ""
     },
     {
         "surname": "Hehner",
         "awards": "",
-        "education": "Carleton University, B.Sc., University of Toronto, M.Sc., Ph.D.",
+        "education": "Eric \"Rick\" C. R. Hehner (born 16 September 1947) is a Canadian computer scientist. He was born in Ottawa. He studied mathematics and physics at Carleton University, graduating with a Bachelor of Science (B.Sc.) in 1969. He studied computer science at the University of Toronto, graduating with a Master of Science (M.Sc.) in 1970, and a Doctor of Philosophy (Ph.D.) in 1974. He then joined the faculty there, becoming a full professor in 1983. He became the Bell University Chair in software engineering in 2001, and retired in 2012.[1]\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Hellman",
         "awards": "",
-        "education": "Born in New York to a Jewish family,[4] Hellman graduated from the Bronx High School of Science. He went on to take his bachelor's degree in electrical engineering from New York University in 1966, and at Stanford University he received a master's degree and a Ph.D. in the discipline in 1967 and 1969.[5]\n\n",
+        "education": "New York University, Stanford University, New York University,  (BE, 1966), Stanford University,  (MS, 1967; PhD, 1969)",
         "dblp_record": ""
     },
     {
@@ -1592,7 +1592,7 @@
     {
         "surname": "Hillis",
         "awards": "",
-        "education": "Born September 25, 1956, in Baltimore, Maryland, Danny Hillis spent much of his childhood living overseas, in Europe, Africa, and Asia.\n\n",
+        "education": "Massachusetts Institute of Technology, Massachusetts Institute of Technology",
         "dblp_record": ""
     },
     {
@@ -1604,7 +1604,7 @@
     {
         "surname": "Hirschberg",
         "awards": "",
-        "education": "Julia Linn Bell Hirschberg received her first Ph.D degree in History (16th-century Mexico) from University of Michigan in 1976. She served on the History faculty of Smith College from 1974 to 1982.  She subsequently shifted to Computer Science studies, receiving her M.S. in Computer and Information Science from University of Pennsylvania in 1982 and a Ph.D in Computer and Information Science from University of Pennsylvania in 1985.\n\n",
+        "education": "University of Pennsylvania, University of Michigan, University of Pennsylvania, University of Michigan",
         "dblp_record": ""
     },
     {
@@ -1634,7 +1634,7 @@
     {
         "surname": "Holland",
         "awards": "",
-        "education": "John Henry Holland was born on 2 February 1929 in Fort Wayne, Allen County, Indiana,[3] son of Gustave A. Holland (b. 24 July 1896 in Russian Poland; only son of Christopher Holland and Appolonia Greiber / Graeber; three sisters) and Mildred P. Gfroerer (b. 1 July 1901\nin Columbus Grove, Ohio; the second of three daughters of John Joseph Gfroerer and Ila Savilla \"Ily S.\" Kiefer).[4] He had one younger sister, Shirley Ann \"Hollie\" Holland (b. about 1931; m1. c.1955 John William Ringgenberg (div. bef. 3 Aug 1968, d. 1982), had issue; m2. 2003 to Albert Vernon \"Vern\" Kinner (d. 2015)).\n\n",
+        "education": "University of Michigan, University of Michigan",
         "dblp_record": ""
     },
     {
@@ -1646,7 +1646,7 @@
     {
         "surname": "Holzmann",
         "awards": "",
-        "education": "Holzmann was born in Amsterdam, Netherlands and received an Engineer's degree in electrical engineering from the Delft University of Technology in 1976. He subsequently also received his PhD degree from Delft University in 1979 under Willem van der Poel and J.L. de Kroes with a thesis entitled Coordination problems in multiprocessing systems. After receiving a Fulbright Scholarship he was a post-graduate student at the University of Southern California for another year, where he worked with Per Brinch Hansen.\n\n",
+        "education": "Delft University of Technology, Delft University of Technology",
         "dblp_record": ""
     },
     {
@@ -1670,13 +1670,13 @@
     {
         "surname": "Householder",
         "awards": "",
-        "education": "Householder was born in Rockford, Illinois, USA. He received a BA in philosophy from the Northwestern University of Evanston, Illinois in 1925, and an MA, also in philosophy, from Cornell University in 1927. He taught mathematics while preparing for his PhD, which was awarded at the University of Chicago in 1937.  His thesis dealt with the topic of the calculus of variations.\n\n",
+        "education": "University of Chicago, University of Chicago",
         "dblp_record": ""
     },
     {
         "surname": "Hudak",
         "awards": "",
-        "education": "Vanderbilt University, B.S., Massachusetts Institute of Technology, M.S., University of Utah, Ph.D.",
+        "education": "Paul Raymond Hudak (July 15, 1952 – April 29, 2015) was an American musician and professor of computer science at Yale University who was best known for his involvement in the design of the programming language Haskell, and for several textbooks on Haskell and computer music. He was a chair of the department, and was also master of Saybrook College. He died on April 29, 2015, of leukemia.[7][9]\n\n",
         "dblp_record": ""
     },
     {
@@ -1688,7 +1688,7 @@
     {
         "surname": "Hughes",
         "awards": "",
-        "education": "University of Oxford, PhD",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
@@ -1724,7 +1724,7 @@
     {
         "surname": "Ierusalimschy",
         "awards": "",
-        "education": "Pontifical Catholic University of Rio de Janeiro",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
@@ -1736,25 +1736,25 @@
     {
         "surname": "Irwin",
         "awards": "",
-        "education": "Mary Jane Irwin received her B.S. in Mathematics from Memphis State University in 1971, and her M.S. and Ph.D. in Computer Science from the University of Illinois in 1975 and 1977, respectively.  Her dissertation research on the topic of computer arithmetic was supervised by Dr. James Robertson.\n\n",
+        "education": "University of Illinois at Urbana-Champaign, Memphis State University, University of Illinois at Urbana-Champaign, Memphis State University",
         "dblp_record": ""
     },
     {
         "surname": "Iverson",
         "awards": "",
-        "education": "Ken Iverson was born on 17 December 1920 near Camrose, a town in central Alberta, Canada.[2] His parents were farmers who came to Alberta from North Dakota; his ancestors came from Trondheim, Norway.[3]\n\n",
+        "education": "Iverson began school on 1 April 1926 in a one-room school,[4] initially in Grade 1, promoted to Grade 2 after 3 months and to Grade 4 by the end of June 1927.\nHe left school after Grade 9 because it was the depths of the Great Depression and there was work to do on the family farm, and because he thought further schooling only led to becoming a schoolteacher and he had no desire to become one.  At age 17, while still out of school, he enrolled in a correspondence course on radios with De Forest Training in Chicago, and learned calculus by self-study from a textbook.[4][6]\nDuring World War II, while serving in the Royal Canadian Air Force, he took correspondence courses toward a high school diploma.\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Jacobson",
         "awards": "",
-        "education": "Ivar Jacobson was born in Ystad, Sweden, on September 2, 1939. He received his Master of Electrical Engineering degree at Chalmers Institute of Technology in Gothenburg in 1962. After his work at Ericsson, he formalized the language and method he had been working on in his PhD at the Royal Institute of Technology in Stockholm in 1985 on the thesis Language Constructs for Large Real Time Systems.[citation needed]\n\n",
+        "education": "Chalmers Institute of Technology, Gothenburg, Royal Institute of Technology, Stockholm, Chalmers Institute of Technology,  in , Gothenburg, , , Royal Institute of Technology,  in , Stockholm",
         "dblp_record": ""
     },
     {
         "surname": "Jain",
         "awards": "",
-        "education": "Born in India, Anil K. Jain received his Bachelor of Technology in electrical engineering from the Indian Institute of Technology, Kanpur in 1969. He received his MS and PhD from the Ohio State University in 1970 and 1973, respectively. His PhD advisor was Robert B. McGhee, and his PhD thesis was titled Some Aspects of Dimensionality and Sample Size Problems in Statistical Pattern Recognition. Jain taught at Wayne State University from 1972 to 1974 and joined the faculty of Michigan State University in 1974, where he is currently a University Distinguished Professor.\n\n",
+        "education": "Indian Institute of Technology, Kanpur, Ohio State University, , , Indian Institute of Technology, Kanpur, , , Ohio State University, , ",
         "dblp_record": ""
     },
     {
@@ -1766,13 +1766,13 @@
     {
         "surname": "James",
         "awards": "",
-        "education": "",
+        "education": "Jonathan Joseph James (December 12, 1983 – May 18, 2008) was an American hacker (a gray hat ethical hacker) who was the first juvenile incarcerated for cybercrime in the United States.[1] The South Florida native was 15 years old at the time of the first offense and 16 years old on the date of his sentencing. He died at his Pinecrest, Florida home on May 18, 2008, of a self-inflicted gunshot wound.[2][3]\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Johnson",
         "awards": "",
-        "education": "",
+        "education": "Amherst College, MIT, , , Amherst College, , , MIT, , ",
         "dblp_record": ""
     },
     {
@@ -1784,7 +1784,7 @@
     {
         "surname": "Jones",
         "awards": "",
-        "education": "",
+        "education": "University of Oxford, University of Oxford",
         "dblp_record": ""
     },
     {
@@ -1802,13 +1802,13 @@
     {
         "surname": "Joshi",
         "awards": "",
-        "education": "",
+        "education": "College of Engineering, Pune, Indian Institute of Science, University of Pennsylvania, College of Engineering, Pune, Indian Institute of Science, University of Pennsylvania",
         "dblp_record": ""
     },
     {
         "surname": "Joy",
         "awards": "",
-        "education": "Joy was born in the Detroit suburb of Farmington Hills, Michigan, to William Joy, a school vice-principal and counselor, and Ruth Joy. He earned a Bachelor of Science in electrical engineering from the University of Michigan and a Master of Science in electrical engineering and computer science from the University of California, Berkeley, in 1979.[3]\n\n",
+        "education": "University of Michigan, University of California, Berkeley, University of Michigan,  (BS),  , University of California, Berkeley,  (MS)",
         "dblp_record": ""
     },
     {
@@ -1820,25 +1820,25 @@
     {
         "surname": "Kahan",
         "awards": "",
-        "education": "Born to a Canadian Jewish family,[2] he attended the University of Toronto, where he received his bachelor's degree in 1954, his master's degree in 1956, and his Ph.D. in 1958, all in the field of mathematics. Kahan is now emeritus professor of mathematics and of electrical engineering and computer sciences (EECS) at the University of California, Berkeley.\n\n",
+        "education": "University of Toronto, University of Toronto",
         "dblp_record": ""
     },
     {
         "surname": "Kahn",
         "awards": "",
-        "education": "",
+        "education": "City College of New York, Princeton University, City College of New York,  (B.E.E., 1960) , Princeton University, (M.A., 1962; Ph.D., 1964)",
         "dblp_record": ""
     },
     {
         "surname": "Kak",
         "awards": "",
-        "education": "",
+        "education": "University of Madras, Indian Institute of Technology, Delhi, University of Madras, , , Indian Institute of Technology, Delhi",
         "dblp_record": ""
     },
     {
         "surname": "Kamp",
         "awards": "",
-        "education": "",
+        "education": "Poul-Henning Kamp (Danish: [ˈpʰʌwl ˈhene̝ŋ ˈkʰɑmˀp]; born 1966) is a Danish computer software developer known for work on various projects including FreeBSD and Varnish. He currently resides in Slagelse, Denmark.\n\n",
         "dblp_record": ""
     },
     {
@@ -1850,19 +1850,19 @@
     {
         "surname": "Karp",
         "awards": "",
-        "education": "Born to parents Abraham and Rose Karp in Boston, Massachusetts, Karp has three younger siblings: Robert, David, and Carolyn. His family was Jewish,[3] and he grew up in a small apartment, in a then mostly Jewish neighborhood of Dorchester in Boston.\n\n",
+        "education": "Harvard University, Harvard University",
         "dblp_record": ""
     },
     {
         "surname": "Karmarkar",
         "awards": "",
-        "education": "Karmarkar received his B.Tech in Electrical Engineering from IIT Bombay in 1978, MS from the California Institute of Technology in 1979,[3] and PhD in Computer Science from the University of California, Berkeley in 1983 under the supervision of Richard M. Karp.[4]\nKarmarkar was a post-doctoral research fellow at IBM research (1983), Member of Technical Staff and fellow at Mathematical Sciences Research Center, AT&T Bell Laboratories (1983–1998), professor of mathematics at M.I.T. (1991), at Institute for Advanced study, Princeton (1996), and Homi Bhabha Chair Professor at the Tata Institute of Fundamental Research in Mumbai from 1998 to 2005. He was the scientific advisor to the chairman of the TATA group (2006–2007). During this time, he was funded by Ratan Tata to scale-up the supercomputer he had designed and prototyped at TIFR. The scaled-up model ranked ahead of supercomputer in Japan at that time and achieved the best ranking India ever achieved in supercomputing. He was the founding director of Computational Research labs in Pune, where the scaling-up work was performed. He continues to work on his new architecture for supercomputing.\n\n",
+        "education": "IIT Bombay, Caltech, University of California, Berkeley, IIT Bombay,  (B.Tech), Caltech,  (MS), University of California, Berkeley,  (PhD)",
         "dblp_record": ""
     },
     {
         "surname": "Karpinski",
         "awards": "",
-        "education": "",
+        "education": "Marek Karpinski[1] is a computer scientist and mathematician known for his research in the theory of algorithms and their applications, combinatorial optimization, computational complexity, and mathematical foundations. He is a recipient of several research prizes in the above areas.\n\n",
         "dblp_record": ""
     },
     {
@@ -1898,7 +1898,7 @@
     {
         "surname": "Kennedy",
         "awards": "",
-        "education": "",
+        "education": "Rice University, New York University, Rice University, New York University",
         "dblp_record": ""
     },
     {
@@ -1910,13 +1910,13 @@
     {
         "surname": "Kesselman",
         "awards": "",
-        "education": "",
+        "education": "Carl Kesselman is an American computer scientist specializing in grid computing technologies.[1]\nThis term was developed by him and professor Ian Foster in the book The Grid: Blueprint for a New Computing Infrastructure. He and Foster are winners of the British Computer Society's Lovelace Medal for their grid work.\nHe is institute fellow at the University of Southern California's Information Sciences Institute and a professor in the Epstein Department of Industrial and Systems Engineering, at the University of Southern California.\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Kiczales",
         "awards": "",
-        "education": "After pursuing undergraduate studies at MIT, Kiczales started his research career in 1980 at the MIT Lab for Computer Science, where he stayed until 1983. In 1984, he joined the Xerox Palo Alto Research Center software research lab as Member of Research Staff, becoming Principal Scientist in 1996. Throughout his time at PARC, Kiczales developed some of his most important research works, including aspect-oriented programming and AspectJ. He left PARC in 1999 to focus on computer science education.[6]\n\n",
+        "education": "Massachusetts Institute of Technology, Massachusetts Institute of Technology,  (dropped out)",
         "dblp_record": ""
     },
     {
@@ -1928,13 +1928,13 @@
     {
         "surname": "Kleene",
         "awards": "",
-        "education": "Kleene was awarded a bachelor's degree from Amherst College in 1930. He was awarded a Ph.D. in mathematics from Princeton University in 1934, where his thesis, entitled A Theory of Positive Integers in Formal Logic, was supervised by Alonzo Church. In the 1930s, he did important work on Church's lambda calculus. In 1935, he joined the mathematics department at the University of Wisconsin–Madison, where he spent nearly all of his career. After two years as an instructor, he was appointed assistant professor in 1937.\n\n",
+        "education": "Amherst College, Princeton University, Amherst College, Princeton University",
         "dblp_record": ""
     },
     {
         "surname": "Klein",
         "awards": "",
-        "education": "",
+        "education": "Cornell University, University of Oxford, Stanford University, Cornell University, University of Oxford, Stanford University",
         "dblp_record": ""
     },
     {
@@ -1952,7 +1952,7 @@
     {
         "surname": "Koenig",
         "awards": "",
-        "education": "Koenig was born in New York City and is the son of the physicist Dr. Seymour H. Koenig,[6] a former director of the IBM Watson Laboratory, and Harriet Koenig, an author and collector of Native American Indian art.[7]\n\n",
+        "education": "Columbia University, Columbia University,  , (B.S., Mathematics; M.S., Computer Science, 1977)",
         "dblp_record": ""
     },
     {
@@ -1970,7 +1970,7 @@
     {
         "surname": "Kolmogorov",
         "awards": "",
-        "education": "Andrey Kolmogorov was born in Tambov, about 500 kilometers south-southeast of Moscow, in 1903. His unmarried mother, Maria Yakovlevna Kolmogorova, died giving birth to him.[8] Andrey was raised by two of his aunts in Tunoshna (near Yaroslavl) at the estate of his grandfather, a well-to-do nobleman.\n\n",
+        "education": "Moscow State University, Ph.D., Moscow State University,  (, Ph.D., )",
         "dblp_record": ""
     },
     {
@@ -1988,7 +1988,7 @@
     {
         "surname": "Antonius",
         "awards": "",
-        "education": "University of Amsterdam",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
@@ -2000,7 +2000,7 @@
     {
         "surname": "Koza",
         "awards": "",
-        "education": "",
+        "education": "John R. Koza is a computer scientist and a former adjunct professor at Stanford University, most notable for his work in pioneering the use of genetic programming for the optimization of complex problems. Koza co-founded Scientific Games Corporation, a company which builds computer systems to run state lotteries in the United States. John Koza is also credited with being the creator of the 'scratch card' with the help of retail promotions specialist Daniel Bower.[1]\n\n",
         "dblp_record": ""
     },
     {
@@ -2012,13 +2012,13 @@
     {
         "surname": "Kruskal",
         "awards": "",
-        "education": "Kruskal was born to a Jewish family[2] in New York City to a successful fur wholesaler, Joseph B. Kruskal, Sr. His mother, Lillian Rose Vorhaus Kruskal Oppenheimer, became a noted promoter of origami during the early era of television.\n\n",
+        "education": "He was a student at the University of Chicago earning a bachelor of science in mathematics in the year of 1948, and a master of science in mathematics in the following year 1949.[3] After his time at the University of Chicago Kruskal attended Princeton University, where he completed his Ph.D. in 1954, nominally under Albert W. Tucker and Roger Lyndon,[4] but de facto under Paul Erdős with whom he had two very short conversations.[5] Kruskal worked on well-quasi-orderings [4][6] and multidimensional scaling.[7]\nHe was a Fellow of the American Statistical Association, former president of the Psychometric Society, and former president of the Classification Society of North America. He also initiated and was first president of the Fair Housing Council of South Orange and Maplewood in 1963, and actively supported civil rights in several other organizations such as CORE.[8]\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Kruusmaa",
         "awards": "",
-        "education": "Kruusmaa graduated from Tallinn Polytechnic in 1989 (majoring in electronic computing machines and devices) and in 1994 from Tallinn University of Technology, majoring in computers and computer networks. From 1995 to 2002, she was a doctoral student at Chalmers University of Technology in Sweden, where she defended her doctoral thesis in 2002 on \"Repeated Path Planning for Mobile Robots in Dynamic Environments.\"[1][2]\n\n",
+        "education": "Tallinn University of Technology, Chalmers University of Technology, Tallinn University of Technology, Chalmers University of Technology",
         "dblp_record": ""
     },
     {
@@ -2030,13 +2030,13 @@
     {
         "surname": "Ladner",
         "awards": "",
-        "education": "Richard Ladner was born as one of four children of deaf parents. Both of his parents were teachers at the California School for the Deaf when it was in Berkeley, California, and used American Sign Language and speech for communication. He grew up around deaf people and ASL but did not become fluent until he took some ASL classes in his early thirties.[1] Ladner earned his undergraduate degree from St. Mary's College of California in 1965, and his doctorate in mathematics from the University of California, Berkeley in 1971. Among other work, he obtained important results in computational complexity theory[2] and in automata theory.[3] Since 1971, he has been a professor at the University of Washington.\n\n",
+        "education": "St. Mary's College of California, University of California, Berkeley, St. Mary's College of California,  , University of California, Berkeley",
         "dblp_record": ""
     },
     {
         "surname": "Lam",
         "awards": "",
-        "education": "Monica Lam received a B.Sc. from University of British Columbia in 1980 and a Ph.D. in computer science from Carnegie Mellon University in 1987.[1]\n\n",
+        "education": "Carnegie Mellon University, Carnegie Mellon University",
         "dblp_record": ""
     },
     {
@@ -2054,7 +2054,7 @@
     {
         "surname": "Landin",
         "awards": "",
-        "education": "Clare College, Cambridge University",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
@@ -2078,13 +2078,13 @@
     {
         "surname": "Lawrence",
         "awards": "",
-        "education": "",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Lazowska",
         "awards": "",
-        "education": "",
+        "education": "Brown University, University of Toronto, Brown University,  (A.B. 1972), , University of Toronto,  (M.Sc. 1974, Ph.D. 1977)",
         "dblp_record": ""
     },
     {
@@ -2096,13 +2096,13 @@
     {
         "surname": "Lehman,",
         "awards": "",
-        "education": "Lehman was born in Germany on 24 January 1925 and emigrated to England in 1931.[6][7] He studied mathematics as an undergraduate at Imperial College London where he was involved in the design of the Imperial College Computing Engine's Digital Computer Arithmetic Unit.[8] He spent a year at Ferranti in London before working at Israel's Ministry of Defense from 1957 to 1964. From 1964 to 1972 he worked at IBM's research division in Yorktown Heights, NY where he studied program evolution with Les Belady. The study of IBM's programming process gave the foundations for Lehman's laws of software evolution.[9] In 1972 he returned to Imperial College where he was Head of Section and later Head of Department (1979–1984). Lehman remained at Imperial for some thirty years until 2002 when he moved to the School of Computing Science at Middlesex University.\nAfter retiring from Middlesex he moved to Jerusalem, Israel, where he died on 29 December 2010.[10]\n\n",
+        "education": "Imperial College London, Imperial College London",
         "dblp_record": ""
     },
     {
         "surname": "Leiserson",
         "awards": "",
-        "education": "",
+        "education": "Carnegie Mellon University, Yale University, Carnegie Mellon University, Yale University",
         "dblp_record": ""
     },
     {
@@ -2114,7 +2114,7 @@
     {
         "surname": "LeCun",
         "awards": "",
-        "education": "LeCun was born at Soisy-sous-Montmorency in the suburbs of Paris. His name was originally spelled Le Cun from the old Breton form Le Cunff and was from the region of Guingamp in northern Brittany. \"Yann\" is the Breton form for \"John\".\n\n",
+        "education": "He received a Diplôme d'Ingénieur from the ESIEE Paris in 1983 and a PhD in Computer Science from Université Pierre et Marie Curie (today Sorbonne University) in 1987 during which he proposed an early form of the back-propagation learning algorithm for neural networks.[14]\n\n",
         "dblp_record": ""
     },
     {
@@ -2132,13 +2132,13 @@
     {
         "surname": "Levin",
         "awards": "",
-        "education": "He obtained his master's degree at Moscow University in 1970  where he studied under Andrey Kolmogorov and completed the Candidate Degree academic requirements in 1972.[2][4] After researching algorithmic problems of information theory at the Moscow Institute of Information Transmission of the National Academy of Sciences in 1972–1973, and a position as senior research scientist at the Moscow National Research Institute of Integrated Automation for the Oil/Gas Industry in 1973–1977, he emigrated to the U.S. in 1978 and also earned a Ph.D. at the Massachusetts Institute of Technology (MIT) in 1979.[2] His advisor at MIT was Albert R. Meyer.\n\n",
+        "education": "Moscow University, Massachusetts Institute of Technology, Moscow University, Massachusetts Institute of Technology",
         "dblp_record": ""
     },
     {
         "surname": "Leyton-Brown",
         "awards": "",
-        "education": "",
+        "education": "McMaster University, Stanford University, McMaster University, , , Stanford University",
         "dblp_record": ""
     },
     {
@@ -2150,31 +2150,31 @@
     {
         "surname": "Liddle",
         "awards": "",
-        "education": "",
+        "education": "David Liddle is co-founder of Interval Research Corporation, consulting professor of computer science at Stanford University. While at Xerox PARC[1] he was credited with heading development of the Xerox Star computer system.[2] In 1982 he co-founded Metaphor Computer Systems. He has served on the board of many corporations. He was chair of the board of trustees of the Santa Fe Institute from 1994 to 1999.[3] Liddle holds a B.S. in computer science from the University of Michigan, and a Ph.D. in EECS from the University of Toledo, in Ohio.[4]\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Liedtke",
         "awards": "",
-        "education": "In the mid-1970s Liedtke studied for a diploma degree in mathematics at the Bielefeld University. His thesis project was to build a compiler for the programming language ELAN, which had been launched for teaching programming in German schools.[citation needed] The compiler was written in ELAN.\n\n",
+        "education": "Bielefeld University, Technical University of Berlin, Bielefeld University, Technical University of Berlin",
         "dblp_record": ""
     },
     {
         "surname": "Lions",
         "awards": "",
-        "education": "Lions gained a degree with first-class honours from the University of Sydney in 1959. He applied, and received a scholarship to study at the University of Cambridge where he earned his doctorate on Control engineering in 1963. After his graduation, he worked at the consulting firm KCS Ltd in Toronto, Ontario, Canada. In 1967, he briefly took a position at Dalhousie University in Halifax, Canada before moving on to working for Burroughs in Los Angeles as a Systems Analyst.\n\n",
+        "education": "University of Sydney, University of Cambridge, University of Sydney, University of Cambridge",
         "dblp_record": ""
     },
     {
         "surname": "Lindsey",
         "awards": "",
-        "education": "",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Lipton",
         "awards": "",
-        "education": "In 1968, Lipton received his undergraduate degree in mathematics from Case Western Reserve University.  In 1973, he received his Ph.D. from Carnegie Mellon University; his dissertation, supervised by David Parnas, is entitled On Synchronization Primitive Systems.  After graduating, Lipton taught at Yale 1973–1978, at Berkeley 1978–1980, and then at Princeton 1980–2000.  Since 2000, Lipton has been at Georgia Tech.  While at Princeton, Lipton worked in the field of DNA computing.  Since 1996, Lipton has been the chief consulting scientist at Telcordia. In 1999, Lipton was elected a member of the National Academy of Engineering for the application of computer science theory to practice.\n\n",
+        "education": "Carnegie Mellon, Carnegie Mellon",
         "dblp_record": ""
     },
     {
@@ -2192,13 +2192,13 @@
     {
         "surname": "Long",
         "awards": "",
-        "education": "Long did his undergraduate studies at San Diego State University, graduating in 1984, and went on to graduate studies at the University of California, San Diego, earning a Ph.D. in 1988 under the supervision of Jehan-François Pâris.[5]\n\n",
+        "education": "San Diego State University, University of California, San Diego, San Diego State University,  , (B.S. 1984),  , University of California, San Diego,  , (M.S. 1986), , , (Ph.D. 1988)",
         "dblp_record": ""
     },
     {
         "surname": "Lopez",
         "awards": "",
-        "education": "Lopez received three degrees from New Mexico State University, a B.S. in Computer Science with honors in 1980, a M.S. in Computer Science with a minor in EE and Psychology in 1982,  and a Ph.D in Computer Science in 1989. From 1983-1989 she was part of the Vision and Robotics group at New Mexico State University. In 1989 she joined Hewlett Packard Co. as an R&D Software Design Engineer developing image processing algorithms and photo imaging software, and in 2000 as an Imaging Scientist responsible for new imaging technologies. In 2008, she moved to Intel Corporation as a Component Design Engineer for Logic Validation and in 2010 as a Platform Applications Engineer for the Mission Critical Data Center. Anita Borg Institute wrote a biography about her.[6]\n\n",
+        "education": "New Mexico State University, New Mexico State University",
         "dblp_record": ""
     },
     {
@@ -2216,7 +2216,7 @@
     {
         "surname": "Luckham",
         "awards": "",
-        "education": "",
+        "education": "Ph.D., MIT, Ph.D., , , MIT",
         "dblp_record": ""
     },
     {
@@ -2234,19 +2234,19 @@
     {
         "surname": "Thalmann",
         "awards": "",
-        "education": "Thalmann received an MS in Psychology, an MS in Biology and a Master in Biochemistry at the University of Geneva. She obtained a PhD in Quantum Physics in 1977 from the same university. She started her career as an assistant professor at the University Laval in Canada, then became a professor at HEC, University of Montreal until 1988. In 1989, she moved to the University of Geneva where she founded the MIRALab laboratory.[citation needed]\n\n",
+        "education": "University of Geneva, École Polytechnique Fédérale de Lausanne, University of Geneva, École Polytechnique Fédérale de Lausanne,  (EPFL)",
         "dblp_record": ""
     },
     {
         "surname": "Maibaum",
         "awards": "",
-        "education": "B.Sc., University of Toronto, Ph.D., University of London",
+        "education": "Thomas Stephen Edward Maibaum Fellow of the Royal Society of Arts (FRSA) is a computer scientist.\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Marlow",
         "awards": "",
-        "education": "University of Glasgow, University of Bristol",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
@@ -2258,13 +2258,13 @@
     {
         "surname": "Martin",
         "awards": "",
-        "education": "James Martin was born on 19 October 1933 in Ashby-de-la-Zouch, England.[7] He earned a degree in physics at Keble College, Oxford.\n\n",
+        "education": "University of Oxford, University of Oxford,  (BA)",
         "dblp_record": ""
     },
     {
         "surname": "Martin",
         "awards": "",
-        "education": "",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
@@ -2276,19 +2276,19 @@
     {
         "surname": "Matiyasevich",
         "awards": "",
-        "education": "Yuri Matiyasevich was born in Leningrad on March 2, 1947. The first few classes he studied at school No. 255 with Sofia G. Generson, thanks to whom he became interested in mathematics. In 1961 he began to participate in all-Russian olympiads. From 1962 to 1963 he studied at Leningrad physical and mathematical school No. 239. Also from 7th to 9th grade he was involved in the mathematical circle of the Leningrad Palace of Pioneers. In 1963-1964 he completed 10th grade at the Moscow State University physics and mathematics boarding school No. 18 named after A. N. Kolmogorov.[1][2]\n\n",
+        "education": "Leningrad State University, Leningrad State University",
         "dblp_record": ""
     },
     {
         "surname": "Matsumoto",
         "awards": "",
-        "education": "Born in Osaka Prefecture, Japan, he was raised in Tottori from the age of four. According to an interview conducted by Japan Inc., he was a self-taught programmer until the end of high school.[2] He graduated with an information science degree from University of Tsukuba where he was a member of Ikuo Nakata's research lab on programming languages and compilers.\n\n",
+        "education": "University of Tsukuba, Shimane University, University of Tsukuba,  (BS), Shimane University,  (PhD candidate)",
         "dblp_record": ""
     },
     {
         "surname": "Mauchly",
         "awards": "",
-        "education": "John W. Mauchly was born on August 30, 1907, to Sebastian and Rachel (Scheidemantel) Mauchly in Cincinnati, Ohio. He moved with his parents and sister, Helen Elizabeth (Betty), at an early age to Chevy Chase, Maryland, when Sebastian Mauchly obtained a position at the Carnegie Institution of Washington as head of its Section of Terrestrial Electricity. As a youth, Mauchly was interested in science, and in particular with electricity, and as a young teenager was known to fix neighbors' electric systems. Mauchly attended E.V. Brown Elementary School in Chevy Chase and McKinley Technical High School in Washington, DC. At McKinley, Mauchly was extremely active in the debate team, was a member of the national honor society, and became editor-in-chief of the school's newspaper, Tech Life. After graduating from high school in 1925, he earned a scholarship to study engineering at Johns Hopkins University. He subsequently transferred to the physics department, and without completing his undergraduate degree, instead earned a Ph.D. in physics in 1932.[2]\n\n",
+        "education": "Johns Hopkins University, Johns Hopkins University",
         "dblp_record": ""
     },
     {
@@ -2300,7 +2300,7 @@
     {
         "surname": "McAuley",
         "awards": "",
-        "education": "McAuley undertook his PhD in computer science at the Cambridge University Computer Laboratory for which his thesis topic was Protocol Design for High Speed Networks.  From 1990 to 1995 McAuley was a lecturer at the Computer Laboratory at the University of Cambridge.  In 1995 he became a professor in computer science at the University of Glasgow, a position which he held until 1997. In 2009 he moved to the University of Nottingham as Professor of Digital Economy and director of the Horizon Digital Economy Research Hub.\n\n",
+        "education": "University of Cambridge, University of Cambridge",
         "dblp_record": ""
     },
     {
@@ -2312,13 +2312,13 @@
     {
         "surname": "McCallum",
         "awards": "",
-        "education": "McCallum graduated summa cum laude from Dartmouth College in 1989.  He completed his Ph.D. at University of Rochester in 1995 under the supervision of Dana H. Ballard.  He was then a postdoctoral fellow, working with Sebastian Thrun and Tom M. Mitchell at Carnegie Mellon University. From 1998 to 2000 he was a Research Scientist and Research Coordinator at Justsystem Pittsburgh Research Center.  From 2000 to 2002 was Vice President of Research and Development at WhizBang Labs, and Director of its Pittsburgh office. Since 2002, he worked as a professor of computer science at the University of Massachusetts Amherst. In 2020, he also joined Google as a part-time research scientist.\n\n",
+        "education": "Dartmouth College, University of Rochester, [2], Dartmouth College, University of Rochester, [2]",
         "dblp_record": ""
     },
     {
         "surname": "McIlroy",
         "awards": "",
-        "education": "McIlroy earned his bachelor's degree in engineering physics from Cornell University,[5] and a Ph.D. in applied mathematics from MIT in 1959 for his thesis On the Solution of the Differential Equations of Conical Shells (advisor Eric Reissner).[6]\nHe taught at MIT from 1954 to 1958.[5]\n\n",
+        "education": "Cornell University, Massachusetts Institute of Technology, Cornell University,  (B.S., 1954), Massachusetts Institute of Technology,  (Ph.D., 1959)",
         "dblp_record": ""
     },
     {
@@ -2330,7 +2330,7 @@
     {
         "surname": "McKusick",
         "awards": "",
-        "education": "University of California, Berkeley",
+        "education": "Marshall Kirk McKusick (born January 19, 1954) is a computer scientist, known for his extensive work on BSD UNIX, from the 1980s to FreeBSD in the present day.  He was president of the USENIX Association from 1990 to 1992 and again from 2002 to 2004, and still serves on the board. He is on the editorial board of ACM Queue Magazine.[1] He is known to friends and colleagues as \"Kirk\".\n\n",
         "dblp_record": ""
     },
     {
@@ -2360,7 +2360,7 @@
     {
         "surname": "Micali",
         "awards": "",
-        "education": "Micali graduated in mathematics at La Sapienza University of Rome in 1978 and earned a PhD degree in computer science from the University of California, Berkeley in 1982;[6] for research supervised by Manuel Blum.[2] Micali has been on the faculty at MIT, Electrical Engineering and Computer Science Department, since 1983. He's also served on the faculty of the University of Pennsylvania, University of Toronto, and Tsinghua University.[7] His research interests are cryptography, zero knowledge, pseudorandom generation, secure protocols, and mechanism design.\n\n",
+        "education": "La Sapienza University of Rome, UC Berkeley, La Sapienza University of Rome, UC Berkeley,  (PhD)",
         "dblp_record": ""
     },
     {
@@ -2384,7 +2384,7 @@
     {
         "surname": "Mitchell",
         "awards": "",
-        "education": "Mitchell was born in Kitchener, Ontario, Canada. He grew up in Cambridge, Ontario, and graduated with a degree in mathematics from the University of Waterloo in 1966.\nMitchell began working with computers in 1962 while a student at the University of Waterloo. He and three other undergraduates developed a fast compiler for the Fortran programming language named WATFOR (Waterloo FORTRAN), for the IBM 7040 computer.[2]\nThe project, initiated by Professor J. Wesley Graham, established Waterloo's early reputation as a centre for software and computer science research by helping the first generation of computer science majors learn to program. He then graduated with a PhD in computer science from Carnegie Mellon University in 1970.[3] His dissertation is titled “The design and construction of flexible and efficient interactive programming systems”.[4]\n\n",
+        "education": "University of Waterloo, Carnegie Mellon University, University of Waterloo, , , Carnegie Mellon University",
         "dblp_record": ""
     },
     {
@@ -2408,19 +2408,19 @@
     {
         "surname": "Moler",
         "awards": "",
-        "education": "He received his bachelor's degree from California Institute of Technology in 1961, and a Ph.D. in 1965 from Stanford University, both in mathematics.[2]  He worked for Charles Lawson at the Jet Propulsion Laboratory in 1961 and 1962.\n\n",
+        "education": "California Institute of Technology, Stanford University, California Institute of Technology, Stanford University",
         "dblp_record": ""
     },
     {
         "surname": "Moller",
         "awards": "",
-        "education": "Moller studied mathematics and computer science as an undergraduate at the University of British Columbia, and then as a Masters student at the University of Waterloo, before going on to do a PhD supervised by Robin Milner in the Laboratory for Foundations of Computer Science at the University of Edinburgh.  He has held posts at the universities of Strathclyde and Edinburgh, The Swedish Institute for Computer Science, The Royal Institute of Technology in Stockholm, and Uppsala University before moving to Wales as Professor of Computer Science at Swansea University in 2000.\n\n",
+        "education": "University of British Columbia, University of Waterloo, University of Edinburgh, , , University of British Columbia,  (BSc), , , University of Waterloo,  (MMath), , , University of Edinburgh,  (PhD), , ",
         "dblp_record": ""
     },
     {
         "surname": "Moon",
         "awards": "",
-        "education": "Moon was born in Philadelphia, on July 15, 1938. His father, Perry Moon was a construction worker who often answered John's questions about how things work. John spent his time building model cars in the family basement where he assembled and took apart electronic devices. Since he worked so well with his hands, he was quick at repairing things like radios, earning him the nickname \"fix-it boy\", which was given to him by his neighbors.[1]\n\n",
+        "education": "Moon's best subjects in school were Mathematics, Science and English.  After he graduated high school with honors, he enrolled at Pennsylvania State University where he received a degree in mechanical engineering in 1960. After graduating from there he decided to further pursue his education and get his masters from New York University (NYU) where he continued his studies in engineering.\n\n",
         "dblp_record": ""
     },
     {
@@ -2432,7 +2432,7 @@
     {
         "surname": "Moore",
         "awards": "",
-        "education": "Moore received a B.S. in chemistry from the Virginia Polytechnic Institute in Blacksburg, Virginia in 1947 and a Ph.D. in Mathematics from Brown University in Providence, Rhode Island in June 1950. He worked at the University of Illinois at Urbana–Champaign  from 1950 to 1952 and was a visiting professor at MIT and visiting lecturer at Harvard University simultaneously in 1961-1962. He worked at Bell Labs from 1952 to 1966. After that, he was a professor at the University of Wisconsin–Madison from 1966 until he retired in 1985.\n\n",
+        "education": "Virginia Tech, Brown University, Virginia Tech, Brown University",
         "dblp_record": ""
     },
     {
@@ -2444,25 +2444,25 @@
     {
         "surname": "Moore",
         "awards": "",
-        "education": "",
+        "education": "J Strother Moore (his first name is the alphabetic character \"J\" – not an abbreviated \"J.\") is a computer scientist. He is a co-developer of the Boyer–Moore string-search algorithm, Boyer–Moore majority vote algorithm, and the Boyer–Moore automated theorem prover, Nqthm. He made pioneering contributions to structure sharing including the piece table data structure and early logic programming. An example of the workings of the Boyer–Moore string search algorithm is given in Moore's website. Moore received his Bachelor of Science (BS) in mathematics at Massachusetts Institute of Technology in 1970 and his Doctor of Philosophy (Ph.D.)[1] in computational logic at the University of Edinburgh in Scotland in 1973.[2]\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Moore",
         "awards": "",
-        "education": "",
+        "education": "Stanford University, Stanford University, (B.S. Mathematics 1963)",
         "dblp_record": ""
     },
     {
         "surname": "Moravec",
         "awards": "",
-        "education": "Moravec attended Loyola College in Montreal for two years and transferred to Acadia University, where he received his BSc in mathematics in 1969.  He received his MSc in computer science in 1971 from the University of Western Ontario.  He then earned a PhD from Stanford University in 1980 for a TV-equipped robot which was remote controlled by a large computer (the Stanford Cart).  The robot was able to negotiate cluttered obstacle courses.  Another achievement in robotics was the discovery of new approaches for robot spatial representation such as 3D occupancy grids. He also developed the idea of bush robots.\n\n",
+        "education": "Acadia University, [1], University of Western Ontario, [1], Stanford University, [1], BSc: , Acadia University, [1], MSc: , University of Western Ontario, [1], PhD: , Stanford University, [1]",
         "dblp_record": ""
     },
     {
         "surname": "Morgan",
         "awards": "",
-        "education": "Ph.D., University of Sydney",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
@@ -2498,7 +2498,7 @@
     {
         "surname": "Müller",
         "awards": "",
-        "education": "Klaus-Robert Müller received his Diplom in mathematical physics and PhD in theoretical computer science from the University of Karlsruhe. Following his Ph.D. he went to Berlin as a postdoctoral fellow at GMD (German National Research Center for Computer Science) Berlin (now part of Fraunhofer Institute for Open Communication Systems), where he started building up the Intelligent Data Analysis (IDA) group.[2]\n\n",
+        "education": "University of Karlsruhe, Diplom, University of Karlsruhe, , , University of Karlsruhe,  (, Diplom, ), , , University of Karlsruhe,  (PhD), , ",
         "dblp_record": ""
     },
     {
@@ -2516,25 +2516,25 @@
     {
         "surname": "Nadin",
         "awards": "",
-        "education": "Born in Braşov, Romania, Nadin was educated under the communist regime imposed after World War II. He studied electrical engineering, telecommunications and computer science, as well as studying at the Polytechnic University of Bucharest. He took a Master of Science with honors. He studied philosophy at the University of Bucharest, receiving a Master of Arts; then received his doctoral degree with a specialization in aesthetics. He attended the Ludwig-Maximilian University in Munich, studying for a post-doctoral degree (\"Habilitierung\") with Professor Dr. Wolfgang Stegmüller in Philosophy, Logic, and the Theory of Science. His dissertation was entitled The Semiotic Foundation of Value Theory.\n\n",
+        "education": "At the Rhode Island School of Design, Nadin made a name for himself as one of the first proponents, in the nation, of integrating computers in education. He lectured on the topic around the US and consulted for several institutes of higher education (Rochester Institute of Technology, Illinois Institute of Technology, University of Oregon, Hadassah University in Israel, among others) in setting up programs in art and design with computers.\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Nagao",
         "awards": "",
-        "education": "Born and raised in Mie Prefecture, Japan, Makoto Nagao graduated from Kyoto University in 1959, and received a master's degree in engineering in 1961 and a Ph.D. in engineering in 1966 from the university.[7]\nIn Kyoto University, he became an assistant professor in 1967, an associate professor in 1968, and a professor in 1973.[7] He served as the 23rd president of Kyoto University (1997–2003).[4]\nAfter retirement from the university, he was appointed to the director of National Diet Library in 2007 and held the position until 2012.[5][6]\n\n",
+        "education": "Kyoto University, Kyoto University",
         "dblp_record": ""
     },
     {
         "surname": "Nake",
         "awards": "",
-        "education": "Nake had his first exhibition at Galerie Wendelin Niedlich in Stuttgart in November, 1965 alongside the artist Georg Nees.[1][2]\n\n",
+        "education": "University of Stuttgart",
         "dblp_record": ""
     },
     {
         "surname": "Nardi",
         "awards": "",
-        "education": "",
+        "education": "Bonnie A. Nardi is an emeritus professor of the Department of Informatics at the University of California, Irvine, where she led the TechDec research lab in the areas of Human-Computer Interaction and computer-supported cooperative work. She is well known for her work on activity theory, interaction design, games, social media, and society and technology.  She was elected to the ACM CHI academy in 2013.[1] She retired in 2018.[2]\n\n",
         "dblp_record": ""
     },
     {
@@ -2564,7 +2564,7 @@
     {
         "surname": "Neumann",
         "awards": "",
-        "education": "",
+        "education": "\nFrederick Bernard de Neumann (known in Austria and Germany as Bernhard von Neumann; (15 December 1943 – 18 April 2018[1]) was a British mathematician, computer scientist, inventor, and naval historian.\n\n",
         "dblp_record": ""
     },
     {
@@ -2582,7 +2582,7 @@
     {
         "surname": "Newell",
         "awards": "",
-        "education": "",
+        "education": "Stanford University, Princeton University, Carnegie Mellon University, Stanford University, Princeton University, Carnegie Mellon University",
         "dblp_record": ""
     },
     {
@@ -2594,7 +2594,7 @@
     {
         "surname": "Ng",
         "awards": "",
-        "education": "Ng was born in the United Kingdom in 1976. His parents Ronald P. Ng and Tisa Ho[8][9][10] are both immigrants from Hong Kong. He has at least one brother.[9] Growing up, he spent time in Hong Kong and Singapore.[2]\n\n",
+        "education": "In 2011, Stanford launched a total of three massive open online course (MOOCs) on machine learning (CS229a), databases, and AI, taught by Ng, Peter Norvig, Sebastian Thrun, and Jennifer Widom.[45][46] This has led to the modern MOOC movement. Ng taught machine learning and Widom taught databases. The course on AI taught by Thrun led to the genesis of Udacity.[45] Coursera was the 6th online education website that Ng built and arguably the most successful to date.[47]\n",
         "dblp_record": ""
     },
     {
@@ -2636,13 +2636,13 @@
     {
         "surname": "Nordin",
         "awards": "",
-        "education": "Peter Nordin was born in 1965 in Helsingborg but moved to Gothenburg in 1967, where he was raised. He began studies at Chalmers University of Technology in 1984 and completed the M.S. in computer science and engineering in 1988 and studied economics. He then worked as a knowledge engineer for artificial intelligence (AI) company, Infologics AB, focusing on research and development of knowledge-based systems and complex system configuration.[2]\n\n",
+        "education": "University of Dortmund, Chalmers University of Technology, Göteborg University, University of Dortmund, Chalmers University of Technology, Göteborg University",
         "dblp_record": ""
     },
     {
         "surname": "Norman",
         "awards": "",
-        "education": "Norman made the transition from cognitive science to cognitive engineering by entering the field as a consultant and writer. His article \"The truth about Unix: The user interface is horrid\"[14] in Datamation (1981) catapulted him to a position of prominence in the computer world.[citation needed] Soon after, his career took off outside of academia, although he still remained active at UCSD until 1993. Norman continued his work to further human-centered design by serving on numerous university and government advisory boards such as the Defense Advanced Research Projects Agency (DARPA). He currently[when?] serves on numerous committees and advisory boards like at Motorola, the Toyota National College of Technology, TED Conference, Panasonic, Encyclopædia Britannica and many more.\n\n",
+        "education": "MIT, University of Pennsylvania, MIT, University of Pennsylvania",
         "dblp_record": ""
     },
     {
@@ -2666,7 +2666,7 @@
     {
         "surname": "Odersky",
         "awards": "",
-        "education": "",
+        "education": "Ludwig Maximilian University of Munich, ETH Zurich, Ludwig Maximilian University of Munich, , , ETH Zurich",
         "dblp_record": ""
     },
     {
@@ -2690,37 +2690,37 @@
     {
         "surname": "Ornstein",
         "awards": "",
-        "education": "",
+        "education": "Severo M. Ornstein (born 1930) is a retired computer scientist and son of American composer Leo Ornstein. In 1955 he joined MIT's Lincoln Laboratory as a programmer and designer for the SAGE air-defense system. He later joined the TX-2 group and became a member of the team that designed the LINC. He moved with the team to Washington University in St. Louis where he was one of the principal designers of macromodules.[1]\n\n",
         "dblp_record": ""
     },
     {
         "surname": "O'Sullivan",
         "awards": "",
-        "education": "",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Ousterhout",
         "awards": "",
-        "education": "Bachelor's degree, Ph.D",
+        "education": "John Kenneth Ousterhout (/ˈoʊstərhaʊt/, born October 15, 1954) is a professor of computer science at Stanford University. He founded Electric Cloud with John Graham-Cumming. Ousterhout was a professor of computer science at University of California, Berkeley where he created the Tcl scripting language and the Tk platform-independent widget toolkit, and proposed the idea of coscheduling.[1] Ousterhout led the research group that designed the experimental Sprite operating system and the first log-structured file system.[2]\nOusterhout also led the team that developed the Magic VLSI computer-aided design (CAD) program.[3]\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Overmars",
         "awards": "",
-        "education": "",
+        "education": "Utrecht University, Utrecht University",
         "dblp_record": ""
     },
     {
         "surname": "Owicki",
         "awards": "",
-        "education": "Owicki received her PhD in computer science from Cornell University in 1975. Her advisor was David Gries. In her thesis,[2] she invented Interference freedom, a method for proving concurrent programs correct, which is basis for much of the ensuing work on developing concurrent programs with shared variables and proving them correct. Two papers resulted directly from her thesis:[3][4]\n\n",
+        "education": "Cornell University, Cornell University",
         "dblp_record": ""
     },
     {
         "surname": "Page",
         "awards": "",
-        "education": "Lawrence Edward Page was born on March 26, 1973,[19] in Lansing, Michigan.[20][21] His mother is Jewish;[22] his maternal grandfather later immigrated to Israel,[21] though Page's household while growing up was secular.[22][23] His father, Carl Victor Page Sr., earned a PhD in computer science from the University of Michigan. BBC reporter Will Smale described him as a \"pioneer in computer science and artificial intelligence\".[24] Page's paternal grandparents came from a Protestant background.[25][26] Page's father was a computer science professor at Michigan State University and his mother Gloria was an instructor in computer programming at Lyman Briggs College at the same institution.[27][24][28] Larry's parents divorced when he was eight years old, but he maintained a good relationship both with his mother Gloria and his father's long-term partner and MSU professor Joyce Wildenthal.[29]: ch. 2 \n\n",
+        "education": "Page attended Okemos Montessori School (now called Montessori Radmoor) in Okemos, Michigan, from ages 2 to 7 (1975 to 1979). He attended East Lansing High School, graduating in 1991. In summer school, he attended Interlochen Center for the Arts at Interlochen, Michigan, playing flute but mainly saxophone for two summers.\n\n",
         "dblp_record": ""
     },
     {
@@ -2732,7 +2732,7 @@
     {
         "surname": "Pandya",
         "awards": "",
-        "education": "",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
@@ -2744,7 +2744,7 @@
     {
         "surname": "Park",
         "awards": "",
-        "education": "University of Oxford, Massachusetts Institute of Technology",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
@@ -2762,7 +2762,7 @@
     {
         "surname": "Patt",
         "awards": "",
-        "education": "",
+        "education": "Yale Nance Patt is an American professor of electrical and computer engineering at The University of Texas at Austin.  He holds the Ernest Cockrell, Jr. Centennial Chair in Engineering. In 1965, Patt introduced the WOS module, the first complex logic gate implemented on a single piece of silicon. He is a fellow of both the Institute of Electrical and Electronics Engineers and the Association for Computing Machinery, and in 2014 he was elected to the National Academy of Engineering.\n\n",
         "dblp_record": ""
     },
     {
@@ -2774,13 +2774,13 @@
     {
         "surname": "Paterson",
         "awards": "",
-        "education": "Ph.D., University of Cambridge",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Pătrașcu",
         "awards": "",
-        "education": "",
+        "education": "Massachusetts Institute of Technology, Massachusetts Institute of Technology",
         "dblp_record": ""
     },
     {
@@ -2792,31 +2792,31 @@
     {
         "surname": "Pausch",
         "awards": "",
-        "education": "Randolph Frederick Pausch was born in Baltimore, Maryland, and grew up in Columbia, Maryland.[2] After graduating from Oakland Mills High School in Columbia, Pausch received his bachelor's degree in computer science from Brown University in May 1982 and his PhD in computer science from Carnegie Mellon University in August 1988.[4] While completing his doctoral studies, Pausch was briefly employed at Xerox Palo Alto Research Center and Adobe Systems.[5]\n\n",
+        "education": "Brown University, Carnegie Mellon University, Brown University,  B.S.'82, , , Carnegie Mellon University,  PhD.'88",
         "dblp_record": ""
     },
     {
         "surname": "Pavón",
         "awards": "",
-        "education": "Pavón belongs to the first Spanish generation to get official studies in Computer Science, during the 1980s.[11] He studied Computer Science at the Technical University of Madrid, graduating in 1985. In 1988, he obtained his PhD in this area with the thesis: \"Synthesis of communication protocols from service specifications\".[12] While doing this thesis, he worked as assistant professor at the same university. After his PhD, he joined Alcatel-Lucent R&D team, where he worked for 10 years. At the end of 1997 he got an Associate Professor position at UCM, and in 2006, he achieved the Habilitation à diriger des recherches qualification in Computer Science at the Université Pierre et Marie Curie (Paris VI) with the thesis \"INGENIAS : Développement Dirigé par Modèles des Systèmes Multi-Agents\" (in French).[13][11][14]\n\n",
+        "education": "Technical University of Madrid, Université Pierre et Marie Curie, Technical University of Madrid, , , Université Pierre et Marie Curie",
         "dblp_record": ""
     },
     {
         "surname": "Pearl",
         "awards": "",
-        "education": "Judea Pearl was born in Tel Aviv, British Mandate for Palestine, in 1936 to Polish Jewish immigrant parents.[8] He is a descendant of Menachem Mendel of Kotzk on his mother's side. After serving in the Israel Defense Forces and joining a kibbutz, Pearl decided to study engineering in 1956. He received a B.S. in electrical engineering from the Technion 1960. That same year, he emigrated to the United States and pursued graduate studies. He received an M.S. in electrical engineering from the Newark College of Engineering (now New Jersey Institute of Technology) in 1961, and went on to receive an M.S. in physics from Rutgers University and a PhD in electrical engineering from the Polytechnic Institute of Brooklyn (now the New York University Tandon School of Engineering) in 1965.[9] He worked at RCA Research Laboratories (now SRI International) in Princeton, New Jersey on superconductive parametric amplifiers and storage devices and at Electronic Memories, Inc., on advanced memory systems.[9] When semiconductors \"wiped out\" Pearl's work, as he later expressed it,[10] he joined UCLA's School of Engineering in 1970 and started work on probabilistic artificial intelligence. He is one of the founding editors of the Journal of Causal Inference.\n\n",
+        "education": "Technion – Israel Institute of Technology, New Jersey Institute of Technology, Rutgers University, New York University Tandon School of Engineering, Technion – Israel Institute of Technology, New Jersey Institute of Technology, Rutgers University, New York University Tandon School of Engineering",
         "dblp_record": ""
     },
     {
         "surname": "Perlis",
         "awards": "",
-        "education": "Perlis was born to a Jewish family in Pittsburgh, Pennsylvania. He graduated from Taylor Allderdice High School in 1939.[2] In 1943, he received his bachelor's degree in chemistry from the Carnegie Institute of Technology (later renamed Carnegie Mellon University).\n\n",
+        "education": "Chemistry, Carnegie Mellon, MIT, B.S., , Chemistry, ,, Carnegie Mellon,  1943, M.S., mathematics,, MIT,  1949, Ph.D., mathematics,, MIT 1950",
         "dblp_record": ""
     },
     {
         "surname": "Perlman",
         "awards": "",
-        "education": "Perlman was born in 1951, Portsmouth, Virginia. She grew up in Loch Arbour, New Jersey.[9] She is Jewish.[10] Both of her parents worked as engineers for the US government. Her father worked on radar and her mother was a mathematician by training who worked as a computer programmer. During her school years Perlman found math and science to be “effortless and fascinating”, but had no problem achieving top grades in other subjects as well. She enjoyed playing the piano and French horn. While her mother helped her with her math homework, they mainly talked about literature and music. But she didn't feel like she fit underneath the stereotype of an \"engineer\" as she did not break apart computer parts [11]\n\n",
+        "education": "As an undergraduate at MIT Perlman learned programming for a physics class. She was given her first paid job in 1971 as part-time programmer for the LOGO Lab at the (then) MIT Artificial Intelligence Laboratory, programming system software such as debuggers. [14]\n\n",
         "dblp_record": ""
     },
     {
@@ -2852,7 +2852,7 @@
     {
         "surname": "Pingali",
         "awards": "",
-        "education": "",
+        "education": "IIT Kanpur, MIT, , , IIT Kanpur, , , MIT, , ",
         "dblp_record": ""
     },
     {
@@ -2882,7 +2882,7 @@
     {
         "surname": "Post",
         "awards": "",
-        "education": "Post was born in Augustów, Suwałki Governorate, Congress Poland, Russian Empire (now Poland) into a Polish-Jewish family that immigrated to New York City in May 1904. His parents were Arnold and Pearl Post.[2]\n\n",
+        "education": "City College of New York, [1], Columbia University, [2], City College of New York,  (B.S., 1917), [1], Columbia University,  (A.M. 1918, Ph.D. 1920), [2]",
         "dblp_record": ""
     },
     {
@@ -2894,13 +2894,13 @@
     {
         "surname": "Preparata",
         "awards": "",
-        "education": "",
+        "education": "University of Rome, University of Rome",
         "dblp_record": ""
     },
     {
         "surname": "Press",
         "awards": "",
-        "education": "",
+        "education": "Harvard University, California Institute of Technology, Harvard University, , (A.B.) , California Institute of Technology, , (Ph.D.)",
         "dblp_record": ""
     },
     {
@@ -2918,13 +2918,13 @@
     {
         "surname": "Rabin",
         "awards": "",
-        "education": "Rabin was born in 1931 in Breslau, Germany (today Wrocław, in Poland), the son of a rabbi. In 1935, he emigrated with his family to Mandate Palestine. As a young boy, he was very interested in mathematics and his father sent him to the best high school in Haifa, where he studied under mathematician Elisha Netanyahu, who was then a high school teacher.[1]\n\n",
+        "education": "Hebrew University of Jerusalem, MSc, University of Pennsylvania, Princeton University, PhD, Hebrew University of Jerusalem,  (, MSc, ), University of Pennsylvania,  , Princeton University,  (, PhD, )",
         "dblp_record": ""
     },
     {
         "surname": "Radev",
         "awards": "",
-        "education": "",
+        "education": "Dragomir R. Radev (August 7, 1968 – March 29, 2023) was an American computer scientist who was a professor at Yale University, working on natural language processing and information retrieval. He also served as a University of Michigan computer science professor and Columbia University computer science adjunct professor, as well as a Member of the Advisory Board of Lawyaw.[1]\n\n",
         "dblp_record": ""
     },
     {
@@ -2936,13 +2936,13 @@
     {
         "surname": "Randell",
         "awards": "",
-        "education": "Randell was employed at English Electric from 1957 to 1964 where he was working on compilers. His work on ALGOL 60 is particularly well known, including the development of the Whetstone compiler for the English Electric KDF9, an early stack machine.[1] In 1964, he joined IBM, where he worked at the Thomas J. Watson Research Center on high performance computer architectures and also on operating system design methodology. In May 1969, he became a professor of computing science at the then named University of Newcastle upon Tyne, where he has worked since then in the area of software fault tolerance and dependability.\n\n",
+        "education": "Imperial College London, Imperial College London",
         "dblp_record": ""
     },
     {
         "surname": "Ravn",
         "awards": "",
-        "education": "",
+        "education": "University of Copenhagen, Technical University of Denmark, University of Copenhagen, Technical University of Denmark",
         "dblp_record": ""
     },
     {
@@ -2954,13 +2954,13 @@
     {
         "surname": "Reed",
         "awards": "",
-        "education": "",
+        "education": "MIT, MIT",
         "dblp_record": ""
     },
     {
         "surname": "Reenskaug",
         "awards": "",
-        "education": "",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
@@ -2972,19 +2972,19 @@
     {
         "surname": "Reynolds",
         "awards": "",
-        "education": "Reynolds held bachelor's and master's degrees in social sciences from the University of Southern California.[4]\n\n",
+        "education": "University of Southern California, University of Southern California",
         "dblp_record": ""
     },
     {
         "surname": "Riet",
         "awards": "",
-        "education": "University of Amsterdam, Ph.D.",
+        "education": "Reinder Pieter (Reind) van de Riet (22 April 1939, Groningen – 18 December 2008, Baarn)[1] was a Dutch computer scientist and Emeritus Professor Information Systems at the Vrije Universiteit Amsterdam, known for the development of COLOR-X, a linguistically-based event modeling language for object modeling.[2][3]\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Richards",
         "awards": "",
-        "education": "",
+        "education": "\nBernard Richards (born 16 October 1931) is a British computer scientist and an Emeritus Professor of Medical Informatics at the University of Manchester, England.[1][2]\n\n",
         "dblp_record": ""
     },
     {
@@ -3002,13 +3002,13 @@
     {
         "surname": "Rijsbergen",
         "awards": "",
-        "education": "",
+        "education": "University of Western Australia, University of Cambridge, University of Western Australia, , , University of Cambridge",
         "dblp_record": ""
     },
     {
         "surname": "Ritchie",
         "awards": "",
-        "education": "Dennis Ritchie was born in Bronxville, New York. His father was Alistair E. Ritchie, a longtime Bell Labs scientist and co-author of The Design of Switching Circuits[7] on switching circuit theory.[8] As a child, Dennis moved with his family to Summit, New Jersey, where he graduated from Summit High School.[9] He graduated from Harvard University with degrees in physics and applied mathematics in 1963.[8]\n\n",
+        "education": "Harvard University, BS, Harvard University,  (, BS, )",
         "dblp_record": ""
     },
     {
@@ -3038,7 +3038,7 @@
     {
         "surname": "Rosenfeld",
         "awards": "",
-        "education": "",
+        "education": "Azriel Rosenfeld (February 19, 1931 – February 22, 2004) was an American Research Professor, a Distinguished University Professor, and Director of the Center for Automation Research at the University of Maryland, College Park, Maryland, where he also held affiliate professorships in the Departments of Computer Science, Electrical Engineering, and Psychology, and a talmid chochom[citation needed].  He held a Ph.D. in mathematics from Columbia University (1957), rabbinic ordination (1952) and a Doctor of Hebrew Literature degree (1955) from Yeshiva University, honorary Doctor of Technology degrees from Linkoping University (1980) and Oulu University (1994), and an honorary Doctor of Humane Letters degree from Yeshiva University (2000); he was awarded an honorary Doctor of Science degree from the Technion (2004, conferred posthumously). He was a Fellow of the Association for the Advancement of Artificial Intelligence (1990) and of the Association for Computing Machinery (1994).\n\n",
         "dblp_record": ""
     },
     {
@@ -3074,7 +3074,7 @@
     {
         "surname": "Rudich",
         "awards": "",
-        "education": "",
+        "education": "Steven Rudich (born October 4, 1961) is a professor in the Carnegie Mellon School of Computer Science. In 1994, he and Alexander Razborov proved that a large class of combinatorial arguments, dubbed natural proofs, was unlikely to answer many of the important problems in computational complexity theory. For this work, they were awarded the Gödel Prize in 2007.[1][2]  He also co-authored a paper demonstrating that all currently known NP-complete problems remain NP-complete even under AC0 or NC0 reductions.[3]\n\n",
         "dblp_record": ""
     },
     {
@@ -3122,19 +3122,19 @@
     {
         "surname": "Sammet",
         "awards": "",
-        "education": "Jean E. Sammet was born on March 23, 1928, in New York City. Jean and her sister, Helen, were born to Harry and Ruth Sammet who were both lawyers. Jean and Helen attended public elementary schools in Manhattan. Sammet had a strong interest in mathematics but was unable to attend the Bronx High School of Science because it did not accept girls. Instead, Sammet attended Julia Richman High School.[1]\n\n",
+        "education": "Mount Holyoke College, B.A., University of Illinois at Urbana Champaign, M.A., Columbia University, Mount Holyoke College,  (, B.A., ), University of Illinois at Urbana Champaign,  (, M.A., ), Columbia University",
         "dblp_record": ""
     },
     {
         "surname": "Sammut",
         "awards": "",
-        "education": "",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Sassenrath",
         "awards": "",
-        "education": "During his final year at the university, Sassenrath joined Hewlett-Packard's Computer Systems Division as a member of the Multi-Programming Executive (MPE) file system design group for HP 3000 computers. His task was to implement a compiler for a new type of control language called Outqueue—a challenge because the language was both descriptive and procedural. A year later, Sassenrath became a member of the MPE-IV OS kernel team and later part of the HPE kernel group.\n\n",
+        "education": "University of California, Davis, University of California, Davis",
         "dblp_record": ""
     },
     {
@@ -3146,13 +3146,13 @@
     {
         "surname": "Savitch",
         "awards": "",
-        "education": "",
+        "education": "University of California, Berkeley, University of California, Berkeley",
         "dblp_record": ""
     },
     {
         "surname": "Schaeffer",
         "awards": "",
-        "education": "Born in Toronto, Ontario, he received a Bachelor of Science degree in 1979 from the University of Toronto. He received a Master of Mathematics degree in 1980 and a Ph.D. in 1986 from the University of Waterloo. Schaeffer reached national master strength in chess while in his early 20s, but has played little competitive chess since that time.\n\n",
+        "education": "University of Waterloo, University of Toronto, University of Waterloo, University of Toronto",
         "dblp_record": ""
     },
     {
@@ -3164,25 +3164,25 @@
     {
         "surname": "Schmidhuber",
         "awards": "",
-        "education": "Schmidhuber completed his undergraduate (1987) and PhD (1991) studies at the Technical University of Munich in Munich, Germany.[1] His PhD advisors were Wilfried Brauer and Klaus Schulten.[10] He taught there from 2004 until 2009. From 2009,[11] until 2021, he was a professor of artificial intelligence at the Università della Svizzera Italiana in Lugano, Switzerland.[1]\n\n",
+        "education": "Technical University of Munich, Technical University of Munich",
         "dblp_record": ""
     },
     {
         "surname": "Schneider",
         "awards": "",
-        "education": "Steve Schneider studied at Oxford University, joining the Oxford University Computing Laboratory (now the Oxford University Department of Computer Science) to study for a Doctorate on CSP, which was awarded in 1989, supervised by Mike Reed.[1][4] He joined Royal Holloway, University of London as a lecturer in 1994, becoming a senior lecturer in 1999 and a professor in 2002.  He moved to the University of Surrey in 2004, and was head of the Department of Computer Science from 2004 until 2010.[3]\n\n",
+        "education": "University of Oxford, University of Oxford",
         "dblp_record": ""
     },
     {
         "surname": "Schneier",
         "awards": "",
-        "education": "Bruce Schneier is the son of Martin Schneier, a Brooklyn Supreme Court judge. He grew up in the Flatbush neighborhood of Brooklyn, New York, attending P.S. 139 and Hunter College High School.[6]\n\n",
+        "education": "American University, University of Rochester, , , American University, , , University of Rochester, , ",
         "dblp_record": ""
     },
     {
         "surname": "Schneider",
         "awards": "",
-        "education": "",
+        "education": "Stony Brook University, Stony Brook University",
         "dblp_record": ""
     },
     {
@@ -3218,13 +3218,13 @@
     {
         "surname": "Sedgewick",
         "awards": "",
-        "education": "Sedgewick was born on December 20, 1946, in Willimantic, Connecticut. During his childhood he lived in Storrs, Connecticut, where his parents Charles Hill Wallace Sedgewick and Rose Whelan Sedgewick were professors at the University of Connecticut.[5]\n\n",
+        "education": "Sedgewick earned his Bachelor of Science (1968) and Master of Science (1969) degrees in applied mathematics from Brown University, where he was a student of Andries van Dam.  He went on to graduate work at Stanford University where he was an advisee of Donald E. Knuth, receiving his PhD in 1975.[6] His thesis was entitled Quicksort and was named an outstanding dissertation in computer science.[7]\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Sethi",
         "awards": "",
-        "education": "",
+        "education": "Indian Institute of Technology, Kanpur, Princeton University, Indian Institute of Technology, Kanpur, Princeton University",
         "dblp_record": ""
     },
     {
@@ -3236,13 +3236,13 @@
     {
         "surname": "Shamir",
         "awards": "",
-        "education": "Adi Shamir was born in Tel Aviv. He  received a Bachelor of Science (BSc) degree in mathematics from Tel Aviv University in 1973 and obtained an MSc and PhD in computer science from the Weizmann Institute in 1975 and 1977 respectively.[3]\nHe spent a year as a postdoctoral researcher at the University of Warwick and did research at Massachusetts Institute of Technology (MIT) from 1977 to 1980.\n\n",
+        "education": "Tel Aviv University, Weizmann Institute of Science, Tel Aviv University, Weizmann Institute of Science",
         "dblp_record": ""
     },
     {
         "surname": "Shannon",
         "awards": "",
-        "education": "The Shannon family lived in Gaylord, Michigan, and Claude was born in a hospital in nearby Petoskey.[1] His father, Claude Sr. (1862–1934), was a businessman and, for a while, a judge of probate in Gaylord. His mother, Mabel Wolf Shannon (1890–1945), was a language teacher, who also served as the principal of Gaylord High School.[14] Claude Sr. was a descendant of New Jersey settlers, while Mabel was a child of German immigrants.[1] Shannon's family was active in their Methodist Church during his youth.[15]\n\n",
+        "education": "University of Michigan, AB, BS, Massachusetts Institute of Technology, MS, PhD, University of Michigan,  (, AB, , , BS, ), , , Massachusetts Institute of Technology,  (, MS, , , PhD, )",
         "dblp_record": ""
     },
     {
@@ -3254,13 +3254,13 @@
     {
         "surname": "Shaw",
         "awards": "",
-        "education": "",
+        "education": "John Clifford Shaw (February 23, 1922 – February 9, 1991)[1] was a systems programmer at the RAND Corporation. He is a coauthor of the first artificial intelligence program, the Logic Theorist, and was one of the developers of General Problem Solver (universal problem solver machine) and Information Processing Language (a programming language of the 1950s). Information Processing Language is considered the true \"father\" of the JOSS language.[2] One of the most significant events that occurred in the programming was the development of the concept of list processing by Allen Newell, Herbert A. Simon and Cliff Shaw during the development of the language IPL-V.[3] He invented the linked list,[4] which remains fundamental in many strands of modern computing technology.\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Shenker",
         "awards": "",
-        "education": "Shenker received his Sc.B. in physics from Brown University in 1978, and his PhD in physics from University of Chicago in 1983.[5] In 2007, he received an honorary doctorate from the same university.[6]\n\n",
+        "education": "Brown University, University of Chicago, Brown University, University of Chicago",
         "dblp_record": ""
     },
     {
@@ -3290,7 +3290,7 @@
     {
         "surname": "Sifakis",
         "awards": "",
-        "education": "Joseph Sifakis was born in Heraklion, Crete in 1946 and lives in France. He studied Electrical Engineering at the National Technical University of Athens and Computer Science at the University of Grenoble under a French scholarship. He received his engineering doctorate in 1974 from the University of Grenoble,[1] where he also received a state doctorate in 1979.[2][3][4]\n\n",
+        "education": "National Technical University of Athens, University of Grenoble, National Technical University of Athens,  , University of Grenoble",
         "dblp_record": ""
     },
     {
@@ -3308,13 +3308,13 @@
     {
         "surname": "Sitaraman",
         "awards": "",
-        "education": "Ramesh Sitaraman received a B.Tech in electrical engineering from the Indian Institute of Technology, Madras and a Ph.D (1993) in computer science from Princeton University under Robert Tarjan.[2][6] He helped build Akamai's high-performance network for delivering web and media content[2] and is an Akamai Fellow.[7][8] Currently, he is a distinguished professor in the computer science department at University of Massachusetts, Amherst.\n\n",
+        "education": "Indian Institute of Technology, Madras, [2], Princeton University, [2], Indian Institute of Technology, Madras, [2], Princeton University, [2]",
         "dblp_record": ""
     },
     {
         "surname": "Sleator",
         "awards": "",
-        "education": "Sleator was born to William Warner Sleator, Jr., a professor of physiology and biophysics, and Esther Kaplan Sleator, a pediatrician who did pioneering research on attention deficit disorder (ADD).[6] He is the younger brother of William Sleator, who wrote science fiction for young adults.\n\n",
+        "education": "University of Illinois at Urbana–Champaign, Stanford University, University of Illinois at Urbana–Champaign, , , Stanford University",
         "dblp_record": ""
     },
     {
@@ -3332,13 +3332,13 @@
     {
         "surname": "Smith",
         "awards": "",
-        "education": "Smith received his BS, MS and PhD degrees from the Massachusetts Institute of Technology. Smith's 1982 doctoral dissertation [1][2] introduced the notion of computational reflection in programming languages, an area of active ongoing research in computer science. Past publications have addressed questions in computational reflection, meta-level architecture, programming languages, and knowledge representation. Over the last decade, his work has focused on fundamental issues in the foundations of epistemology, ontology, and metaphysics.\n\n",
+        "education": "MIT, MIT",
         "dblp_record": ""
     },
     {
         "surname": "Smith",
         "awards": "",
-        "education": "Smith was born in Roanoke, Virginia on March 29, 1945. Smith graduated from Chillicothe (Ohio) High School in 1963 and was inducted into the Chillicothe High School Distinguished Alumni Hall of Fame in 2007[1]\n\n",
+        "education": "Oberlin College, Stanford University, Oberlin College, Stanford University",
         "dblp_record": ""
     },
     {
@@ -3350,13 +3350,13 @@
     {
         "surname": "Spradling",
         "awards": "",
-        "education": "",
+        "education": "University of Nebraska - Lincoln, University of Nebraska - Lincoln",
         "dblp_record": ""
     },
     {
         "surname": "Sproull",
         "awards": "",
-        "education": "Deep Springs College, Cornell University",
+        "education": "Deep Springs College, Cornell University, Deep Springs College, , , Cornell University",
         "dblp_record": ""
     },
     {
@@ -3398,7 +3398,7 @@
     {
         "surname": "Steele",
         "awards": "",
-        "education": "",
+        "education": "Carleton College, Princeton University, Carleton College,  (B.A.) ,  , Princeton University,  (Ph.D.)",
         "dblp_record": ""
     },
     {
@@ -3416,13 +3416,13 @@
     {
         "surname": "Stepanov",
         "awards": "",
-        "education": "",
+        "education": "Alexander Alexandrovich Stepanov (Russian: Алекса́ндр Алекса́ндрович Степа́нов; born November 16, 1950, Moscow) is a Russian-American computer programmer, best known as an advocate of generic programming and as the primary designer and implementer of the C++ Standard Template Library,[1] which he started to develop around 1992 while employed at HP Labs. He had earlier been working for Bell Labs close to Andrew Koenig and tried to convince Bjarne Stroustrup to introduce something like Ada generics in C++.[2] He is credited with the notion of concept.[3][4]\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Stevens",
         "awards": "",
-        "education": "Richard Stevens was born in 1951 in Luanshya, Northern Rhodesia (now Zambia), where his father worked for the copper industry.  The family later moved to Salt Lake City, Utah, Hurley, New Mexico, Washington, D.C., and Phalaborwa, South Africa. Stevens attended Fishburne Military School in Waynesboro, Virginia. He received a bachelor's degree in aerospace engineering from the University of Michigan in 1973 and both a master's degree (in 1978) and PhD (in 1982) in systems engineering from the University of Arizona. He moved to Tucson in 1975 where he was employed at Kitt Peak National Observatory as a computer programmer until 1982. From 1982 until 1990 he was Vice President of Computing Services at Health Systems International in New Haven, Connecticut. Stevens moved back to Tucson in 1990 where he pursued his career as an author and consultant. He was also an avid pilot and a part-time flight instructor during the 1970s.[2]\n\n",
+        "education": "University of Michigan, University of Arizona, University of Michigan, University of Arizona",
         "dblp_record": ""
     },
     {
@@ -3440,7 +3440,7 @@
     {
         "surname": "Stonebraker",
         "awards": "",
-        "education": "Stonebraker grew up in Milton, New Hampshire.[11] He earned his B.S.E. in electrical engineering from Princeton University in 1965, and his M.S. and Ph.D. from the University of Michigan in 1967 and 1971[12] respectively. His awards include the IEEE John von Neumann Medal and the first SIGMOD Edgar F. Codd Innovations Award. In 1994 he was inducted as a Fellow of the Association for Computing Machinery.[13] In 1997, he was elected a member of the National Academy of Engineering for the development and commercialization of relational and object-relational database systems. In March 2015 it was announced he won the 2014 ACM Turing Award.[7] In September 2015, he won the 2015 Commonwealth Award, chosen by council members of MassTLC.[14]\n\n",
+        "education": "Princeton University, University of Michigan, Princeton University, ,, University of Michigan",
         "dblp_record": ""
     },
     {
@@ -3458,7 +3458,7 @@
     {
         "surname": "Strassen",
         "awards": "",
-        "education": "Strassen was born on April 29, 1936, in Düsseldorf-Gerresheim.[2]\nAfter studying music, philosophy, physics, and mathematics at several German universities,[2] he received his Ph.D. in mathematics in 1962 from the University of Göttingen under the supervision of Konrad Jacobs [de].[6] He then took a position in the department of statistics at the University of California, Berkeley while performing his habilitation at the University of Erlangen-Nuremberg, where Jacobs had since moved.[2] In 1968, Strassen moved to the Institute of Applied Mathematics at the University of Zurich, where he remained for twenty years before moving to the University of Konstanz in 1988.[2] He retired in 1998.[4]\n\n",
+        "education": "University of Göttingen, University of Göttingen",
         "dblp_record": ""
     },
     {
@@ -3470,7 +3470,7 @@
     {
         "surname": "Sudan",
         "awards": "",
-        "education": "He received his bachelor's degree in computer science from IIT Delhi in 1987[1] and his doctoral degree in computer science at the University of California, Berkeley in 1992.[1][2]  The dissertation he wrote at the University of California, Berkeley is titled Efficient Checking of Polynomials and Proofs and the Hardness of Approximation Problems. He was a research staff member at the IBM Thomas J. Watson Research Center in Yorktown Heights, New York from 1992 to 1997 and became a researcher at the Massachusetts Institute of Technology (MIT) after that.[1] From 2009 to 2015 he was a permanent researcher at Microsoft Research New England before joining the Harvard University faculty in 2015.[3]\n\n",
+        "education": "IIT Delhi, University of California, Berkeley, IIT Delhi,  ,  , University of California, Berkeley",
         "dblp_record": ""
     },
     {
@@ -3482,13 +3482,13 @@
     {
         "surname": "Sutherland",
         "awards": "",
-        "education": "",
+        "education": "RPI, MIT, RPI, MIT",
         "dblp_record": ""
     },
     {
         "surname": "Sutherland",
         "awards": "",
-        "education": "Sutherland's father was from New Zealand; his mother, Anne Sutherland, was from Scotland. His family moved to Wilmette, Illinois, then Scarsdale, New York, for his father's career. Bert Sutherland was his elder brother.[4] Ivan Sutherland earned his bachelor's degree in electrical engineering from the Carnegie Institute of Technology, his master's degree from Caltech, and his Ph.D. from MIT in Electrical Engineering in 1963.[5]\n\n",
+        "education": "MIT, Caltech, Carnegie Institute of Technology, MIT,  (Ph.D., 1963) ,  , Caltech,  (M.S., 1960) ,  , Carnegie Institute of Technology,  (B.S., 1959)",
         "dblp_record": ""
     },
     {
@@ -3500,13 +3500,13 @@
     {
         "surname": "Szegedy",
         "awards": "",
-        "education": "",
+        "education": "University of Chicago, University of Chicago",
         "dblp_record": ""
     },
     {
         "surname": "Tabriz",
         "awards": "",
-        "education": "Parisa Tabriz was born to an Iranian father, a doctor, and an American mother, a nurse, of Polish-American descent.[1] She grew up in the suburbs of Chicago and is the older sister of two brothers.[1] Tabriz was not exposed to coding and computer science until her first year at university.[4]\n\n",
+        "education": "Tabriz initially enrolled at the University of Illinois at Urbana–Champaign to study computer engineering, but soon became interested in computer science instead.[4][5] She completed a bachelor of science and master of science degree at the university[4][6] and did research in wireless security and attacks on privacy-enhancing technologies, co-authoring papers with her advisor Nikita Borisov.[5][7][8] She was an active member of a student club interested in computer security, which she joined because her own website was hacked.[4]\n\n",
         "dblp_record": ""
     },
     {
@@ -3518,7 +3518,7 @@
     {
         "surname": "Tanenbaum",
         "awards": "",
-        "education": "Tanenbaum was born in New York City and grew up in suburban White Plains, New York, where he attended the White Plains High School.[10] He is Jewish.[11] His paternal grandfather was born in Khorostkiv in the Austro-Hungarian empire.[10]\n\n",
+        "education": "Massachusetts Institute of Technology, University of California, Berkeley, Massachusetts Institute of Technology, University of California, Berkeley",
         "dblp_record": ""
     },
     {
@@ -3530,7 +3530,7 @@
     {
         "surname": "Thalheim",
         "awards": "",
-        "education": "Born in Radebeul (near Dresden), Germany, Thalheim received his M.Sc. in mathematics and computer science in 1975 at the Dresden University of Technology, his PhD in discrete mathematics in 1979 at the Lomonosov Moscow State University, and his habilitation in theoretical computer science in 1985 at the Dresden University of Technology.\n\n",
+        "education": "Dresden University of Technology, Lomonosov Moscow State University, Dresden University of Technology, Lomonosov Moscow State University",
         "dblp_record": ""
     },
     {
@@ -3572,31 +3572,31 @@
     {
         "surname": "Teng",
         "awards": "",
-        "education": "Teng was born in China in 1964. His father, Dr. Teng Zhanhong, was a professor of civil engineering at the Taiyuan University of Technology. His mother, Li Guixin, was an administrator at the same university.[3]\n\n",
+        "education": "Shanghai Jiao Tong University, University of Southern California, Carnegie Mellon, Shanghai Jiao Tong University, University of Southern California, Carnegie Mellon",
         "dblp_record": ""
     },
     {
         "surname": "Tesler",
         "awards": "",
-        "education": "Tesler was born on April 24, 1945, in the Bronx in New York City, to Jewish parents Isidore, an anesthesiologist, and Muriel (née Krechmer).[1] Tesler lived in the Bronx through his childhood and graduated from the Bronx High School of Science in 1961. While in high school, he was guided towards computers by a teacher after showing the teacher an algorithm for generating prime numbers. Through this, he learned of a program at Columbia University where he was able to spend a half-hour each week on their computer systems, through which he taught himself programming before college.[1] He went on to Stanford University in 1961 when he was 16, studying computer science and graduating in 1965 with a degree in mathematics.[1][2] At Stanford, he had spent time as a student programmer for Joshua Lederberg on the LINC platform,[1] and was a colleague of Larry Breed, Charles Brenner, Douglas Hofstadter, Roger Moore, and Bill Strachan.[3]\n\n",
+        "education": "Stanford University, Stanford University",
         "dblp_record": ""
     },
     {
         "surname": "Avadis",
         "awards": "",
-        "education": "Tevanian is from Westbrook, Maine.[3] He is of Armenian descent.[4] Tevanian cloned the 1980s arcade game Missile Command, giving it the same name in a version for the Xerox Alto, and Mac Missiles! for the Macintosh platform.[5] He has a B.A. degree in mathematics from the University of Rochester and M.S. and Ph.D. degrees in computer science from Carnegie Mellon University. There, he was a principal designer and engineer of the Mach operating system.[6]\n\n",
+        "education": "Carnegie Mellon University, University of Rochester",
         "dblp_record": ""
     },
     {
         "surname": "Thacker",
         "awards": "",
-        "education": "Thacker was born in Pasadena, California, on February 26, 1943.[4] His father was Ralph Scott Thacker, born 1906, an electrical engineer (Caltech class of 1928[5]) in the aeronautical industry.[6][7][8][9][10] His mother was the former (Mattie) Fern Cheek, born 1922 in Oklahoma, a cashier and secretary, who soon raised their two sons on her own.[11]\n\n",
+        "education": "University of California, Berkeley, University of California, Berkeley,  (B.S., 1967)",
         "dblp_record": ""
     },
     {
         "surname": "Thalmann",
         "awards": "",
-        "education": "After a master's degree in Nuclear Physics (1970) and a combined Certificate in Statistics and Computer Science (1972) both from the University of Geneva, he earned a PhD in Computer Science (1977) also from the University of Geneva. In his PhD, he worked very early on the concept of abstract machines for portable compilers and operating systems.[1] From 1977 to 1989, he was Professor at the University of Montreal, in Canada, where he started to work on computer graphics and animation.  Then, he came back to Switzerland and founded the virtual reality lab (VRlab) at EPFL, Switzerland. He has been Visiting Professor/ Researcher at CERN, University of Nebraska-Lincoln, University of Tokyo, and National University of Singapore. From 2009 to 2017, he was Visiting Professor at the Institute for Media Innovation, Nanyang Technological University, Singapore. He is co-editor-in-chief of the Journal of Computer Animation and Virtual Worlds,[2] and member of the editorial board of six other journals. Thalmann has published more than 650 papers in graphics, animation, and virtual reality. He is coeditor of 30 books, and coauthor of several books including Crowd Simulation (second edition 2012)[3] and Stepping Into Virtual Reality (2007),[4] published by Springer.\n\n",
+        "education": "University of Geneva, University of Geneva",
         "dblp_record": ""
     },
     {
@@ -3620,25 +3620,25 @@
     {
         "surname": "Tichy",
         "awards": "",
-        "education": "",
+        "education": "Technische Universität München, Carnegie Mellon University, Technische Universität München, , , Carnegie Mellon University",
         "dblp_record": ""
     },
     {
         "surname": "Toda",
         "awards": "",
-        "education": "",
+        "education": "Seinosuke Toda (戸田 誠之助, Toda Seinosuke, born January 15, 1959) is a computer scientist working at the Nihon University in Tokyo.[1] Toda earned his Ph.D. from the Tokyo Institute of Technology in 1992, under the supervision of Kojiro Kobayashi.[2] He was a recipient of the 1998 Gödel Prize for proving Toda's theorem in computational complexity theory, which states that every problem in the polynomial hierarchy has a polynomial-time Turing reduction to a counting problem.[3]\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Toh",
         "awards": "",
-        "education": "Born in Singapore, Toh studied in Singapore Polytechnic[4] and then received his university education in the United Kingdom. He subsequently moved to live and work in the United States. He studied at King's College, Cambridge under a Cambridge Commonwealth Trust Scholarship, and received his Ph.D. in computer science from University of Cambridge, UK in 1996 and his undergraduate EE degrees at the University of Manchester Institute of Science and Technology in 1991.\n\n",
+        "education": "University of Cambridge, University of Manchester, University of Cambridge, University of Manchester",
         "dblp_record": ""
     },
     {
         "surname": "Torvalds",
         "awards": "",
-        "education": "Torvalds was born in Helsinki, Finland, the son of journalists Anna and Nils Torvalds,[6] the grandson of statistician Leo Törnqvist and of poet Ole Torvalds, and the great-grandson of journalist and soldier Toivo Karanko. His parents were campus radicals at the University of Helsinki in the 1960s. His family belongs to the Swedish-speaking minority in Finland. He was named after Linus Pauling, the Nobel Prize–winning American chemist, although in the book Rebel Code: Linux and the Open Source Revolution, he is quoted as saying, \"I think I was named equally for Linus the Peanuts cartoon character\", noting that this made him \"half Nobel Prize–winning chemist and half blanket-carrying cartoon character\".[7]\n\n",
+        "education": "University of Helsinki, [1], University of Helsinki,  (M.S.), [1]",
         "dblp_record": ""
     },
     {
@@ -3656,7 +3656,7 @@
     {
         "surname": "Townsend",
         "awards": "",
-        "education": "",
+        "education": "Indiana University, Indiana University",
         "dblp_record": ""
     },
     {
@@ -3668,7 +3668,7 @@
     {
         "surname": "Traub",
         "awards": "",
-        "education": "Traub attended the Bronx High School of Science where he was captain and first board of the chess team. After graduating from City College of New York he entered Columbia in 1954 intending to take a PhD in physics. In 1955, on the advice of a fellow student, Traub visited the IBM Watson Research Lab at Columbia. At the time, this was one of the few places in the country where a student could gain access to computers. Traub found his proficiency for algorithmic thinking matched perfectly with computers. In 1957 he became a Watson Fellow through Columbia. His thesis was on computational quantum mechanics. His 1959 PhD is in applied mathematics since computer science degrees were not yet available. (Indeed, there was no Computer Science Department at Columbia until Traub was invited there in 1979 to start the Department.)[12][4]\n\n",
+        "education": "City College of New York (B.S., 1954), Columbia University (Ph.D., Applied Mathematics, 1959)",
         "dblp_record": ""
     },
     {
@@ -3680,7 +3680,7 @@
     {
         "surname": "Tukey",
         "awards": "",
-        "education": "Tukey was born in New Bedford, Massachusetts in 1915, to a Latin teacher father and a private tutor. He was mainly taught by his mother and attended regular classes only for certain subjects like French.[3] Tukey obtained a BA in 1936 and MSc in 1937 in chemistry, from Brown University, before moving to Princeton University, where in 1939 he received a PhD in mathematics after completing a doctoral dissertation titled \"On denumerability in topology\".[4][5][6]\n\n",
+        "education": "Brown University, Princeton University, Brown University,  (BA, MSc), Princeton University,  (PhD)",
         "dblp_record": ""
     },
     {
@@ -3692,19 +3692,19 @@
     {
         "surname": "Turner",
         "awards": "",
-        "education": "D.Phil., University of Oxford",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Turoff",
         "awards": "",
-        "education": "Turoff received his B.A. degree in Mathematics and Physics  from the University of California at Berkeley in 1958. He received his PhD in Physics from Brandeis University in 1965.\n\n",
+        "education": "University of California - Berkeley, Brandeis University, University of California - Berkeley, , , Brandeis University",
         "dblp_record": ""
     },
     {
         "surname": "Ullman",
         "awards": "",
-        "education": "Ullman received a Bachelor of Science degree in engineering mathematics from Columbia University in 1963 and his PhD in electrical engineering from Princeton University in 1966. He then worked for three years at Bell Labs.  In 1969, he returned to Princeton as an associate professor, and was promoted to full professor in 1974.  Ullman moved to Stanford University in 1979, and served as the department chair from 1990 to 1994.  He was named the Stanford W. Ascherman Professor of Computer Science in 1994,[4] and became an Emeritus in 2003.[5]\n\n",
+        "education": "Columbia University, Princeton University, Columbia University, Princeton University",
         "dblp_record": ""
     },
     {
@@ -3740,7 +3740,7 @@
     {
         "surname": "Vazirani",
         "awards": "",
-        "education": "Vazirani received a BS from MIT in 1981[2] and received his Ph.D. in 1986 from UC Berkeley under the supervision of Manuel Blum.[3]\n\n",
+        "education": "MIT, University of California, Berkeley, MIT, , , University of California, Berkeley",
         "dblp_record": ""
     },
     {
@@ -3764,19 +3764,19 @@
     {
         "surname": "Vilkomir",
         "awards": "",
-        "education": "",
+        "education": "Kharkov State University, Kharkov Polytechnic Institute, Kharkov State University, , , Kharkov Polytechnic Institute",
         "dblp_record": ""
     },
     {
         "surname": "Vitányi",
         "awards": "",
-        "education": "Vitányi was born in Budapest to a Dutch mother and a Hungarian father. He received his degree of mathematical engineer from Delft University of Technology in 1971 and his Ph.D. from the Free University of Amsterdam in 1978.[1]\n\n",
+        "education": "Delft University of Technology, Free University of Amsterdam, Delft University of Technology, Free University of Amsterdam",
         "dblp_record": ""
     },
     {
         "surname": "Viterbi",
         "awards": "",
-        "education": "Viterbi was born to an Italian Jewish family[2] in Bergamo, Italy and emigrated with them to the United States two years before World War II. His original name was Andrea, but when he was naturalized in the US, his parents anglicized it to Andrew.[citation needed]\n\n",
+        "education": "Viterbi attended the Boston Latin School, and then entered Massachusetts Institute of Technology (MIT) in 1952, studying electrical engineering. He received both BS and MS in electrical engineering in 1957 from MIT. He was elected to membership in the honor society Eta Kappa Nu in 1956 through the MIT chapter.\n\n",
         "dblp_record": ""
     },
     {
@@ -3788,19 +3788,19 @@
     {
         "surname": "Vixie",
         "awards": "",
-        "education": "Paul A Vixie was born on 23 May 1963 and grew up in San Francisco, and his mother's maiden name is Killian.[6]\n\n",
+        "education": "Keio University, Keio University",
         "dblp_record": ""
     },
     {
         "surname": "Wada",
         "awards": "",
-        "education": "University of Tokyo",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Wagner",
         "awards": "",
-        "education": "",
+        "education": "David A. Wagner (born 1974) is a professor of computer science at the University of California, Berkeley and a well-known researcher in cryptography and computer security. He is a member of the Election Assistance Commission's Technical Guidelines Development Committee, tasked with assisting the EAC in drafting the Voluntary Voting System Guidelines. He is also a member of the ACCURATE project.\n\n",
         "dblp_record": ""
     },
     {
@@ -3818,7 +3818,7 @@
     {
         "surname": "Ward",
         "awards": "",
-        "education": "",
+        "education": "Steve Ward is Professor of Computer Science and Engineering at MIT, where his recent teaching and research activities revolve around areas of computer system architecture. He holds three degrees from MIT – a Bachelor of Science and a Master of Science in Electrical Engineering and a PhD in Computer Science.\n\n",
         "dblp_record": ""
     },
     {
@@ -3836,13 +3836,13 @@
     {
         "surname": "Warwick",
         "awards": "",
-        "education": "Kevin Warwick was born in 1954 in Keresley, Coventry, England,[11] and was raised in the nearby village of Ryton-on-Dunsmore, Warwickshire. His family attended a Methodist church but soon he began doubting the existence of God.[12] He attended Lawrence Sheriff School in Rugby, Warwickshire, where he was a contemporary of actor Arthur Bostrom. He left school at the age of 16 to start an apprenticeship with British Telecom. In 1976, he was granted his first degree at Aston University, followed by a PhD degree and a research job at Imperial College London.\n\n",
+        "education": "Aston University, Imperial College London, , , Aston University,  (BSc), , , Imperial College London,  (PhD), , ",
         "dblp_record": ""
     },
     {
         "surname": "Węglarz",
         "awards": "",
-        "education": "",
+        "education": "Poznań University of Technology, Poznań University of Technology",
         "dblp_record": ""
     },
     {
@@ -3860,13 +3860,13 @@
     {
         "surname": "Wegstein",
         "awards": "",
-        "education": "University of Illinois, B.S., M.S.",
+        "education": "Joseph Henry Wegstein (April 7, 1922 in Washburn, Illinois - August 16, 1985) was an American computer scientist.[1]\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Weinberger",
         "awards": "",
-        "education": "",
+        "education": "University of California, Berkeley, University of California, Berkeley,  (Ph.D. 1969)",
         "dblp_record": ""
     },
     {
@@ -3878,7 +3878,7 @@
     {
         "surname": "Weizenbaum",
         "awards": "",
-        "education": "Born in Berlin, Germany to Jewish parents, he escaped Nazi Germany in January 1936, immigrating with his family to the United States. He started studying mathematics in 1941 at Wayne State University, in Detroit, Michigan. In 1942, he interrupted his studies to serve in the U.S. Army Air Corps as a meteorologist, having been turned down for cryptology work because of his \"enemy alien\" status. After the war, in 1946, he returned to Wayne State, obtaining his B.S. in Mathematics in 1948, and his M.S. in 1950.[1][2]\n\n",
+        "education": "Wayne State University, Wayne State University",
         "dblp_record": ""
     },
     {
@@ -3920,13 +3920,13 @@
     {
         "surname": "Adriaan",
         "awards": "",
-        "education": "Van Wijngaarden's university education was in mechanical engineering, for which he received a degree from Delft University of Technology[1] in 1939. He then studied for a doctorate in hydrodynamics, but abandoned the field. He joined the Nationaal Luchtvaartlaboratorium in 1945 and went with a group to England the next year to learn about new technologies that had been developed there during World War II.\n\n",
+        "education": "Delft University of Technology, Delft University of Technology,  (1939)",
         "dblp_record": ""
     },
     {
         "surname": "Wilkes",
         "awards": "",
-        "education": "Wilkes was born in Chicago, Illinois and graduated from Wellesley College in 1959 where she majored in philosophy and theology.[2] Wilkes planned to become a lawyer, but was discouraged by friends and mentors from pursuing law because of the challenges women faced in the field.[3] A geography teacher in the eighth grade had told Wilkes, \"Mary Allen, when you grow up, you ought to be a computer programmer.\"[4] She worked in the field as one of the first programmers for a number of years before pursuing law and becoming an attorney in 1975.[5]\n\n",
+        "education": "Wellesley College, Harvard Law School, Wellesley College, , , Harvard Law School",
         "dblp_record": ""
     },
     {
@@ -3938,7 +3938,7 @@
     {
         "surname": "Wilks",
         "awards": "",
-        "education": "Wilks was educated at Torquay Boys' Grammar School, followed by Pembroke College, Cambridge, where he read Philosophy,[2] joined the Epiphany Philosophers and obtained his Doctor of Philosophy degree (1968) under Professor R. B. Braithwaite for the thesis 'Argument and Proof';[3] he was an early pioneer in meaning-based approaches to the understanding of natural language content by computers.[4] His main early contribution in the 1970s was called \"Preference Semantics\" (Wilks, 1973; Wilks and Fass, 1992), an algorithmic method for assigning the \"most coherent\" interpretation to a sentence in terms of having the maximum number of internal preferences of its parts (normally verbs or adjectives) satisfied. That early work was hand-coded with semantic entries (of the order of some hundreds) as was normal at the time, but since then has led to the empirical determinations of preferences (chiefly of English verbs) in the 1980s and 1990s.[5]\n\n",
+        "education": "University of Cambridge, University of Cambridge",
         "dblp_record": ""
     },
     {
@@ -3956,7 +3956,7 @@
     {
         "surname": "Winograd",
         "awards": "",
-        "education": "",
+        "education": "New York University, Massachusetts Institute of Technology, New York University, Massachusetts Institute of Technology",
         "dblp_record": ""
     },
     {
@@ -3968,7 +3968,7 @@
     {
         "surname": "Winston",
         "awards": "",
-        "education": "",
+        "education": "MIT, [1], MIT,  (BS 1965, MS 1967, PhD 1970) , [1]",
         "dblp_record": ""
     },
     {
@@ -3992,25 +3992,25 @@
     {
         "surname": "Wolfram",
         "awards": "",
-        "education": "Stephen Wolfram was born in London in 1959 to Hugo and Sybil Wolfram, both German Jewish refugees to the United Kingdom.[10]  His maternal grandmother was British psychoanalyst Kate Friedlander.\n\n",
+        "education": "St. John's College, Oxford, California Institute of Technology, , , St. John's College, Oxford, (no degree), , , California Institute of Technology, (PhD, 19 November 1979), , ",
         "dblp_record": ""
     },
     {
         "surname": "Woodger",
         "awards": "",
-        "education": "",
+        "education": "University College London, University College London",
         "dblp_record": ""
     },
     {
         "surname": "Woodward",
         "awards": "",
-        "education": "",
+        "education": "Oxford University, Oxford University",
         "dblp_record": ""
     },
     {
         "surname": "Worsley",
         "awards": "",
-        "education": "Beatrice was born on 18 October 1921[a] to Joel and Beatrice Marie (nee Trinker). Joel was born in 1887 to a working-class family in Ashton-Under-Lyne, Manchester. Beatrice Marie's grandparents had started a textile mill in Xia, Mexico, in the 1850s, and in 1908 Joel and Beatrice Marie moved to work at the plant. The plant was destroyed by rebels around 1917 and Joel took a job in El Salto with Rio Grande group's CIMSA mills, rising to become the general manager.[3]\n\n",
+        "education": "University of Toronto, Massachusetts Institute of Technology, University of Cambridge, University of Toronto, Massachusetts Institute of Technology, University of Cambridge",
         "dblp_record": ""
     },
     {
@@ -4022,7 +4022,7 @@
     {
         "surname": "Wu",
         "awards": "",
-        "education": "",
+        "education": "Jie Wu (Chinese: 吴杰; pinyin: Wú Jié) is a Chinese computer scientist. He is the Associate Vice Provost for International Affairs and Director for Center for Networked Computing at Temple University. He also serves as the Laura H. Carnell professor in the Department of Computer and Information Sciences. He served as Program Director of Networking Technology and Systems (NeTS) at the National Science Foundation from 2006 to 2008.\n\n",
         "dblp_record": ""
     },
     {
@@ -4046,31 +4046,31 @@
     {
         "surname": "Yen",
         "awards": "",
-        "education": "",
+        "education": "University of California, Berkeley, Santa Clara University, National Taiwan University, National Hsinchu Senior High School, University of California, Berkeley, , ,  , Santa Clara University, , ,  , National Taiwan University, , ,  , National Hsinchu Senior High School",
         "dblp_record": ""
     },
     {
         "surname": "Yoneda",
         "awards": "",
-        "education": "University of Tokyo",
+        "education": "\n\n",
         "dblp_record": ""
     },
     {
         "surname": "Yourdon",
         "awards": "",
-        "education": "Yourdon obtained his B.S. in applied mathematics from Massachusetts Institute of Technology (MIT) in 1965, and did graduate work in electrical engineering and computer science at MIT and the Polytechnic Institute of New York.\n\n",
+        "education": "Massachusetts Institute of Technology, Massachusetts Institute of Technology",
         "dblp_record": ""
     },
     {
         "surname": "Yung",
         "awards": "",
-        "education": "Yung earned his PhD from Columbia University in 1988 under the supervision of Zvi Galil.[1] In the past, he worked at the IBM Thomas J. Watson Research Center,[2] CertCo, RSA Laboratories, and Google.[3] In 2016, Yung moved from Google to Snap Inc.[4] Yung is currently a research scientist at Google.[5]\n\n",
+        "education": "Columbia University, Columbia University",
         "dblp_record": ""
     },
     {
         "surname": "Zadeh",
         "awards": "",
-        "education": "Zadeh was born in Baku, Azerbaijan SSR,[18] as Lotfi Aliaskerzadeh.[19] His father was Rahim Aleskerzade, an Iranian Muslim Azerbaijani journalist from Ardabil on assignment from Iran,[citation needed] and his mother was Fanya (Feyga[20]) Korenman, a Jewish pediatrician from Odesa, Ukraine, who was an Iranian citizen.[21][22][23][24] The Soviet government at this time courted foreign correspondents, and the family lived well while in Baku.[25] Zadeh attended elementary school for three years there,[25] which he said \"had a significant and long-lasting influence on my thinking and my way of looking at things.\"[26]\n\n",
+        "education": "Zadeh became the Chair of Department of Electrical Engineering at the University of California, Berkeley, in 1963. One of the lasting impacts of his leadership in this role is the expansion and the integration of computer science. He initiated and completed (in 1968) the transformation of the Electrical Engineering department at UC Berkeley to the Department of Electrical Engineering and Computer Science (EECS). This strategic move not only led UC Berkeley's advancement into the top ranks of computer science education and research, but also led other research universities globally to add computer science to their electrical engineering departments. \nIn 1973, Lotfi Zadeh received the prestigious (Institute of Electronic and Electrical Engineers) IEEE Education Award, largely in recognition of his performance as chair of EE and then EECS. Other important services to UC Berkeley include his Academic Senate committee memberships: Academic Planning & Resource Allocation (1992–95); Committees (1969–70; 1980–81); Courses of Instruction (1975–80); and Faculty Awards (1990–92). Professor Zadeh graduated more than 50 PhD students, many of whom went on to become leaders in various areas of engineering, management and information sciences.[30]\n\n",
         "dblp_record": ""
     },
     {
@@ -4082,7 +4082,7 @@
     {
         "surname": "Zaman",
         "awards": "",
-        "education": "",
+        "education": "Stanford University, [2], Harvey Mudd College, Claremont Graduate University, Stanford University, [2], Harvey Mudd College, Claremont Graduate University",
         "dblp_record": ""
     },
     {
@@ -4094,13 +4094,13 @@
     {
         "surname": "Zedan",
         "awards": "",
-        "education": "",
+        "education": "University of Bristol, University of Bristol,  (UK)",
         "dblp_record": ""
     },
     {
         "surname": "Zilberstein",
         "awards": "",
-        "education": "",
+        "education": "University of California, Berkeley, Technion – Israel Institute of Technology, , , University of California, Berkeley, , , Technion – Israel Institute of Technology, , ",
         "dblp_record": ""
     },
     {
