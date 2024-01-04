@@ -1,10 +1,7 @@
-#version 4
-
 import aiohttp
 import asyncio
 import json
 from bs4 import BeautifulSoup
-
 
 # Function which returns last word
 def lastWord(string):
@@ -17,9 +14,6 @@ def lastWord(string):
 
     # returning last element in list
     return lis[length - 1]
-
-
-
 
 def table_award_search(soup):
     awards_found = 0
@@ -182,11 +176,10 @@ def extract_awards(soup):
     else:
         return awards_number
 
-
-# function for extracting surname of a scientist
+#function for extracting surname of a scientist
 def extract_surname(soup):
-    try:
-        temp_html = soup.find('div', class_='mw-content-ltr mw-parser-output')  # get each scientist's name
+    try:  
+        temp_html = soup.find('div', class_='mw-content-ltr mw-parser-output') #get each scientist's name
         name = temp_html.find('p', class_='').b
 
         z = 1
@@ -204,15 +197,14 @@ def extract_surname(soup):
         print(f"Error extracting surname: {e}")
         return "Unknown"
 
-
-# extract what education every scientist has had from their wikipedia page
+#extract what education every scientist has had from their wikipedia page
 def extract_education(soup):
     education = ""
     education_found = False
     headlines = soup.find_all('h2', class_='')  # Get all the headlines of the page
     for headline in headlines:
         span_tag = headline.find('span', class_='mw-headline')
-        title = span_tag.get_text().lower()
+        title=span_tag.get_text().lower()
         if "education" in title:
             # If "education" is found in the headline
             next_tag = headline.find_next('h2')  # Find the next h2 tag after the headline
@@ -225,28 +217,31 @@ def extract_education(soup):
                 elif element.name == 'ul':
                     education += element.get_text(separator='\n') + "\n"
                 if element.find_next('h2') == next_tag:
-                    education_found = True  # we found education so we set it true!
+                    education_found=True #we found education so we set it true!
                     break  # Exit loop when the next h2 tag is encountered
             break  # Exit the loop after processing the education section
 
     if not education_found:
-        label_element = soup.find('th', class_='infobox-label',
-                                  string=lambda text: text and "Alma" in text and "mater" in text)
-        if label_element:
-            # Get the corresponding <td> tag containing educational information
-            data = label_element.find_next('td', class_='infobox-data')
-            if data:
-                # Extract text from <a> tags inside the <td> element
-                education_list = [a.text for a in data.find_all('a')]
+            alma_mater_label = soup.find('th',class_='infobox-label', string=lambda text: text and "Alma" in text and "mater" in text)
+            education_label = soup.find('th',class_='infobox-label', string=lambda text: text and "Education" in text)
+            
+            label = alma_mater_label or education_label  # Combining both label searches
 
-                # Extract text separated by <br> tags inside the <td> element
-                br_text = data.get_text(separator='\n')
-                if br_text:
-                    education_list.extend(br_text.split('\n'))
+            if label:
+                # Get the corresponding <td> tag containing educational information
+                data = label.find_next('td', class_='infobox-data')
+                if data:
+                    # Extract text from <a> tags inside the <td> element
+                    education_list = [a.text for a in data.find_all('a')]
 
-                education = ', '.join(education_list)  # Convert list to text
-                education_found = True
+                    # Extract text separated by <br> tags inside the <td> element
+                    br_text = data.get_text(separator='\n')
+                    if br_text:
+                        education_list.extend(br_text.split('\n'))
 
+                    education = ', '.join(education_list)  # Convert list to text
+                    education_found=True
+  
     if not education_found:
         # Check "Biography", "Life", or "Career" sections
         for headline in soup.find_all('span', class_='mw-headline'):
@@ -271,57 +266,56 @@ def extract_education(soup):
     return education
 
 
-# asynchronous function for fetching information about scientists
+#asynchronous function for fetching information about scientists
 async def fetch_info(session, link):
-    async with session.get(link) as response:
-        if response.status == 200:
-            html_text = await response.text()
-            soup = BeautifulSoup(html_text, 'lxml')
-
-            awards = ''  # Extract awards from the page
-            dblp_record = ''  # Extract DBLP record
-
-            # Return a dictionary with extracted information
-            return {
-                'surname': extract_surname(soup),
-                'awards': extract_awards(soup),
-                'education': extract_education(soup),
-                'dblp_record': dblp_record
-            }
-        else:
-            return None
-
+        async with session.get(link) as response:
+            if response.status == 200:
+                html_text = await response.text()
+                soup = BeautifulSoup(html_text, 'lxml')
+                
+                    
+                # Return a dictionary with extracted information
+                return {
+                    'surname': extract_surname(soup),
+                    'awards': extract_awards(soup),
+                    'education': extract_education(soup),
+                    'dblp_record': ''
+                }
+            else:
+                return None
 
 async def main():
-    href_obj = []  # a list where the hrefs will be stored
-    scientist_info_list = []  # a list where the surnames of the computer scientists' pages will be stored
-    links = []  # a list where the links of the computer scientists' pages will be stored
+    href_obj = []  #a list where the hrefs will be stored
+    scientist_info_list = []  #a list where the surnames of the computer scientists' pages will be stored
+    links = []  #a list where the links of the computer scientists' pages will be stored
+    names_list = []  #a list to store names
 
     async with aiohttp.ClientSession() as session:
         html_text = await session.get('https://en.wikipedia.org/wiki/List_of_computer_scientists')
         soup = BeautifulSoup(await html_text.text(), 'lxml')
-        list_items = soup.find_all('li', class_='')  # get the <li>s that have no class
+        list_items = soup.find_all('li', class_='') #get the <li>s that have no class
 
-        for l in list_items:  # for each <li> tag
-            a_tag = l.find('a')  # find the first <a> tag
-            if a_tag is not None:  # if <a> tag exists
-                a_tag_href = a_tag['href']  # get the href (link) of the <a> tag
-                href_obj.append(a_tag_href)  # add the href in the list
+        for l in list_items:        #for each <li> tag
+            a_tag = l.find('a')     #find the first <a> tag
+            if a_tag is not None:           #if <a> tag exists
+                a_tag_href = a_tag['href']  #get the href (link) of the <a> tag
+                href_obj.append(a_tag_href) #add the href in the list
+                names_list.append(a_tag.get_text())# Append whole name to the names_list
             else:
                 a_tag_text = None
 
-        del href_obj[687:]  # delete the hrefs that don't refer to computer scientists
+        del href_obj[687:]   #delete the hrefs that don't refer to computer scientists
 
-        # we store the links of the computer scientists' pages in the "links" list
+        #we store the links of the computer scientists' pages in the "links" list
         links = ["https://en.wikipedia.org" + str(h) for h in href_obj]
 
         tasks = []
-        for link in links:  # visiting each scientist's page
+        for link in links:      #visiting each scientist's page
             tasks.append(fetch_info(session, link))
 
         scientist_info_list = await asyncio.gather(*tasks)
 
-        # Changing some elements in the surname list, because some surnames have peculiarities
+        #Changing some elements in the surname list, because some surnames have peculiarities
         scientist_info_list[24]['surname'] = 'Bachman'
         scientist_info_list[26]['surname'] = 'Backus'
         scientist_info_list[33]['surname'] = 'Bauer'
@@ -339,7 +333,7 @@ async def main():
         scientist_info_list[146]['surname'] = 'Draper'
         scientist_info_list[154]['surname'] = 'Eckert'
         scientist_info_list[158]['surname'] = 'Emerson'
-        scientist_info_list[181]['surname'] = 'Ford'  # Ford Jr.
+        scientist_info_list[181]['surname'] = 'Ford' #Ford Jr. 
         scientist_info_list[180]['surname'] = 'Forbus'
         scientist_info_list[201]['surname'] = 'Gates'
         scientist_info_list[204]['surname'] = 'Geschke'
@@ -351,9 +345,7 @@ async def main():
         scientist_info_list[510]['surname'] = 'Royce'
         scientist_info_list[566]['surname'] = 'Steele'
 
-
-
-        #Setting the number of awards for some scientists, because we could not fetch the number from their wikipedia page with the web crawler
+         #Setting the number of awards for some scientists, because we could not fetch the number from their wikipedia page with the web crawler
 
         scientist_info_list[50]['awards'] = 12
         scientist_info_list[58]['awards'] = 8
@@ -384,22 +376,23 @@ async def main():
         scientist_info_list[635]['awards'] = 2
         scientist_info_list[668]['awards'] = 1
 
-
-
-
         # Saving scientist info to JSON file
-        with open("scientist_info.json", "w") as outfile:
-            json.dump(scientist_info_list, outfile, indent=4)
-            # with ensure_ascii=False, non-ASCII characters are represented directly in the JSON file without escaping them as Unicode escape sequences.
+        with open("scientist_info.json", "w", encoding='utf-8') as outfile:
+            json.dump(scientist_info_list, outfile, indent=4,ensure_ascii=False)
+            #with ensure_ascii=False, non-ASCII characters are represented directly in the JSON file without escaping them as Unicode escape sequences.
+        
+        # Saving scientist complete names to JSON file so as to search their dblp record
+        with open("names.json", "w", encoding='utf-8') as outfile:
+            json.dump(names_list[:687], outfile, indent=4,ensure_ascii=False)
+
 
         i = 0
 
         for scientist_info in scientist_info_list:
             surname = scientist_info.get('surname')
-            education = scientist_info.get('education')
-            awards = scientist_info.get('awards')
-            print(f'\n\nScientist: {surname} , awards: {awards} and \n education: {education}, and index number: {i} \n')
-            i = i + 1
+            if scientist_info.get('education')=='':
+                print(f'Scientist: {surname}, and index number: {i} \n')
+                i=i+1
 
 
 asyncio.run(main())
