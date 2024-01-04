@@ -1,0 +1,92 @@
+import aiohttp
+import asyncio
+import json
+from bs4 import BeautifulSoup
+
+
+
+#asynchronous function to extract the dblp record of every scientist by visiting dblp page and searching their name.
+#info about the publications of every scientist was not given in many scientists' wikipedia pages
+async def extract_dblp(session,page,name):
+    dblp = 0
+    entries=[]
+    search_url = f'{page}/search?q={name}'
+
+    async with session.get(search_url) as response:
+            if response.status == 200:
+                html_text = await response.text()
+                soup = BeautifulSoup(html_text, 'lxml')
+                authors=soup.find('ul', class_='result-list')
+
+                # Introduce a 1-second delay after each request
+                await asyncio.sleep(1)
+
+                if authors:
+                    first_result = authors.find('a')
+                    if first_result:
+                        first_result_link = first_result.get('href')
+                        print(first_result_link)
+                        async with session.get(first_result_link) as result_page:
+                            if result_page.status == 200:
+                                result_html_text = await result_page.text()
+                                result_soup = BeautifulSoup(result_html_text, 'lxml')
+                                
+                                entries = result_soup.find_all('li', class_='entry')
+                                if entries:
+                                    dblp = len(entries)
+                                else:
+                                    print("NO RESULT!!!")
+                                
+            else:
+                print("WEBPAGE ERROR 404 ---------------------------------------------")
+                print(name)
+    
+    # Introduce a 1-second delay after each request
+    await asyncio.sleep(1)
+
+    return dblp
+
+
+# Function to update existing scientist_info with new dblp_records
+def update_dblp_records(new_dblp_records):
+    with open('scientist_info.json', 'r') as file:
+        scientist_info = json.load(file)
+
+    for i, record in enumerate(new_dblp_records):
+        scientist_info[i]["dblp_record"] = record
+
+    with open('scientist_info.json', 'w') as file:
+        json.dump(scientist_info, file, indent=4)
+
+async def process_names(names):
+    page = 'https://dblp.uni-trier.de'
+    batch_size = 20
+
+    async with aiohttp.ClientSession() as session:
+        tasks = []
+        dblp_records = []  # Store new dblp_records
+
+        for idx, name in enumerate(names):
+            task = extract_dblp(session, page, name)
+            tasks.append(task)
+
+            if (idx + 1) % batch_size == 0 or (idx + 1) == len(names):
+                results = await asyncio.gather(*tasks, return_exceptions=True)
+                dblp_records.extend(results)  # Extend with new results
+
+                tasks = []
+
+                if (idx + 1) < len(names):
+                    # Introduce a delay before starting the next batch of requests
+                    await asyncio.sleep(20)
+        
+        # Update the existing scientist_info with new dblp_records
+        update_dblp_records(dblp_records)
+
+
+# Load names from names.json
+with open('names.json', 'r') as file:
+    names = json.load(file)
+
+# Run the search function asynchronously for each name
+asyncio.run(process_names(names))

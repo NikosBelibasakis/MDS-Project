@@ -3,7 +3,6 @@ import asyncio
 import json
 from bs4 import BeautifulSoup
 
-
 # Function which returns last word
 def lastWord(string):
     # split by space and converting
@@ -101,32 +100,30 @@ def extract_education(soup):
 
     return education
 
-       
+
 #asynchronous function for fetching information about scientists
 async def fetch_info(session, link):
-    async with session.get(link) as response:
-        if response.status == 200:
-            html_text = await response.text()
-            soup = BeautifulSoup(html_text, 'lxml')
-            
-            awards = ''  # Extract awards from the page
-            dblp_record = ''  # Extract DBLP record
-            
-            
-            # Return a dictionary with extracted information
-            return {
-                'surname': extract_surname(soup),
-                'awards': awards,
-                'education': extract_education(soup),
-                'dblp_record': dblp_record
-            }
-        else:
-            return None
+        async with session.get(link) as response:
+            if response.status == 200:
+                html_text = await response.text()
+                soup = BeautifulSoup(html_text, 'lxml')
+                
+                    
+                # Return a dictionary with extracted information
+                return {
+                    'surname': extract_surname(soup),
+                    'awards': '',
+                    'education': extract_education(soup),
+                    'dblp_record': ''
+                }
+            else:
+                return None
 
 async def main():
     href_obj = []  #a list where the hrefs will be stored
     scientist_info_list = []  #a list where the surnames of the computer scientists' pages will be stored
     links = []  #a list where the links of the computer scientists' pages will be stored
+    names_list = []  #a list to store names
 
     async with aiohttp.ClientSession() as session:
         html_text = await session.get('https://en.wikipedia.org/wiki/List_of_computer_scientists')
@@ -138,6 +135,7 @@ async def main():
             if a_tag is not None:           #if <a> tag exists
                 a_tag_href = a_tag['href']  #get the href (link) of the <a> tag
                 href_obj.append(a_tag_href) #add the href in the list
+                names_list.append(a_tag.get_text())# Append whole name to the names_list
             else:
                 a_tag_text = None
 
@@ -187,6 +185,10 @@ async def main():
             json.dump(scientist_info_list, outfile, indent=4,ensure_ascii=False)
             #with ensure_ascii=False, non-ASCII characters are represented directly in the JSON file without escaping them as Unicode escape sequences.
         
+        # Saving scientist complete names to JSON file so as to search their dblp record
+        with open("names.json", "w") as outfile:
+            json.dump(names_list, outfile, indent=4,ensure_ascii=False)
+
 
         i = 0
 
