@@ -97,6 +97,9 @@ for scientist in data:
         # Print the details of the scientists that meet the condition at the if statement
         print({surname}, {awards}, {education}, {dblp_record})
 
-# Print the results
-for scientist in results:
-    print(scientist['surname'], scientist['awards'], scientist['education'], scientist['dblp_record'])
+        # Print the results
+        print("Surname:", scientist['surname'])
+        print("Awards:", scientist['awards'])
+        print("Education:", scientist['education'])
+        print("DBLP Record:", scientist['dblp_record'])
+        print("\n" + "=" * 30 + "\n")  # make better looking results
