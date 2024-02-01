@@ -1,11 +1,11 @@
 import json
-import hashlib
 import numpy as np
 from sortedcontainers import SortedDict
 from nearpy.hashes import RandomBinaryProjections
 from nearpy import Engine
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from general_functions import get_features
 
 # Get data from the JSON file
 with open('scientist_info.json', 'r', encoding="utf-8") as file:
@@ -41,22 +41,6 @@ class RangeTree:
             # Handle the case where there are too many values to unpack
             pass
         return result
-
-
-# Function to get the features for the index
-def get_features(scientist_data):
-    # Assuming fields exist and are not empty
-    surname = scientist_data['surname']
-    awards = scientist_data['awards']
-    dblp_record = scientist_data['dblp_record']
-
-    # Calculate hashes
-    surname_hash = int(hashlib.sha256(surname.encode('utf-8')).hexdigest(), 16)
-    awards_hash = int(hashlib.sha256(str(awards).encode('utf-8')).hexdigest(), 16)
-    dblp_record_hash = int(hashlib.sha256(str(dblp_record).encode('utf-8')).hexdigest(), 16)
-
-    return [surname_hash, awards_hash, dblp_record_hash]
-
 
 # Get all the features from the scientists
 values = []
