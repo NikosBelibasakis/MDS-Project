@@ -36,6 +36,9 @@ async def extract_dblp(session,page,name):
                                 result_html_text = await result_page.text()
                                 result_soup = BeautifulSoup(result_html_text, 'lxml')
                                 
+                                # Introduce a 1-second delay after each request
+                                await asyncio.sleep(1)
+
                                 entries = result_soup.find_all('li', class_='entry')
                                 if entries:
                                     dblp = len(entries)
@@ -65,7 +68,7 @@ def update_dblp_records(new_dblp_records):
 
 async def process_names(names):
     page = 'https://dblp.uni-trier.de'
-    batch_size = 20
+    batch_size = 15
 
     async with aiohttp.ClientSession() as session:
         tasks = []
