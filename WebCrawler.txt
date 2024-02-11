@@ -304,7 +304,7 @@ async def main():
             else:
                 a_tag_text = None
 
-        del href_obj[687:]   #delete the hrefs that don't refer to computer scientists
+        del href_obj[688:]   #delete the hrefs that don't refer to computer scientists
 
         #we store the links of the computer scientists' pages in the "links" list
         links = ["https://en.wikipedia.org" + str(h) for h in href_obj]
@@ -383,16 +383,10 @@ async def main():
         
         # Saving scientist complete names to JSON file so as to search their dblp record
         with open("names.json", "w", encoding='utf-8') as outfile:
-            json.dump(names_list[:687], outfile, indent=4,ensure_ascii=False)
+            json.dump(names_list[:688], outfile, indent=4,ensure_ascii=False)
 
 
-        i = 0
 
-        for scientist_info in scientist_info_list:
-            surname = scientist_info.get('surname')
-            if scientist_info.get('education')=='':
-                print(f'Scientist: {surname}, and index number: {i} \n')
-                i=i+1
 
 
 asyncio.run(main())
