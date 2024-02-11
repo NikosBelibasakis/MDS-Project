@@ -1,5 +1,5 @@
 import json
-from general_functions import get_features
+from general_functions import assing_index_surname, get_features
 
 """At this point we will define  Octrees """
 class Point3D:
@@ -146,34 +146,30 @@ class Octree:
                     return self.children[7].search(p)
     
 
-
-# Example usage:
-octree = Octree()
-octree.insert("Smith", 3, 45.6, "PhD in Computer Science from XYZ University.")
-octree.insert("Johnson", 2, 30.8, "Master's in Electrical Engineering from ABC University.")
-octree.insert("Williams", 1, 20.5, "Bachelor's in Mechanical Engineering from DEF College.")
-
-# Search for education information
-result = octree.search("Johnson")
-if result:
-    print("Surname:", result["surname"])
-    print("Awards:", result["awards"])
-    print("DBLP Record:", result["dblp_record"])
-    print("Education:", result["education"])
-else:
-    print("Person not found.")
-
-# Print the entire tree
-octree.print_tree()
-
-
 # Get data from the JSON file
 with open('../scientist_info.json', 'r', encoding="utf-8") as file:
     data = json.load(file)
 
-# Get all the features from the scientists
-scientists = []
-for scientist_data in data[:4]:
-    features = get_features(scientist_data)
-    #outer_insert(features[0],features[1],features[2],"Education info")
+surnames=assing_index_surname(data[:10])
+surname_ids=[id[1] for id in surnames]
+awards = [int(scientist['awards']) for scientist in data[:10]]
+dblp_record = [int(scientist['dblp_record']) for scientist in data[:10]]
+education = [scientist['education'] for scientist in data[:10]]
 
+# Extract min and max values --- they will be the boundaries
+top_boundary=Point3D( min(surname_ids), min(awards) , min(dblp_record) )
+bottom_boundary=Point3D( max(surname_ids) , max(awards) , max(dblp_record) )
+
+print(top_boundary)
+print(bottom_boundary)
+
+octree = Octree(top_boundary, bottom_boundary)  #initialization of octree
+
+for i in len(surname_ids):
+    node=OctreeNode(Point3D(surname_ids[i],awards[i],dblp_record[i]),education[i])
+    octree.insert(node) #populate the tree with all our information
+
+#example searching
+print("Node a:", octree.search(Point3D(1, 1, 1)).data)
+print("Node b:", octree.search(Point3D(2, 5, 3)).data)
+print("Node c:", octree.search(Point3D(7, 6, 4)).data)
