@@ -1,4 +1,5 @@
 import hashlib
+import json
 
 # Function to get the features for the index
 def get_features(scientist_data):
@@ -18,3 +19,27 @@ def get_features(scientist_data):
 
     return [surname_hash, awards_hash, dblp_record_hash]
     
+
+
+def assing_index_surname():
+    # Read the JSON file
+    with open('../scientist_info.json', 'r', encoding="utf-8") as file:
+        data = json.load(file)
+
+    # Extract surnames from the JSON data
+    surnames = [scientist['surname'] for scientist in data]
+
+    # Assign a unique number to each unique surname
+    surname_numbers = []
+    current_number = 0
+    previous_surname=''
+
+    for i, surname in enumerate(surnames):
+        if surname!=previous_surname: #check for duplicate surnames
+            current_number += 1
+            surname_numbers.append([surname,current_number])
+        else :
+            surname_numbers.append([surname,current_number]) #keep the same value for duplicate surnames
+        previous_surname=surname
+
+    return surname_numbers
