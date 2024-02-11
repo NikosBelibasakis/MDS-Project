@@ -1,5 +1,4 @@
 import hashlib
-import json
 
 # Function to get the features for the index
 def get_features(scientist_data):
@@ -21,11 +20,8 @@ def get_features(scientist_data):
     
 
 
-def assing_index_surname():
-    # Read the JSON file
-    with open('../scientist_info.json', 'r', encoding="utf-8") as file:
-        data = json.load(file)
-
+def assing_index_surname(data):
+    
     # Extract surnames from the JSON data
     surnames = [scientist['surname'] for scientist in data]
 
