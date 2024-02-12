@@ -340,10 +340,10 @@ async def main():
         scientist_info_list[257]['surname'] = 'Hehner'
         scientist_info_list[288]['surname'] = 'Ingalls'
         scientist_info_list[335]['surname'] = 'Kruskal'
-        scientist_info_list[404]['surname'] = 'Moore'
-        scientist_info_list[474]['surname'] = 'Pieraccini'
-        scientist_info_list[510]['surname'] = 'Royce'
-        scientist_info_list[566]['surname'] = 'Steele'
+        scientist_info_list[405]['surname'] = 'Moore'
+        scientist_info_list[475]['surname'] = 'Pieraccini'
+        scientist_info_list[511]['surname'] = 'Royce'
+        scientist_info_list[568]['surname'] = 'Steele'
 
          #Setting the number of awards for some scientists, because we could not fetch the number from their wikipedia page with the web crawler
 
@@ -352,29 +352,29 @@ async def main():
         scientist_info_list[92]['awards'] = 7
         scientist_info_list[145]['awards'] = 5
         scientist_info_list[191]['awards'] = 9
-        scientist_info_list[237]['awards'] = 2
+        scientist_info_list[238]['awards'] = 2
         scientist_info_list[268]['awards'] = 7
         scientist_info_list[286]['awards'] = 3
         scientist_info_list[313]['awards'] = 6
         scientist_info_list[370]['awards'] = 2
-        scientist_info_list[386]['awards'] = 3
-        scientist_info_list[392]['awards'] = 10
-        scientist_info_list[399]['awards'] = 7
-        scientist_info_list[421]['awards'] = 2
-        scientist_info_list[433]['awards'] = 1
-        scientist_info_list[440]['awards'] = 7
-        scientist_info_list[485]['awards'] = 11
-        scientist_info_list[487]['awards'] = 5
-        scientist_info_list[500]['awards'] = 5
-        scientist_info_list[513]['awards'] = 3
-        scientist_info_list[515]['awards'] = 1
-        scientist_info_list[544]['awards'] = 10
-        scientist_info_list[576]['awards'] = 5
-        scientist_info_list[585]['awards'] = 4
-        scientist_info_list[606]['awards'] = 13
-        scientist_info_list[608]['awards'] = 8
-        scientist_info_list[635]['awards'] = 2
-        scientist_info_list[668]['awards'] = 1
+        scientist_info_list[387]['awards'] = 3
+        scientist_info_list[393]['awards'] = 10
+        scientist_info_list[400]['awards'] = 7
+        scientist_info_list[422]['awards'] = 2
+        scientist_info_list[434]['awards'] = 1
+        scientist_info_list[441]['awards'] = 7
+        scientist_info_list[486]['awards'] = 11
+        scientist_info_list[488]['awards'] = 5
+        scientist_info_list[501]['awards'] = 5
+        scientist_info_list[514]['awards'] = 3
+        scientist_info_list[516]['awards'] = 1
+        scientist_info_list[545]['awards'] = 10
+        scientist_info_list[577]['awards'] = 5
+        scientist_info_list[586]['awards'] = 4
+        scientist_info_list[607]['awards'] = 13
+        scientist_info_list[609]['awards'] = 8
+        scientist_info_list[636]['awards'] = 2
+        scientist_info_list[669]['awards'] = 1
 
         # Saving scientist info to JSON file
         with open("scientist_info.json", "w", encoding='utf-8') as outfile:
