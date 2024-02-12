@@ -52,48 +52,11 @@ class Octree:
                 self.n = node #leaf node created , if it doesnt already exist
             return
 
-        midx = (self.top_boundary.x + self.bottom_boundary.x) / 2
-        midy = (self.top_boundary.y + self.bottom_boundary.y) / 2
-        midz = (self.top_boundary.z + self.bottom_boundary.z) / 2
+        child_index, boundaries = self.get_child(node.position)
+        if self.children[child_index] is None:
+            self.children[child_index] = Octree(boundaries[0],boundaries[1])
+        self.children[child_index].insert(node)
 
-        if midx >= node.position.x:
-            if midy >= node.position.y:
-                if midz >= node.position.z:
-                    if self.children[0] is None:
-                        self.children[0] = Octree(self.top_boundary, Point3D(midx, midy, midz))
-                    self.children[0].insert(node)
-                else:
-                    if self.children[1] is None:
-                        self.children[1] = Octree(Point3D(self.top_boundary.x, self.top_boundary.y, midz), Point3D(midx, midy, self.bottom_boundary.z))
-                    self.children[1].insert(node)
-            else:
-                if midz >= node.position.z:
-                    if self.children[2] is None:
-                        self.children[2] = Octree(Point3D(self.top_boundary.x, midy, self.top_boundary.z), Point3D(midx, self.bottom_boundary.y, midz))
-                    self.children[2].insert(node)
-                else:
-                    if self.children[3] is None:
-                        self.children[3] = Octree(Point3D(self.top_boundary.x, midy, midz), Point3D(midx, self.bottom_boundary.y, self.bottom_boundary.z))
-                    self.children[3].insert(node)
-        else:
-            if midy >= node.position.y:
-                if midz >= node.position.z:
-                    if self.children[4] is None:
-                        self.children[4] = Octree(Point3D(midx, self.top_boundary.y, self.top_boundary.z), Point3D(self.bottom_boundary.x, midy, midz))
-                    self.children[4].insert(node)
-                else:
-                    if self.children[5] is None:
-                        self.children[5] = Octree(Point3D(midx, self.top_boundary.y, midz), Point3D(self.bottom_boundary.x, midy, self.bottom_boundary.z))
-                    self.children[5].insert(node)
-            else:
-                if midz >= node.position.z:
-                    if self.children[6] is None:
-                        self.children[6] = Octree(Point3D(midx, midy, self.top_boundary.z), Point3D(self.bottom_boundary.x, self.bottom_boundary.y, midz))
-                    self.children[6].insert(node)
-                else:
-                    if self.children[7] is None:
-                        self.children[7] = Octree(Point3D(midx, midy, midz), self.bottom_boundary)
-                    self.children[7].insert(node)
 
     def search(self, p):
         if not self.top_boundary <= p <= self.bottom_boundary:
@@ -101,60 +64,67 @@ class Octree:
 
         if self.n is not None:
             return self.n
+        
+        child_index = self.get_child(p)[0]
+        if self.children[child_index] is None:
+            return None
+        return self.children[child_index].search(p)
 
+    def get_child(self,point):
+        
         midx = (self.top_boundary.x + self.bottom_boundary.x) / 2
         midy = (self.top_boundary.y + self.bottom_boundary.y) / 2
         midz = (self.top_boundary.z + self.bottom_boundary.z) / 2
-
-        if midx >= p.x:
-            if midy >= p.y:
-                if midz >= p.z:
-                    if self.children[0] is None:
-                        return None
-                    return self.children[0].search(p)
+        
+        if midx >= point.x :
+                if midy >= point.y :
+                        if midz >= point.z:
+                                #we are at the first child
+                                return 0, (self.top_boundary, Point3D(midx, midy, midz))
+                        else:
+                                #we are at the second child
+                                return 1, (Point3D(self.top_boundary.x, self.top_boundary.y, midz), 
+                                           Point3D(midx, midy, self.bottom_boundary.z))
                 else:
-                    if self.children[1] is None:
-                        return None
-                    return self.children[1].search(p)
-            else:
-                if midz >= p.z:
-                    if self.children[2] is None:
-                        return None
-                    return self.children[2].search(p)
-                else:
-                    if self.children[3] is None:
-                        return None
-                    return self.children[3].search(p)
+                        if midz >= point.z:
+                                #we are at the third child
+                                return 2, (Point3D(self.top_boundary.x, midy, self.top_boundary.z), 
+                                          Point3D(midx, self.bottom_boundary.y, midz))
+                        else:
+                                #we are at the fourth child
+                                return 3, (Point3D(self.top_boundary.x, midy, midz), 
+                                           Point3D(midx, self.bottom_boundary.y, self.bottom_boundary.z))
         else:
-            if midy >= p.y:
-                if midz >= p.z:
-                    if self.children[4] is None:
-                        return None
-                    return self.children[4].search(p)
+                if midy >= point.y :
+                        if midz >= point.z :
+                                #we are at the fifth child
+                                return 4, (Point3D(midx, self.top_boundary.y, self.top_boundary.z), 
+                                           Point3D(self.bottom_boundary.x, midy, midz))
+                        else:
+                                #we are at the sixth child
+                                return 5, (Point3D(midx, self.top_boundary.y, midz), 
+                                           Point3D(self.bottom_boundary.x, midy, self.bottom_boundary.z))
                 else:
-                    if self.children[5] is None:
-                        return None
-                    return self.children[5].search(p)
-            else:
-                if midz >= p.z:
-                    if self.children[6] is None:
-                        return None
-                    return self.children[6].search(p)
-                else:
-                    if self.children[7] is None:
-                        return None
-                    return self.children[7].search(p)
-    
+                        if midz >= point.z :
+                                #we are at the seveth child
+                                return 6, (Point3D(midx, midy, self.top_boundary.z), 
+                                           Point3D(self.bottom_boundary.x, self.bottom_boundary.y, midz))
+                        else:
+                                #we are at the eighth child
+                                return 7, (Point3D(midx, midy, midz), self.bottom_boundary)
 
-# Get education from the JSON file
+# Get data from the JSON file
 with open('../scientist_info.json', 'r', encoding="utf-8") as file:
     data = json.load(file)
 
-surnames=assing_index_surname(data)
+# Sort the data based on the "surname" key
+sorted_data = sorted(data, key=lambda x: x.get("surname", ""))
+
+surnames=assing_index_surname(sorted_data)
 surname_ids=[id[1] for id in surnames]
-awards = [int(scientist['awards']) for scientist in data]
-dblp_record = [int(scientist['dblp_record']) for scientist in data]
-education = [scientist['education'] for scientist in data]
+awards = [int(scientist['awards']) for scientist in sorted_data]
+dblp_record = [int(scientist['dblp_record']) for scientist in sorted_data]
+education = [scientist['education'] for scientist in sorted_data]
 
 # Extract min and max values --- they will be the boundaries
 top_boundary=Point3D( min(surname_ids), min(awards) , min(dblp_record) )
@@ -170,5 +140,5 @@ for i in range(len(surname_ids)):
     octree.insert(node) #populate the tree with all our information
 
 #example searching
-print("Node a:", octree.search(Point3D(1, 10, 60)).education)
+print("Node a:", octree.search(Point3D(1, 0, 1119)).education)
 
