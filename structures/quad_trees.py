@@ -142,3 +142,28 @@ for i in range(len(surname_ids)):
 #example searching
 print("Node a:", octree.search(Point3D(1, 0, 1119)).education)
 
+def letter_id_range(surnames):
+    start_id=surnames[0][1]
+    current_letter=''
+    letters_ranges={}
+    for i,(surname,number) in enumerate(surnames):
+        first_letter=surname[0]
+
+        if first_letter!=current_letter :
+
+            #save firstly the last number associated to current letter
+            if current_letter : #current letter is not ""
+                letters_ranges[current_letter]=(start_id, previous_id)
+
+            # Update current letter and start for the new letter
+            current_letter = first_letter
+            start_id = number
+        
+        previous_id=number
+    # Save the range for the last letter
+    if current_letter:
+        letters_ranges[current_letter] = (start_id, surnames[-1][1])
+    
+    return letters_ranges
+
+x=letter_id_range(surnames)
