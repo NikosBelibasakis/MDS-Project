@@ -171,6 +171,28 @@ def letter_id_range(surnames):
     return letters_ranges
 
 
+#function needed from general function that is now deleted
+def assing_index_surname(data):
+    
+    # Extract surnames from the JSON data
+    surnames = [scientist['surname'] for scientist in data]
+
+    # Assign a unique number to each unique surname
+    surname_numbers = []
+    current_number = 0
+    previous_surname=''
+
+    for i, surname in enumerate(surnames):
+        if surname!=previous_surname: #check for duplicate surnames
+            current_number += 1
+            surname_numbers.append([surname,current_number])
+        else :
+            surname_numbers.append([surname,current_number]) #keep the same value for duplicate surnames
+        previous_surname=surname
+
+    return surname_numbers
+
+
 """
 From now on we describe the main routine
 """
