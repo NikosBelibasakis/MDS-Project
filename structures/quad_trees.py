@@ -1,5 +1,4 @@
 import json
-from general_functions import assing_index_surname
 
 """
 At this point we will define  Octrees 
@@ -172,7 +171,7 @@ def letter_id_range(surnames):
 
 
 #function needed from general function that is now deleted
-def assing_index_surname(data):
+def assign_index_surname(data):
     
     # Extract surnames from the JSON data
     surnames = [scientist['surname'] for scientist in data]
@@ -204,7 +203,7 @@ with open('../scientist_info.json', 'r', encoding="utf-8") as file:
 # Sort the data based on the "surname" key so that they are from A to Z
 sorted_data = sorted(data, key=lambda x: x.get("surname", ""))
 
-surnames=assing_index_surname(sorted_data)
+surnames=assign_index_surname(sorted_data)
 surname_ids=[id[1] for id in surnames]
 awards = [int(scientist['awards']) for scientist in sorted_data]
 dblp_record = [int(scientist['dblp_record']) for scientist in sorted_data]
