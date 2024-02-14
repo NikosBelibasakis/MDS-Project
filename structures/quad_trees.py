@@ -26,7 +26,7 @@ class Point3D:
         return self.x >= other.x and self.y >= other.y and self.z >= other.z
 
     def __str__(self): #string represantion of point
-        return f"Point3D(surname id={self.x}, awards={self.y}, DBLP record={self.z})"
+        return f"Point3D(surname={self.x}, awards={self.y}, DBLP record={self.z})"
 
 class OctreeNode:
     def __init__(self, position, education):
@@ -82,7 +82,7 @@ class Octree:
         #we will find first the boundaries in which we are searching 
 
         letters_difference=letters_id[1]-letters_id[0]
-        awards_difference=bottom_boundary.y-award_threshold
+        awards_difference= self.bottom_boundary.y-award_threshold
         records_difference=records[1]-records[0]
 
         scientist_list=[]
@@ -191,47 +191,59 @@ def assign_index_surname(data):
 
     return surname_numbers
 
+#get the surname from the given id 
+def get_surname(id, surname_list):
+    
+    for surname, number in surname_list:
+        if number==id :
+            return surname
+
 
 """
 From now on we describe the main routine
 """
 
-# Get data from the JSON file
-with open('../scientist_info.json', 'r', encoding="utf-8") as file:
-    data = json.load(file)
+def create_octree():
+    # Get data from the JSON file
+    with open('../scientist_info.json', 'r', encoding="utf-8") as file:
+        data = json.load(file)
 
-# Sort the data based on the "surname" key so that they are from A to Z
-sorted_data = sorted(data, key=lambda x: x.get("surname", ""))
+    # Sort the data based on the "surname" key so that they are from A to Z
+    sorted_data = sorted(data, key=lambda x: x.get("surname", ""))
 
-surnames=assign_index_surname(sorted_data)
-surname_ids=[id[1] for id in surnames]
-awards = [int(scientist['awards']) for scientist in sorted_data]
-dblp_record = [int(scientist['dblp_record']) for scientist in sorted_data]
-education = [scientist['education'] for scientist in sorted_data]
+    surnames=assign_index_surname(sorted_data)
+    surname_ids=[id[1] for id in surnames]
+    awards = [int(scientist['awards']) for scientist in sorted_data]
+    dblp_record = [int(scientist['dblp_record']) for scientist in sorted_data]
+    education = [scientist['education'] for scientist in sorted_data]
 
-# Extract min and max values --- they will be the boundaries
-top_boundary=Point3D( min(surname_ids), min(awards) , min(dblp_record) )
-bottom_boundary=Point3D( max(surname_ids) , max(awards) , max(dblp_record) )
+    # Extract min and max values --- they will be the boundaries
+    top_boundary=Point3D( min(surname_ids), min(awards) , min(dblp_record) )
+    bottom_boundary=Point3D( max(surname_ids) , max(awards) , max(dblp_record) )
 
-print(top_boundary)
-print(bottom_boundary)
+    octree = Octree(top_boundary, bottom_boundary)  #initialization of octree
 
-octree = Octree(top_boundary, bottom_boundary)  #initialization of octree
+    for i in range(len(surname_ids)):
+        node=OctreeNode(Point3D(surname_ids[i],awards[i],dblp_record[i]),education[i])
+        octree.insert(node) #populate the tree with all our information
 
-for i in range(len(surname_ids)):
-    node=OctreeNode(Point3D(surname_ids[i],awards[i],dblp_record[i]),education[i])
-    octree.insert(node) #populate the tree with all our information
+    return octree , surnames
 
-letter_ranges=letter_id_range(surnames)
+def OctreeSearch(letters,awards,dblp_records):
+    octree,surnames=create_octree()
+    letter_ranges=letter_id_range(surnames)
 
-range_a=letter_ranges.get("Z")[0]
-range_g=letter_ranges.get("Z")[1] #use .upper() later
+    range_start=letter_ranges.get(letters[0].upper())[0]
+    range_finish=letter_ranges.get(letters[1].upper())[1]
 
-#example searching
-print("Node a:", octree.search(Point3D(1, 0, 1119)).education)
+    range_letters=[range_start,range_finish]
 
-letters=[range_a,range_g]
+    scientists=octree.search_in_range(range_letters,awards,dblp_records)
+    for i in range(len(scientists)):
+        #changing surname id to the original string surname
+        id_surname=scientists[i].position.x
+        string_surname=get_surname(id_surname,surnames)
+        scientists[i].position.x=string_surname
+    
+    return scientists
 
-scientists=octree.search_in_range(letters,0,[4,118])
-for i in range(len(scientists)):
-     print(scientists[i])
