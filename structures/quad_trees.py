@@ -233,8 +233,8 @@ def OctreeSearch(letters,awards,dblp_records):
     octree,surnames=create_octree()
     letter_ranges=letter_id_range(surnames)
 
-    range_start=letter_ranges.get(letters[0].upper())[0]
-    range_finish=letter_ranges.get(letters[1].upper())[1]
+    range_start=letter_ranges.get(letters[0])[0]
+    range_finish=letter_ranges.get(letters[1])[1]
 
     range_letters=[range_start,range_finish]
 
