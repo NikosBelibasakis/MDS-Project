@@ -1,0 +1,145 @@
+# version 3
+import json
+
+
+class Node:
+    # Constructor to create a new node
+    def __init__(self, attributes):
+        self.attributes = attributes
+        self.left = None
+        self.right = None
+
+
+# The function for inserting a scientist in the 3-D tree
+def InsertScientist(node, attributes, depth):
+    # If the tree is empty, set the root node
+    if node is None:
+        return Node(attributes)
+
+    # Otherwise, recur down the tree
+
+    # Calculate the current dimension (curr_dim) of comparison. We have three dimensions: 0,1,2.
+    curr_dim = depth % 3
+
+    # Compare the appropriate attributes depending on the current dimension
+    if attributes[curr_dim] < node.attributes[curr_dim]:
+        node.left = InsertScientist(node.left, attributes, depth + 1)
+    else:
+        node.right = InsertScientist(node.right, attributes, depth + 1)
+
+    return node
+
+
+
+
+# The function for the range search in the 3-D tree
+def RangeSearchKD(node, depth, left_l,right_l,awards_th,left_db,right_db):
+
+
+    if node is None:
+        return None
+
+     # Calculate the current dimension (curr_dim) of comparison. We have three dimensions: 0,1,2.
+
+    curr_dim = depth % 3
+
+
+       #Check if the node's/scientist's attributes are in range
+    if (node.attributes[0][0] >= left_l) and (node.attributes[0][0] <= right_l) and (int(node.attributes[1]) > awards_th) and (int(node.attributes[2]) >= left_db) and (int(node.attributes[2]) <= right_db):
+        ScientistsInRange.append(node.attributes)
+
+
+    # If we are on the first dimension (curr_dim = 0) we check the surname to see if the searching should continue
+    if (curr_dim == 0):
+            if left_l < node.attributes[0][0]:
+               RangeSearchKD(node.left,depth+1,left_l,right_l,awards_th,left_db,right_db)
+
+            if right_l >= node.attributes[0][0]:
+                RangeSearchKD(node.right, depth + 1, left_l, right_l, awards_th, left_db, right_db)
+
+
+    # If we are on the second dimension (curr_dim = 1) we check the number of awards to see if the searching should continue
+    if (curr_dim == 1):
+         if node.attributes[1] > awards_th + 1 :
+             RangeSearchKD(node.left, depth + 1, left_l, right_l, awards_th, left_db, right_db)
+
+         #In this case, the searching always continues at the right sub-tree.
+         RangeSearchKD(node.right, depth + 1, left_l, right_l, awards_th, left_db, right_db)
+
+
+    # If we are on the third dimension (curr_dim = 2) we check the DBLP record to see if the searching should continue
+    if (curr_dim == 2):
+        if left_db < node.attributes[2]:
+            RangeSearchKD(node.left, depth + 1, left_l, right_l, awards_th, left_db, right_db)
+
+        if right_db >= node.attributes[2]:
+            RangeSearchKD(node.right, depth + 1, left_l, right_l, awards_th, left_db, right_db)
+
+
+    return None
+
+
+
+
+# Main function
+if __name__ == '__main__':
+
+    # Get the data from the JSON file
+    with open('../scientist_info.json', 'r', encoding="utf-8") as file:
+        data = json.load(file)
+    # Sort the data based on the "surname" key
+    sorted_data = sorted(data, key=lambda x: x.get("surname", ""))
+
+    # fetch the surnames
+    surnames = [scientist['surname'] for scientist in data]
+
+    # fetch the number of awards and convert the integer into a string
+    awards = [scientist['awards'] for scientist in data]
+    awards_int = [int(aw) for aw in awards]
+
+    # fetch the dblp record and convert the integer into a string
+    dblp = [scientist['dblp_record'] for scientist in data]
+    dblp_int = [int(db) for db in dblp]
+
+    # fetch the education
+    education = [scientist['education'] for scientist in data]
+
+    counter = 0;  # counter used for the attributes insertion in the attributes_array.
+    attributes_array = []
+
+    for s in surnames:
+        temp_list = [surnames[counter], awards_int[counter], dblp_int[counter]]
+        attributes_array.append(temp_list)
+        counter = counter + 1
+
+    # Insert the first scientist in the tree and set this object as the root node
+    root = None
+    root = InsertScientist(root, attributes_array[0], 0)
+
+    # Insert the other scientists in the tree
+    for attr in attributes_array[1:]:
+        InsertScientist(root, attr, 0)
+
+    #User query
+    print('Scientists Range Search')
+    left_l = input('Please enter the left end of the surnames letter range: ')
+    right_l = input('Please enter the right end of the surnames letter range: ')
+    awards_th = input('Please enter the threshold for the number of the awards: ')
+    awards_th = int(awards_th)
+    left_db = input('Please enter the left end of the DBLP record range: ')
+    left_db = int(left_db)
+    right_db = input('Please enter the right end of the DBLP record range: ')
+    right_db = int(right_db)
+
+
+    # This array contains all the scientists whose attributes are included in the given range
+    ScientistsInRange = []
+    RangeSearchKD(root,0,left_l,right_l,awards_th,left_db,right_db)
+
+    # This part will be deleted
+    print('')
+    print('Range searching finished. Results:')
+    print('')
+
+    for s in ScientistsInRange:
+        print(s)
