@@ -89,10 +89,11 @@ class Octree:
     #function for searching with index ranges, it returns many leaf nodes 
     def search_in_range(self,letters_id,award_threshold,records):
         #letters_id : is a list containing the id of the first surname with a letter and the last (x index)
-        #award_threshold: is the minimum value of awards (y index) we are looking for 
+        #award_threshold: the value of awards (y index) we are looking for should be greater than the threshold 
         #records: is a list containing the minimum and maximum number of dblp records we will be looking for (z index)
+        min_award=award_threshold+1 #the minimum value for awards
         letters_difference=letters_id[1]-letters_id[0] 
-        awards_difference= self.bottom_boundary.y-award_threshold
+        awards_difference= self.bottom_boundary.y-min_award
         records_difference=records[1]-records[0]
 
         scientist_list=[]
@@ -101,7 +102,7 @@ class Octree:
             for j in range(awards_difference+1):        #iterate through the number of all the different awards
                 for k in range(records_difference+1):   #iterate through the number of all the different dblp records
                     #create a point for each iteration and search that point
-                    point=Point3D(letters_id[0]+i,award_threshold+j,records[0]+k)
+                    point=Point3D(letters_id[0]+i,min_award+j,records[0]+k)
                     scientist=self.search(point)
                     if scientist is not None:
                         #if point exists in tree , it answers our searching question so we store it in a list

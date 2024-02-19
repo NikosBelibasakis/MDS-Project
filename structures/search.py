@@ -70,7 +70,7 @@ def get_dblp():
     end=input("Great! Enter the maximum number of records the scientist may have :\n")
     end=check_digit(end)
     
-    start,end=compare(start,end,state=0)
+    start,end=compare(int(start),int(end),state=0)
     
     return [int(start),int(end)]
 
