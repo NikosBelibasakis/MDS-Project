@@ -1,109 +1,125 @@
+#version 1
+
 import json
-import numpy as np
-from sortedcontainers import SortedDict
-from nearpy.hashes import RandomBinaryProjections
-from nearpy import Engine
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
-from general_functions import get_features
-
-# Get data from the JSON file
-with open('../scientist_info.json', 'r', encoding="utf-8") as file:
-    data = json.load(file)
 
 
-# Creating range tree for (surname, #awards, #DBLP_Record)
-class RangeTree:
-    def __init__(self, dimension):
-        self.dimension = dimension
-        self.tree = SortedDict()
+class x_Node:
 
-    def insert(self, point):
-        key = point[self.dimension]
-        if key not in self.tree:
-            self.tree[key] = []
-        self.tree[key].append(point)
+    # Constructor to create a new node for the first BST tree (where the x coordinate is being used)
+    def __init__(self, x, attributes, isLeaf):
+        self.x = x
+        self.left = None
+        self.right = None
+        self.isLeaf = isLeaf
+        self.attributes = attributes
 
-    def query_range(self, start, end):
-        result = []
-        try:
-            if isinstance(start, (int, float)) and isinstance(end, (int, float)):
-                # For numeric ranges, use values
-                for values in self.tree.values():
-                    for value in values:
-                        if start <= value[self.dimension] <= end:
-                            result.append(value)
-            else:
-                # For non-numeric ranges, use irange
-                for key, values in self.tree.irange(minimum=start, maximum=end, inclusive=(True, True)):
-                    result.extend(values)
-        except ValueError:
-            # Handle the case where there are too many values to unpack
-            pass
-        return result
 
-# Get all the features from the scientists
-values = []
-for scientist_data in data:
-    features = get_features(scientist_data)
-    values.append(features)
 
-# values is not empty
-if not values:
-    print("Error: combined_values is empty. Check your feature calculation logic.")
-else:
-    dimension = len(values[0])
+# The function for inserting a scientist in the first BST tree (where the x coordinate is being used)
+def x_InsertScientist(node, x , attributes):
+    # If the tree is empty, set the root node (or insert a node at this position)
+    if node is None:
 
-# Build an LSH index using nearpy
-len_num = len(values[0])
-hashnum_bits = 10  # Number of hash bits
+        node = x_Node(x, attributes, False)
 
-# LSH index
-engine = Engine(len_num, lshashes=[RandomBinaryProjections('rbp', hashnum_bits)])
+        #set the leaf-node
+        node.left = x_Node(x, attributes, True)
+        return node ;
 
-for i, f in enumerate(values):
-    engine.store_vector(np.array(f), i)  # Convert f to a numpy array
 
-# Query scientist index
-get_scientist_index = 0
-get_scientist_data = data[get_scientist_index]
+    #If the node that we are checking on is a leaf
+    if (node.isLeaf == True):
 
-# Get LSH neighbors
-get_scientist_features = get_features(get_scientist_data)
-if get_scientist_features is not None:
-    neighbors = engine.neighbours(np.array(get_scientist_features))
-else:
-    neighbors = None
+        if x < node.x:
 
-# Function to check similarity at the education feature
-def similar_education(edu_text1, edu_text2):
-    vectorizer = TfidfVectorizer()
-    tfidf_matrix = vectorizer.fit_transform([edu_text1, edu_text2])
-    vec_1, vec_2 = tfidf_matrix[0], tfidf_matrix[1]
+            #We temporarily store the leaf node we are checking on, to the 'node_temp' variable
+            node_temp = x_Node(node.x,  node.attributes, True)
 
-    similarity = cosine_similarity(vec_1, vec_2)
-    return similarity > 0.5
+            #Replace the leaf node we are checking on with the node we want to insert
+            node = x_Node(x,  attributes, False)
 
-# Getting the final results
-results = []
-for scientist in data:
-    surname = scientist['surname']
-    awards = scientist['awards']
-    education = scientist['education']
-    dblp_record = scientist['dblp_record']
+            # Set the leaf node we are checking on as the node's (the node we want to insert) right child
+            node.right = node_temp
 
-    # Example: Check if the surname starts with a letter from 'A' to 'G' and has >4 awards and dblp_record is between [100,200]
-    if 'A' <= surname[0].upper() <= 'G' and awards > 4 and 100 <= dblp_record <= 200 :
-        # Check the similarity between the current education and the query education
-        if similar_education(get_scientist_data['education'], education):
-        # Append the scientist data meeting the condition to results[]
-            results.append(scientist)
-        # Print the details of the scientists that meet the condition at the if statement
-        print({surname}, {awards}, {education}, {dblp_record})
+            # set the leaf-node for the node we want to insert
+            node.left = x_Node(x, attributes, True)
 
-        # Print the results
-        print("Surname:", scientist['surname'])
-        print("Awards:", scientist['awards'])
-        print("Education:", scientist['education'])
-        print("DBLP Record:", scientist['dblp_record'])
-        print("\n" + "=" * 30 + "\n")  # make better looking results
+            return node
+
+
+        elif x == node.x:
+
+            # Replace the leaf node we are checking on with the node we want to insert
+            node = x_Node(x, attributes, False)
+
+            # Set the leaf node
+            node.left = x_Node(x, attributes, True)
+
+            return node
+
+
+
+
+
+    #Otherwise, recur down the tree
+
+    if x <= node.x:
+        node.left = x_InsertScientist(node.left,x,attributes)
+
+    elif x > node.x:
+        node.right = x_InsertScientist(node.right,x,attributes)
+
+    return node
+
+
+
+
+
+
+
+
+# Main function
+if __name__ == '__main__':
+
+    # Get the data from the JSON file
+    with open('../scientist_info.json', 'r', encoding="utf-8") as file:
+        data = json.load(file)
+    # Sort the data based on the "surname" key
+    sorted_data = sorted(data, key=lambda x: x.get("surname", ""))
+
+    # fetch the surnames
+    surnames = [scientist['surname'] for scientist in data]
+
+    # fetch the number of awards and convert the integer into a string
+    awards = [scientist['awards'] for scientist in data]
+    awards_int = [int(aw) for aw in awards]
+
+    # fetch the dblp record and convert the integer into a string
+    dblp = [scientist['dblp_record'] for scientist in data]
+    dblp_int = [int(db) for db in dblp]
+
+    # fetch the education
+    education = [scientist['education'] for scientist in data]
+
+    counter = 0;  # counter used for the attributes insertion in the attributes_array.
+    attributes_array = []
+
+    for s in surnames:
+        temp_list = [surnames[counter], awards_int[counter], dblp_int[counter]]
+        attributes_array.append(temp_list)
+        counter = counter + 1
+
+
+
+    # Insert the first scientist in the tree and set this object as the root node
+    root = None
+    root = x_InsertScientist(root, attributes_array[0][0], attributes_array[0])
+
+
+    # Insert the other scientists in the tree
+    for attr in attributes_array[1:]:
+        x_InsertScientist(root, attr[0], attr)
+
+
+
+
