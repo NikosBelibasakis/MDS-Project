@@ -24,7 +24,7 @@ def x_InsertScientist(node, x , attributes):
 
         #set the leaf-node
         node.left = x_Node(x, attributes, True)
-        return node ;
+        return node
 
 
     #If the node that we are checking on is a leaf
@@ -58,9 +58,6 @@ def x_InsertScientist(node, x , attributes):
             return node
 
 
-
-
-
     #Otherwise, recur down the tree
 
     if x <= node.x:
@@ -72,11 +69,44 @@ def x_InsertScientist(node, x , attributes):
     return node
 
 
+def print_structure(node, level=0, prefix='Root: '):
+    if node is not None:
+        print(' ' * (level * 4) + prefix + str(node.x) + (' (Leaf)' if node.isLeaf else ''))
+        if node.left or node.right:
+            print_structure(node.left, level + 1, 'L--- ')
+            print_structure(node.right, level + 1, 'R--- ')
+
+def get_middle(arr):
+    
+    # Find the middle index
+    mid_index = len(arr) // 2
+    # Extract the middle values
+    middle_values = [arr[mid_index]] if len(arr) % 2 == 1 else [arr[mid_index - 1], arr[mid_index]]
+
+    return middle_values
 
 
+def sort_from_middle(arr):
+    # Sort the array to make finding the middle easier
+    arr.sort(key=lambda x: x[0])
+    sorted_array=[]
 
+    middle_values=get_middle(arr)
+     # Check if the middle values are not empty
+    if middle_values:
+        sorted_array.extend(middle_values)
 
+        # Separate the array into left and right parts
+        left_part = [x for x in arr if x[0] < middle_values[0][0]]
+        right_part = [x for x in arr if x[0] > middle_values[-1][0]]
 
+        # Continue recursion only if the sublists are not empty
+        if left_part:
+            sorted_array.extend(sort_from_middle(left_part))
+        if right_part:
+            sorted_array.extend(sort_from_middle(right_part))
+
+    return sorted_array
 
 # Main function
 if __name__ == '__main__':
@@ -84,8 +114,6 @@ if __name__ == '__main__':
     # Get the data from the JSON file
     with open('../scientist_info.json', 'r', encoding="utf-8") as file:
         data = json.load(file)
-    # Sort the data based on the "surname" key
-    sorted_data = sorted(data, key=lambda x: x.get("surname", ""))
 
     # fetch the surnames
     surnames = [scientist['surname'] for scientist in data]
@@ -109,17 +137,15 @@ if __name__ == '__main__':
         attributes_array.append(temp_list)
         counter = counter + 1
 
-
+    sorted_attributes = sort_from_middle(attributes_array)
 
     # Insert the first scientist in the tree and set this object as the root node
     root = None
-    root = x_InsertScientist(root, attributes_array[0][0], attributes_array[0])
+    root = x_InsertScientist(root, sorted_attributes[0][0], sorted_attributes[0])
 
 
     # Insert the other scientists in the tree
-    for attr in attributes_array[1:]:
+    for attr in sorted_attributes[1:]:
         x_InsertScientist(root, attr[0], attr)
-
-
 
 
