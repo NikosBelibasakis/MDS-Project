@@ -106,29 +106,28 @@ def x_InsertScientist(node, x , attributes):
 
 
 
-def get_middle(arr):
-    
-    # Find the middle index
-    mid_index = len(arr) // 2
-    # Extract the middle values
-    middle_values = [arr[mid_index]] if len(arr) % 2 == 1 else [arr[mid_index - 1], arr[mid_index]]
-
-    return middle_values
-
-
 def sort_from_middle(arr):
     # Sort the array to make finding the middle easier
     arr.sort(key=lambda x: x[0])
     sorted_array=[]
 
-    middle_values=get_middle(arr)
+    # Find the middle index
+    mid_index = len(arr) // 2
+    # Extract the middle values
+    if len(arr) % 2 == 1:
+        middle_values = [arr[mid_index]]
+        odd=True
+    else:
+        middle_values = [arr[mid_index - 1], arr[mid_index]]
+        odd=False
+
      # Check if the middle values are not empty
     if middle_values:
         sorted_array.extend(middle_values)
 
         # Separate the array into left and right parts
-        left_part = [x for x in arr if x[0] < middle_values[0][0]]
-        right_part = [x for x in arr if x[0] > middle_values[-1][0]]
+        left_part = [x for x in arr[:mid_index]] if odd else [x for x in arr[:mid_index-1]]
+        right_part = [x for x in arr[mid_index+1:]]
 
         # Continue recursion only if the sublists are not empty
         if left_part:
@@ -169,8 +168,7 @@ if __name__ == '__main__':
         counter = counter + 1
 
     sorted_attributes = sort_from_middle(attributes_array)
-
-
+    
    #This array contains all the leaf nodes
     Leaves_array = []
 
