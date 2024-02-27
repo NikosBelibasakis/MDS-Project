@@ -93,11 +93,11 @@ if __name__ == '__main__':
     # fetch the surnames
     surnames = [scientist['surname'] for scientist in data]
 
-    # fetch the number of awards and convert the integer into a string
+    # fetch the number of awards
     awards = [scientist['awards'] for scientist in data]
     awards_int = [int(aw) for aw in awards]
 
-    # fetch the dblp record and convert the integer into a string
+    # fetch the dblp record
     dblp = [scientist['dblp_record'] for scientist in data]
     dblp_int = [int(db) for db in dblp]
 

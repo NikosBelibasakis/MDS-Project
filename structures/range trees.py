@@ -1,4 +1,4 @@
-#version 1
+#version 2
 
 import json
 
@@ -15,6 +15,32 @@ class x_Node:
 
 
 
+
+
+#The function for the search in the tree
+
+def x_Search(node, key):
+
+    #If the node is a leaf
+    if node.isLeaf == True:
+        return node
+
+    #If the node is not a leaf
+
+    if key <= node.x:
+        #Continue the search at the left child
+         return x_Search(node.left,key)
+
+    elif key > node.x:
+        # Continue the search at the right child
+        return x_Search(node.right,key)
+
+
+
+
+
+
+
 # The function for inserting a scientist in the first BST tree (where the x coordinate is being used)
 def x_InsertScientist(node, x , attributes):
     # If the tree is empty, set the root node (or insert a node at this position)
@@ -24,6 +50,10 @@ def x_InsertScientist(node, x , attributes):
 
         #set the leaf-node
         node.left = x_Node(x, attributes, True)
+
+        #Add the leaf node to the leaves array
+        Leaves_array.append(node.left)
+
         return node
 
 
@@ -44,6 +74,9 @@ def x_InsertScientist(node, x , attributes):
             # set the leaf-node for the node we want to insert
             node.left = x_Node(x, attributes, True)
 
+            # Add the leaf node to the leaves array
+            Leaves_array.append(node.left)
+
             return node
 
 
@@ -54,6 +87,9 @@ def x_InsertScientist(node, x , attributes):
 
             # Set the leaf node
             node.left = x_Node(x, attributes, True)
+
+            # Add the leaf node to the leaves array
+            Leaves_array.append(node.left)
 
             return node
 
@@ -69,12 +105,6 @@ def x_InsertScientist(node, x , attributes):
     return node
 
 
-def print_structure(node, level=0, prefix='Root: '):
-    if node is not None:
-        print(' ' * (level * 4) + prefix + str(node.x) + (' (Leaf)' if node.isLeaf else ''))
-        if node.left or node.right:
-            print_structure(node.left, level + 1, 'L--- ')
-            print_structure(node.right, level + 1, 'R--- ')
 
 def get_middle(arr):
     
@@ -118,11 +148,12 @@ if __name__ == '__main__':
     # fetch the surnames
     surnames = [scientist['surname'] for scientist in data]
 
-    # fetch the number of awards and convert the integer into a string
+
+    # fetch the number of awards
     awards = [scientist['awards'] for scientist in data]
     awards_int = [int(aw) for aw in awards]
 
-    # fetch the dblp record and convert the integer into a string
+    # fetch the dblp record
     dblp = [scientist['dblp_record'] for scientist in data]
     dblp_int = [int(db) for db in dblp]
 
@@ -139,13 +170,97 @@ if __name__ == '__main__':
 
     sorted_attributes = sort_from_middle(attributes_array)
 
+
+   #This array contains all the leaf nodes
+    Leaves_array = []
+
+
+
     # Insert the first scientist in the tree and set this object as the root node
     root = None
     root = x_InsertScientist(root, sorted_attributes[0][0], sorted_attributes[0])
 
 
+
     # Insert the other scientists in the tree
     for attr in sorted_attributes[1:]:
         x_InsertScientist(root, attr[0], attr)
+
+
+    # This array contains all the leaf nodes, sorted (just like the way the leaf nodes are in the tree)
+    sorted_Leaves_array = sorted(Leaves_array, key=lambda x: x.x)
+
+
+
+
+    # User query
+    print('Scientists Range Search')
+    left_l = input('Please enter the left end of the surnames letter range: ')
+    right_l = input('Please enter the right end of the surnames letter range: ')
+    awards_th = input('Please enter the threshold for the number of the awards: ')
+    awards_th = int(awards_th)
+    left_db = input('Please enter the left end of the DBLP record range: ')
+    left_db = int(left_db)
+    right_db = input('Please enter the right end of the DBLP record range: ')
+    right_db = int(right_db)
+
+
+
+    # Sort the surnames array
+    surnames.sort()
+
+    #We find the first surname that is included in the query range
+    for s in surnames:
+        if (s[0] == left_l):
+            first_surname = s
+            break
+
+    # Reverse sort the surnames array
+    surnames.sort(reverse=True)
+
+    # We find the last surname that is included in the query range
+    for s in surnames:
+        if (s[0] == right_l):
+            last_surname = s
+            break
+
+
+    #We execute the range search with the 'first_surname' and the 'last_surname' as the inputs
+    left_end = x_Search(root,first_surname)
+    right_end = x_Search(root,last_surname)
+
+
+    #Find the position of the leftomost leaf of the query range, in the leaves array
+    pos = 0
+    for l in sorted_Leaves_array:
+        if (left_end.attributes == l.attributes):
+            thesi_l = pos
+            break
+        pos = pos + 1
+
+
+    # Find the position of the rightomost leaf of the query range, in the leaves array
+    pos = 0
+    for l in sorted_Leaves_array:
+        if (right_end.attributes == l.attributes):
+            thesi_r = pos
+            break
+        pos = pos + 1
+
+
+
+    #This array contains the leaves that are included in the query range
+    Leaves_in_Range = sorted_Leaves_array[thesi_l:thesi_r+1]
+
+    #This part will be deleted
+    print('---------------------------------------------------------')
+    print('Range search results:')
+    for l in Leaves_in_Range:
+        print(l.attributes)
+
+
+
+
+
 
 
