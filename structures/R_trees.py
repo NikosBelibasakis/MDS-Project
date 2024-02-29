@@ -1,4 +1,4 @@
-#version 1
+#version 2
 import json
 import rtree
 
@@ -53,8 +53,8 @@ if __name__ == '__main__':
 
         #Insert the node/scientist
         idx.insert(i,bbox, obj = (surname,awards,dblp_record))
-        i = i + 1
 
+        i = i + 1
 
 
     # User query
@@ -67,3 +67,36 @@ if __name__ == '__main__':
     left_db = int(left_db)
     right_db = input('Please enter the right end of the DBLP record range: ')
     right_db = int(right_db)
+
+    #Get the unicode of the letter and turn it into the letter's position in the alphabet
+    left_l_uni = ord(left_l) - 64
+    right_l_uni = ord(right_l) - 64
+
+
+    #Range search on the R-tree
+    range_search  =  list(idx.intersection((left_l_uni,awards_th + 1, left_db, right_l_uni, float('inf'), right_db), objects=True))
+
+    #This array contains the scientists whose attributes are included in the query range
+    Scientists_in_range = []
+
+    #Fill the 'Scientists_in_range' array
+    for rs_result in range_search:
+       Scientists_in_range.append(rs_result.object)
+
+
+    #This part will be deleted
+    print('----------------------------------------------------------------')
+    print('Scientists in range: ')
+
+    #Print the scientists in range
+    for s in Scientists_in_range:
+        print(s)
+
+
+
+
+
+
+
+
+
