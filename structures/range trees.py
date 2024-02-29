@@ -13,12 +13,54 @@ class x_Node:
         self.isLeaf = isLeaf
         self.attributes = attributes
 
+    def __eq__(self, other):
+        # Compare x values for equality
+        return isinstance(other, x_Node) and self.x == other.x
 
+    def get_leaf_nodes(self):
+        leaves = []
+        self.collect_leaf_nodes(self,leaves)
+        return leaves
+
+    def collect_leaf_nodes(self, node, leaves):
+        if node is not None:
+            if node.isLeaf :
+                leaves.append(node)
+            else:
+                children=[node.left,node.right]
+                for n in children:
+                    self.collect_leaf_nodes(n, leaves)
+
+    def get_canonical_subtree(node, leaf_array):
+        canonical=[]
+        #we are going to do the same thing we did in searching
+        if node is not None and node.isLeaf and node in leaf_array:
+            canonical.append(node)
+            
+        #If the node is not a leaf
+        if node is not None and not node.isLeaf:
+            if node.x < leaf_array[0].x:
+                if node.right is not None:
+                    #Check if the right child of the node is in range
+                    canonical.extend(node.right.get_canonical_subtree(leaf_array))
+            elif node.x >= leaf_array[0].x and node.x <=leaf_array[-1].x :
+                #Look for the leafs of this node that is in range
+                node_leaves=node.get_leaf_nodes()
+                if all(leaf in leaf_array for leaf in node_leaves):
+                    canonical.append(node)
+                else:
+                    children=[node.left, node.right]
+                    for child in children:
+                        canonical.extend(child.get_canonical_subtree(leaf_array))
+            else: # node.x>leaf_array[-1].x:
+                if node.left is not None:
+                    canonical.extend(node.left.get_canonical_subtree(leaf_array))
+        
+        return canonical
 
 
 
 #The function for the search in the tree
-
 def x_Search(node, key):
 
     #If the node is a leaf
@@ -34,9 +76,6 @@ def x_Search(node, key):
     elif key > node.x:
         # Continue the search at the right child
         return x_Search(node.right,key)
-
-
-
 
 
 
@@ -103,7 +142,6 @@ def x_InsertScientist(node, x , attributes):
         node.right = x_InsertScientist(node.right,x,attributes)
 
     return node
-
 
 
 def sort_from_middle(arr):
@@ -189,8 +227,6 @@ if __name__ == '__main__':
     sorted_Leaves_array = sorted(Leaves_array, key=lambda x: x.x)
 
 
-
-
     # User query
     print('Scientists Range Search')
     left_l = input('Please enter the left end of the surnames letter range: ')
@@ -256,9 +292,7 @@ if __name__ == '__main__':
     for l in Leaves_in_Range:
         print(l.attributes)
 
-
-
-
-
-
-
+    x=root.get_canonical_subtree(Leaves_in_Range)
+    print('\nCanonical tree nodes\n')
+    for i in x:
+        print(i.attributes,'Is it a leaf=',i.isLeaf)
