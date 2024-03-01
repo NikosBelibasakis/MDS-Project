@@ -12,24 +12,24 @@ class x_Node:
         self.right = None
         self.isLeaf = isLeaf
         self.attributes = attributes
+        self.duplicates=[]
+        self.y_tree = None
 
     def __eq__(self, other):
         # Compare x values for equality
         return isinstance(other, x_Node) and self.x == other.x
-
+    
     def get_leaf_nodes(self):
         leaves = []
-        self.collect_leaf_nodes(self,leaves)
-        return leaves
-
-    def collect_leaf_nodes(self, node, leaves):
-        if node is not None:
-            if node.isLeaf :
-                leaves.append(node)
+        if self is not None:
+            if self.isLeaf :
+                leaves.append(self)
             else:
-                children=[node.left,node.right]
+                children=[self.left,self.right]
                 for n in children:
-                    self.collect_leaf_nodes(n, leaves)
+                    if n is not None:
+                        leaves.extend(n.get_leaf_nodes())
+        return leaves
 
     def get_canonical_subtree(node, leaf_array):
         canonical=[]
@@ -57,7 +57,22 @@ class x_Node:
                     canonical.extend(node.left.get_canonical_subtree(leaf_array))
         
         return canonical
+    
+    def create_2d(self):
+        leaves=self.get_leaf_nodes()
+        entries=[]
+        for leaf in leaves:
+            if leaf.duplicates!=[]:
+                for duplicate in leaf.duplicates:
+                    entries.append(duplicate)
+            entries.append(leaf.attributes)
+        if len(entries)>1:
+            leaves=sort_from_middle(entries,dimension=1)
+        else:
+            leaves=entries
 
+        self.y_tree=create_range_tree1D(leaves,dimension=1)
+        return self.y_tree
 
 
 #The function for the search in the tree
@@ -102,7 +117,7 @@ def x_InsertScientist(node, x , attributes):
         if x < node.x:
 
             #We temporarily store the leaf node we are checking on, to the 'node_temp' variable
-            node_temp = x_Node(node.x,  node.attributes, True)
+            node_temp = node
 
             #Replace the leaf node we are checking on with the node we want to insert
             node = x_Node(x,  attributes, False)
@@ -121,11 +136,19 @@ def x_InsertScientist(node, x , attributes):
 
         elif x == node.x:
 
+            node_temp=node #keep temporarily the node so as to save the dublicate
             # Replace the leaf node we are checking on with the node we want to insert
             node = x_Node(x, attributes, False)
+            
+            duplicate = []
+            if node_temp.duplicates!=[]:
+                duplicate.extend(node_temp.duplicates)
+            duplicate.append(node_temp.attributes)
 
             # Set the leaf node
             node.left = x_Node(x, attributes, True)
+            node.duplicates=duplicate
+            node.left.duplicates=duplicate
 
             # Add the leaf node to the leaves array
             Leaves_array.append(node.left)
@@ -144,9 +167,9 @@ def x_InsertScientist(node, x , attributes):
     return node
 
 
-def sort_from_middle(arr):
+def sort_from_middle(arr,dimension):
     # Sort the array to make finding the middle easier
-    arr.sort(key=lambda x: x[0])
+    arr.sort(key=lambda x: x[dimension])
     sorted_array=[]
 
     # Find the middle index
@@ -169,11 +192,39 @@ def sort_from_middle(arr):
 
         # Continue recursion only if the sublists are not empty
         if left_part:
-            sorted_array.extend(sort_from_middle(left_part))
+            sorted_array.extend(sort_from_middle(left_part,dimension))
         if right_part:
-            sorted_array.extend(sort_from_middle(right_part))
+            sorted_array.extend(sort_from_middle(right_part,dimension))
 
     return sorted_array
+
+def create_range_tree1D(sorted_attributes,dimension):
+    # Insert the first scientist in the tree and set this object as the root node
+    root = None
+    root = x_InsertScientist(root, sorted_attributes[0][dimension], sorted_attributes[0])
+
+    if len(sorted_attributes)>1:
+        # Insert the other scientists in the tree
+        for attr in sorted_attributes[1:]:
+            x_InsertScientist(root, attr[dimension], attr)
+    
+    return root
+
+def Range2D(root_1D):
+    if root_1D is not None:
+        root_1D.create_2d()
+    children=[root_1D.left,root_1D.right]
+    for child in children:
+        if child is not None:
+            Range2D(child)
+
+def print_bst_structure(node, level=0, prefix='Root: '):
+    if node is not None:
+        print(' ' * (level * 4) + prefix + str(node.x) + (' (Leaf)' if node.isLeaf else ''))
+        if node.left or node.right:
+            print_bst_structure(node.left, level + 1, 'L--- ')
+            print_bst_structure(node.right, level + 1, 'R--- ')
+
 
 # Main function
 if __name__ == '__main__':
@@ -205,26 +256,18 @@ if __name__ == '__main__':
         attributes_array.append(temp_list)
         counter = counter + 1
 
-    sorted_attributes = sort_from_middle(attributes_array)
+    sorted_attributes = sort_from_middle(attributes_array,dimension=0)
     
    #This array contains all the leaf nodes
     Leaves_array = []
 
-
-
-    # Insert the first scientist in the tree and set this object as the root node
-    root = None
-    root = x_InsertScientist(root, sorted_attributes[0][0], sorted_attributes[0])
-
-
-
-    # Insert the other scientists in the tree
-    for attr in sorted_attributes[1:]:
-        x_InsertScientist(root, attr[0], attr)
-
+    root = create_range_tree1D(sorted_attributes,dimension=0)
 
     # This array contains all the leaf nodes, sorted (just like the way the leaf nodes are in the tree)
     sorted_Leaves_array = sorted(Leaves_array, key=lambda x: x.x)
+
+    Range2D(root) #create all trees for every node on 2nd dimension
+
 
 
     # User query
@@ -295,4 +338,12 @@ if __name__ == '__main__':
     x=root.get_canonical_subtree(Leaves_in_Range)
     print('\nCanonical tree nodes\n')
     for i in x:
-        print(i.attributes,'Is it a leaf=',i.isLeaf)
+        print(i.attributes)
+        y=i.get_leaf_nodes()
+        print("\nThis are the leaf nodes\n")
+        for leaf in y:
+            print(leaf.attributes,"which it has these dups:",leaf.duplicates)
+        
+    y_tree=x[1].create_2d()
+    print(x[1].attributes)
+    print_bst_structure(y_tree)
