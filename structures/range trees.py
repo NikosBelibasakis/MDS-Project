@@ -1,6 +1,5 @@
-#version 2
-
 import json
+#import sys
 
 
 class x_Node:
@@ -68,10 +67,12 @@ class x_Node:
             entries.append(leaf.attributes)
         if len(entries)>1:
             leaves=sort_from_middle(entries,dimension=1)
+            self.y_tree=create_range_tree1D(leaves,dimension=1)
         else:
-            leaves=entries
+            self.y_tree=x_Node(self.attributes[1],self.attributes,isLeaf=True)
+        
+        #create here the 3d
 
-        self.y_tree=create_range_tree1D(leaves,dimension=1)
         return self.y_tree
 
 
@@ -86,14 +87,13 @@ def x_Search(node, key):
 
     if key <= node.x:
         #Continue the search at the left child
-         return x_Search(node.left,key)
+        if node.left is not None:
+            return x_Search(node.left,key)
 
     elif key > node.x:
         # Continue the search at the right child
-        return x_Search(node.right,key)
-
-
-
+        if node.right is not None:
+            return x_Search(node.right,key)
 
 # The function for inserting a scientist in the first BST tree (where the x coordinate is being used)
 def x_InsertScientist(node, x , attributes):
@@ -225,6 +225,53 @@ def print_bst_structure(node, level=0, prefix='Root: '):
             print_bst_structure(node.left, level + 1, 'L--- ')
             print_bst_structure(node.right, level + 1, 'R--- ')
 
+def get_surname_range(surnames,left_l,right_l):
+    # Sort the surnames array
+    surnames.sort()
+
+    #We find the first surname that is included in the query range
+    for s in surnames:
+        if (s[0] == left_l):
+            first_surname = s
+            break
+
+    # Reverse sort the surnames array
+    surnames.sort(reverse=True)
+
+    # We find the last surname that is included in the query range
+    for s in surnames:
+        if (s[0] == right_l):
+            last_surname = s
+            break
+
+
+    #We execute the range search with the 'first_surname' and the 'last_surname' as the inputs
+    left_end = x_Search(root,first_surname)
+    right_end = x_Search(root,last_surname)
+
+
+    #Find the position of the leftomost leaf of the query range, in the leaves array
+    pos = 0
+    for l in sorted_Leaves_array:
+        if (left_end.attributes == l.attributes):
+            thesi_l = pos
+            break
+        pos = pos + 1
+
+
+    # Find the position of the rightomost leaf of the query range, in the leaves array
+    pos = 0
+    for l in sorted_Leaves_array:
+        if (right_end.attributes == l.attributes):
+            thesi_r = pos
+            break
+        pos = pos + 1
+
+    #This array contains the leaves that are included in the query range
+    Leaves_in_Range = sorted_Leaves_array[thesi_l:thesi_r+1]
+
+    return Leaves_in_Range
+
 
 # Main function
 if __name__ == '__main__':
@@ -281,69 +328,50 @@ if __name__ == '__main__':
     right_db = input('Please enter the right end of the DBLP record range: ')
     right_db = int(right_db)
 
-
-
-    # Sort the surnames array
-    surnames.sort()
-
-    #We find the first surname that is included in the query range
-    for s in surnames:
-        if (s[0] == left_l):
-            first_surname = s
-            break
-
-    # Reverse sort the surnames array
-    surnames.sort(reverse=True)
-
-    # We find the last surname that is included in the query range
-    for s in surnames:
-        if (s[0] == right_l):
-            last_surname = s
-            break
-
-
-    #We execute the range search with the 'first_surname' and the 'last_surname' as the inputs
-    left_end = x_Search(root,first_surname)
-    right_end = x_Search(root,last_surname)
-
-
-    #Find the position of the leftomost leaf of the query range, in the leaves array
-    pos = 0
-    for l in sorted_Leaves_array:
-        if (left_end.attributes == l.attributes):
-            thesi_l = pos
-            break
-        pos = pos + 1
-
-
-    # Find the position of the rightomost leaf of the query range, in the leaves array
-    pos = 0
-    for l in sorted_Leaves_array:
-        if (right_end.attributes == l.attributes):
-            thesi_r = pos
-            break
-        pos = pos + 1
-
-
-
-    #This array contains the leaves that are included in the query range
-    Leaves_in_Range = sorted_Leaves_array[thesi_l:thesi_r+1]
-
-    #This part will be deleted
-    print('---------------------------------------------------------')
-    print('Range search results:')
-    for l in Leaves_in_Range:
-        print(l.attributes)
+    Leaves_in_Range = get_surname_range(surnames,left_l,right_l)
 
     x=root.get_canonical_subtree(Leaves_in_Range)
-    print('\nCanonical tree nodes\n')
+
     for i in x:
-        print(i.attributes)
-        y=i.get_leaf_nodes()
-        print("\nThis are the leaf nodes\n")
-        for leaf in y:
-            print(leaf.attributes,"which it has these dups:",leaf.duplicates)
-        
-    y_tree=x[1].create_2d()
-    print(x[1].attributes)
-    print_bst_structure(y_tree)
+        leaves_in_y=[]
+        leaf_nodes=i.y_tree.get_leaf_nodes()
+        if i.y_tree.isLeaf or len(leaf_nodes)==1:
+            scientist=x_Search(i.y_tree,awards_th+1)
+            if scientist is not None:
+                leaves_in_y.append(scientist)
+                #probably we will find canonical here and search for z, but since it is already a leaf it is just the entry
+        else:
+            #find the first scientist with number of awards > awards_threshold
+            first=x_Search(i.y_tree,awards_th+1)
+
+            if first is not None:
+                index_of_first=leaf_nodes.index(first)
+                #The last scientist that is included in the range query , will be the one with the maximun number of awards
+                last=x_Search(i.y_tree,max(awards_int))
+                if last is None:
+                    #we will get the all the leaves after first
+                    leaves_in_y=leaf_nodes[index_of_first:]
+                else:
+                    index_of_last=leaf_nodes.index(last)
+                    #we will get all leaves between the indexes of the first and last scientist
+                    leaves_in_y=leaf_nodes[index_of_first:index_of_last]
+
+        #THIS UNROLLING MAY NOT BE NEEDED HERE
+        for leaf in leaves_in_y:
+            if leaf.duplicates!=[]:
+                for duplicate in leaf.duplicates:
+                    leaves_in_y.append(x_Node(duplicate[1],duplicate,True))
+        print("End of first search")
+
+
+'''    with open("outpout.txt", 'w') as file:
+        # Save the current standard output (usually the console)
+        original_stdout = sys.stdout
+
+        # Redirect standard output to the file
+        sys.stdout = file
+
+        # Now, use your custom printing method
+        print_bst_structure(root.y_tree)
+
+        sys.stdout = original_stdout'''
