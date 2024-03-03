@@ -1,5 +1,5 @@
 import json
-#import sys
+import sys
 
 
 class x_Node:
@@ -281,6 +281,22 @@ def get_surname_range(surnames,left_l,right_l):
     return Leaves_in_Range
 
 
+def get_awards_range(tree,awards_threshold):
+    leaves_in_y=[]
+    leaf_nodes=tree.get_leaf_nodes()
+    #check if the tree has only one leaf node or is a leaf node
+    for leaf in leaf_nodes:
+        if leaf.x>awards_threshold:
+            leaves_in_y.append(leaf)
+
+    #THIS UNROLLING MAY NOT BE NEEDED HERE
+    for leaf in leaves_in_y:
+        if leaf.duplicates!=[]:
+            for duplicate in leaf.duplicates:
+                leaves_in_y.append(x_Node(duplicate[1],duplicate,True))
+
+    return leaves_in_y
+
 # Main function
 if __name__ == '__main__':
 
@@ -336,42 +352,48 @@ if __name__ == '__main__':
     right_db = input('Please enter the right end of the DBLP record range: ')
     right_db = int(right_db)
 
+
     Leaves_in_Range = get_surname_range(surnames,left_l,right_l)
+    canonical_nodes_y=root.get_canonical_subtree(Leaves_in_Range)
 
-    x=root.get_canonical_subtree(Leaves_in_Range)
+    for node in canonical_nodes_y:
+        trees_in_z=get_awards_range(node.y_tree,awards_th)
+        print("After Awards Search we have:\n")
+        for i in trees_in_z:
+            print(i.attributes)
+'''        for x in trees_in_z:
+            tree=x.y_tree
+            leaves_in_z=[]
+            leaf_nodes=tree.get_leaf_nodes()
+            if tree.isLeaf or len(leaf_nodes)==1:
+                scientist=x_Search(tree,left_db)
+                if scientist is not None:
+                    leaves_in_y.append(scientist)
+                    #probably we will find canonical here and search for z, but since it is already a leaf it is just the entry
+            else:
+                #find the first scientist with number of awards > awards_threshold
+                first=x_Search(tree,awards_th+1)
 
-    for i in x:
-        leaves_in_y=[]
-        leaf_nodes=i.y_tree.get_leaf_nodes()
-        if i.y_tree.isLeaf or len(leaf_nodes)==1:
-            scientist=x_Search(i.y_tree,awards_th+1)
-            if scientist is not None:
-                leaves_in_y.append(scientist)
-                #probably we will find canonical here and search for z, but since it is already a leaf it is just the entry
-        else:
-            #find the first scientist with number of awards > awards_threshold
-            first=x_Search(i.y_tree,awards_th+1)
+                if first is not None:
+                    index_of_first=leaf_nodes.index(first)
+                    #The last scientist that is included in the range query , will be the one with the maximun number of awards
+                    last=x_Search(tree,max(awards_int))
+                    if last is None:
+                        #we will get the all the leaves after first
+                        leaves_in_y=leaf_nodes[index_of_first:]
+                    else:
+                        index_of_last=leaf_nodes.index(last)
+                        #we will get all leaves between the indexes of the first and last scientist
+                        leaves_in_y=leaf_nodes[index_of_first:index_of_last]
 
-            if first is not None:
-                index_of_first=leaf_nodes.index(first)
-                #The last scientist that is included in the range query , will be the one with the maximun number of awards
-                last=x_Search(i.y_tree,max(awards_int))
-                if last is None:
-                    #we will get the all the leaves after first
-                    leaves_in_y=leaf_nodes[index_of_first:]
-                else:
-                    index_of_last=leaf_nodes.index(last)
-                    #we will get all leaves between the indexes of the first and last scientist
-                    leaves_in_y=leaf_nodes[index_of_first:index_of_last]
-
-        #THIS UNROLLING MAY NOT BE NEEDED HERE
-        for leaf in leaves_in_y:
-            if leaf.duplicates!=[]:
-                for duplicate in leaf.duplicates:
-                    leaves_in_y.append(x_Node(duplicate[1],duplicate,True))
-        print("End of first search")
+            #THIS UNROLLING MAY NOT BE NEEDED HERE
+            for leaf in leaves_in_y:
+                if leaf.duplicates!=[]:
+                    for duplicate in leaf.duplicates:
+                        leaves_in_y.append(x_Node(duplicate[1],duplicate,True))
 
 
+'''
 '''    with open("outpout.txt", 'w') as file:
         # Save the current standard output (usually the console)
         original_stdout = sys.stdout
@@ -380,6 +402,7 @@ if __name__ == '__main__':
         sys.stdout = file
 
         # Now, use your custom printing method
-        print_bst_structure(root.y_tree)
+        print_bst_structure(root.y_tree.y_tree)
 
-        sys.stdout = original_stdout'''
+        sys.stdout = original_stdout
+        '''
