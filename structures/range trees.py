@@ -57,7 +57,7 @@ class x_Node:
         
         return canonical
     
-    def create_2d(self):
+    def create_2d(self,dimension):
         leaves=self.get_leaf_nodes()
         entries=[]
         for leaf in leaves:
@@ -66,12 +66,10 @@ class x_Node:
                     entries.append(duplicate)
             entries.append(leaf.attributes)
         if len(entries)>1:
-            leaves=sort_from_middle(entries,dimension=1)
-            self.y_tree=create_range_tree1D(leaves,dimension=1)
+            leaves=sort_from_middle(entries,dimension)
+            self.y_tree=create_range_tree1D(leaves,dimension)
         else:
             self.y_tree=x_Node(self.attributes[1],self.attributes,isLeaf=True)
-        
-        #create here the 3d
 
         return self.y_tree
 
@@ -212,11 +210,21 @@ def create_range_tree1D(sorted_attributes,dimension):
 
 def Range2D(root_1D):
     if root_1D is not None:
-        root_1D.create_2d()
+        root_1D.create_2d(dimension=1)
+        root_2D=root_1D.y_tree
+        Range3D(root_2D)
     children=[root_1D.left,root_1D.right]
     for child in children:
         if child is not None:
             Range2D(child)
+
+def Range3D(root_2D):
+    if root_2D is not None:
+        root_2D.create_2d(dimension=2)
+    children=[root_2D.left,root_2D.right]
+    for child in children:
+        if child is not None:
+            Range3D(child)
 
 def print_bst_structure(node, level=0, prefix='Root: '):
     if node is not None:
