@@ -1,5 +1,6 @@
 # version 3
 import json
+from LSH import LSH_alg
 
 
 class Node:
@@ -143,3 +144,35 @@ if __name__ == '__main__':
 
     for s in ScientistsInRange:
         print(s)
+
+
+
+
+    #We get the education for the scientists in range
+    counter = 0;  # counter used for the attributes insertion in the attributes_array_ed.
+    attributes_array_ed = []
+
+    for s in surnames:
+        temp_list = [surnames[counter], awards_int[counter], dblp_int[counter], education[counter]]
+        attributes_array_ed.append(temp_list)
+        counter = counter + 1
+
+
+    #This array contains the scientists in range with their education included
+    ScientistsInRange_edu = []
+
+    for s in ScientistsInRange:
+        temp = attributes_array.index(s)
+        ScientistsInRange_edu.append(attributes_array_ed[temp])
+
+
+    LSH_alg(ScientistsInRange_edu)
+
+
+
+
+
+
+
+
+
