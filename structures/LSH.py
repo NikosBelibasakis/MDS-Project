@@ -1,7 +1,7 @@
-#version 1
+#version 2
 
 import json
-
+import random
 
 
 #This function creates the sets of shingles
@@ -28,6 +28,24 @@ def create_uni_set(array_of_sets):
    uni_set_final = list(uni_set1)
 
    return uni_set_final
+
+
+
+
+
+#This function creates a signature value for a set of shingles (document/scientist) based on a random permutation on the input matrix
+def createSigVal(array):
+    i = 1
+
+    #We get the position of the vector, where the first '1' is placed. The position value is the signature value that we want to return
+    for value in array:
+        if (value == 1):
+            pos = i
+            break
+        i = i + 1
+
+    return pos
+
 
 
 
@@ -85,26 +103,44 @@ def LSH_alg(array):
     for m in matrix:
         print(m)
 
+    #This is the signatures matrix, where the signatures are the its columns
+    temp_sign_matrix = []
 
+    #We will create 20 random permutations on the input matrix and create signatures of length 20 for each document/scientist
+    for i in range(20):
 
+        # Create a random permutation
+        random_permutation = random.sample(range(len(matrix[1])), len(matrix[1]))
+        temp_sign_vector = []
 
+        #Create a row for the signatures matrix
+        for vector in matrix:
+            permuted_vector = [vector[z] for z in random_permutation]
+            signature_value = createSigVal(permuted_vector)
+            temp_sign_vector.append(signature_value)
 
+        #Add the row in the signatures matrix
+        temp_sign_matrix.append(temp_sign_vector)
 
+    print('------------------------------')
+    print('Signatures matrix: ')
+    for m in temp_sign_matrix:
+        print(m)
 
+    # This is the signatures matrix, where the signatures are its rows
+    signatures_matrix = []
 
+    #We will now create the signature of each document/set of shingles
+    for i in range(len(temp_sign_matrix[0])):
+        temp_vector = []
+        for vector in temp_sign_matrix:
+            temp_vector.append(vector[i])
+        signatures_matrix.append(temp_vector)
 
-
-
-
-
-
-
-
-
-    
-
-
-
+    print('-------------------------------')
+    print('Signatures: ')
+    for signature in signatures_matrix:
+        print(signature)
 
 
 
