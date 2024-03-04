@@ -4,12 +4,13 @@ import json
 class x_Node:
 
     # Constructor to create a new node for the first BST tree (where the x coordinate is being used)
-    def __init__(self, x, attributes, isLeaf):
+    def __init__(self, x, attributes, isLeaf, education):
         self.x = x
         self.left = None
         self.right = None
         self.isLeaf = isLeaf
         self.attributes = attributes
+        self.education=education
         self.duplicates=[]
         self.y_tree = None
 
@@ -65,13 +66,14 @@ class x_Node:
         for leaf in leaves:
             if leaf.duplicates!=[]:
                 for duplicate in leaf.duplicates:
-                    entries.append(duplicate.attributes)
-            entries.append(leaf.attributes)
+                    entries.append(duplicate.attributes+[duplicate.education])
+            entries.append(leaf.attributes+[leaf.education])
         if len(entries)>1:
             leaves=sort_from_middle(entries,dimension)
             self.y_tree=create_range_tree1D(leaves,dimension)
         else:
-            self.y_tree=x_Node(self.attributes[1],self.attributes,isLeaf=True)
+            #if node is just a leaf , then the tree in 2D(or 3D) will be just the leaf
+            self.y_tree=x_Node(self.attributes[1],self.attributes, isLeaf=True, education=self.education)
 
         return self.y_tree
 
@@ -96,14 +98,14 @@ def x_Search(node, key):
             return x_Search(node.right,key)
 
 # The function for inserting a scientist in the first BST tree (where the x coordinate is being used)
-def x_InsertScientist(node, x , attributes):
+def x_InsertScientist(node, x , attributes, education):
     # If the tree is empty, set the root node (or insert a node at this position)
     if node is None:
 
-        node = x_Node(x, attributes, False)
+        node = x_Node(x, attributes, False, education)
 
         #set the leaf-node
-        node.left = x_Node(x, attributes, True)
+        node.left = x_Node(x, attributes, True, education)
 
         #Add the leaf node to the leaves array
         Leaves_array.append(node.left)
@@ -120,13 +122,13 @@ def x_InsertScientist(node, x , attributes):
             node_temp = node
 
             #Replace the leaf node we are checking on with the node we want to insert
-            node = x_Node(x,  attributes, False)
+            node = x_Node(x,  attributes, False, education)
 
             # Set the leaf node we are checking on as the node's (the node we want to insert) right child
             node.right = node_temp
 
             # set the leaf-node for the node we want to insert
-            node.left = x_Node(x, attributes, True)
+            node.left = x_Node(x, attributes, True, education)
 
             # Add the leaf node to the leaves array
             Leaves_array.append(node.left)
@@ -138,7 +140,7 @@ def x_InsertScientist(node, x , attributes):
 
             node_temp=node #keep temporarily the node so as to save the dublicate
             # Replace the leaf node we are checking on with the node we want to insert
-            node = x_Node(x, attributes, False)
+            node = x_Node(x, attributes, False, education)
             
             duplicate = []
             if node_temp.duplicates!=[]:
@@ -148,7 +150,7 @@ def x_InsertScientist(node, x , attributes):
             duplicate.append(node_temp)
 
             # Set the leaf node
-            node.left = x_Node(x, attributes, True)
+            node.left = x_Node(x, attributes, True, education)
             node.duplicates=duplicate
             node.left.duplicates=duplicate
 
@@ -161,10 +163,10 @@ def x_InsertScientist(node, x , attributes):
     #Otherwise, recur down the tree
 
     if x <= node.x:
-        node.left = x_InsertScientist(node.left,x,attributes)
+        node.left = x_InsertScientist(node.left,x,attributes, education)
 
     elif x > node.x:
-        node.right = x_InsertScientist(node.right,x,attributes)
+        node.right = x_InsertScientist(node.right,x,attributes, education)
 
     return node
 
@@ -203,25 +205,34 @@ def sort_from_middle(arr,dimension):
 def create_range_tree1D(sorted_attributes,dimension):
     # Insert the first scientist in the tree and set this object as the root node
     root = None
-    root = x_InsertScientist(root, sorted_attributes[0][dimension], sorted_attributes[0])
+    root = x_InsertScientist(root, sorted_attributes[0][dimension], sorted_attributes[0][:3],sorted_attributes[0][-1])
 
     if len(sorted_attributes)>1:
         # Insert the other scientists in the tree
         for attr in sorted_attributes[1:]:
-            x_InsertScientist(root, attr[dimension], attr)
+            x_InsertScientist(root, attr[dimension], attr[:3],attr[-1])
     
     return root
 
+#This function creates the trees in 2nd dimension , so it creates the 2D Range Tree
 def Range2D(root_1D):
+    #the root_1D describes the node for the 1D Range tree 
+    #that we will have as root in the second dimension
     if root_1D is not None:
+        #dimension=1 because we are using the y_coordinate
         root_1D.create_2d(dimension=1)
+        #the root_2D has an equal description as root_1D
+        #but will be the root for the tree in 3rd dimension 
         root_2D=root_1D.y_tree
-        Range3D(root_2D)
+        Range3D(root_2D) #creates the subtrees in z_coordinate
+    #create the subtrees in y_coordinate for every node recursively
     children=[root_1D.left,root_1D.right]
     for child in children:
         if child is not None:
             Range2D(child)
 
+#This function creates the trees in 3rd dimension , so it creates the  3D Range Tree
+#it uses the same logic as Range2D function
 def Range3D(root_2D):
     if root_2D is not None:
         root_2D.create_2d(dimension=2)
@@ -329,10 +340,9 @@ if __name__ == '__main__':
     counter = 0;  # counter used for the attributes insertion in the attributes_array.
     attributes_array = []
 
-    for s in surnames:
-        temp_list = [surnames[counter], awards_int[counter], dblp_int[counter]]
+    for i in range(len(surnames)):
+        temp_list = [surnames[i], awards_int[i], dblp_int[i],education[i]]
         attributes_array.append(temp_list)
-        counter = counter + 1
 
     sorted_attributes = sort_from_middle(attributes_array,dimension=0)
     
@@ -372,4 +382,6 @@ if __name__ == '__main__':
             
             for leaf in final_result:
                 print(leaf.attributes)
+                print("Education\n",leaf.education)
+
 
