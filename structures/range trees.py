@@ -65,7 +65,7 @@ class x_Node:
         for leaf in leaves:
             if leaf.duplicates!=[]:
                 for duplicate in leaf.duplicates:
-                    entries.append(duplicate)
+                    entries.append(duplicate.attributes)
             entries.append(leaf.attributes)
         if len(entries)>1:
             leaves=sort_from_middle(entries,dimension)
@@ -143,7 +143,9 @@ def x_InsertScientist(node, x , attributes):
             duplicate = []
             if node_temp.duplicates!=[]:
                 duplicate.extend(node_temp.duplicates)
-            duplicate.append(node_temp.attributes)
+            #erase all previous duplicates and append the node to the duplicate list
+            node_temp.duplicates=[] 
+            duplicate.append(node_temp)
 
             # Set the leaf node
             node.left = x_Node(x, attributes, True)
@@ -298,7 +300,7 @@ def get_dblp_range(tree,dblp_min,dblp_max):
     for leaf in leaves_in_z:
         if leaf.duplicates!=[]:
             for duplicate in leaf.duplicates:
-                leaves_in_z.append(x_Node(duplicate[1],duplicate,True))
+                leaves_in_z.append(duplicate)
 
     return leaves_in_z
 
