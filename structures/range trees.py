@@ -1,5 +1,4 @@
 import json
-import sys
 
 
 class x_Node:
@@ -32,28 +31,31 @@ class x_Node:
 
     def get_canonical_subtree(node, leaf_array):
         canonical=[]
-        #we are going to do the same thing we did in searching
-        if node is not None and node.isLeaf and node in leaf_array:
-            canonical.append(node)
-            
-        #If the node is not a leaf
-        if node is not None and not node.isLeaf:
-            if node.x < leaf_array[0].x:
-                if node.right is not None:
-                    #Check if the right child of the node is in range
-                    canonical.extend(node.right.get_canonical_subtree(leaf_array))
-            elif node.x >= leaf_array[0].x and node.x <=leaf_array[-1].x :
-                #Look for the leafs of this node that is in range
-                node_leaves=node.get_leaf_nodes()
-                if all(leaf in leaf_array for leaf in node_leaves):
-                    canonical.append(node)
-                else:
-                    children=[node.left, node.right]
-                    for child in children:
-                        canonical.extend(child.get_canonical_subtree(leaf_array))
-            else: # node.x>leaf_array[-1].x:
-                if node.left is not None:
-                    canonical.extend(node.left.get_canonical_subtree(leaf_array))
+        #check if leaf array is not empty
+        if leaf_array:
+            #we are going to do the same thing we did in searching
+            if node is not None and node.isLeaf and node in leaf_array:
+                canonical.append(node)
+                
+            #If the node is not a leaf
+            if node is not None and not node.isLeaf:
+                if node.x < leaf_array[0].x:
+                    if node.right is not None:
+                        #Check if the right child of the node is in range
+                        canonical.extend(node.right.get_canonical_subtree(leaf_array))
+                elif node.x >= leaf_array[0].x and node.x <=leaf_array[-1].x :
+                    #Look for the leafs of this node that is in range
+                    node_leaves=node.get_leaf_nodes()
+                    if all(leaf in leaf_array for leaf in node_leaves):
+                        canonical.append(node)
+                    else:
+                        children=[node.left, node.right]
+                        for child in children:
+                            if child is not None:
+                                canonical.extend(child.get_canonical_subtree(leaf_array))
+                else: # node.x>leaf_array[-1].x:
+                    if node.left is not None:
+                        canonical.extend(node.left.get_canonical_subtree(leaf_array))
         
         return canonical
     
@@ -226,13 +228,6 @@ def Range3D(root_2D):
         if child is not None:
             Range3D(child)
 
-def print_bst_structure(node, level=0, prefix='Root: '):
-    if node is not None:
-        print(' ' * (level * 4) + prefix + str(node.x) + (' (Leaf)' if node.isLeaf else ''))
-        if node.left or node.right:
-            print_bst_structure(node.left, level + 1, 'L--- ')
-            print_bst_structure(node.right, level + 1, 'R--- ')
-
 def get_surname_range(surnames,left_l,right_l):
     # Sort the surnames array
     surnames.sort()
@@ -289,13 +284,23 @@ def get_awards_range(tree,awards_threshold):
         if leaf.x>awards_threshold:
             leaves_in_y.append(leaf)
 
-    #THIS UNROLLING MAY NOT BE NEEDED HERE
-    for leaf in leaves_in_y:
+    return leaves_in_y
+
+def get_dblp_range(tree,dblp_min,dblp_max):
+    leaves_in_z=[]
+    leaf_nodes=tree.get_leaf_nodes()
+    #check if the tree has only one leaf node or is a leaf node
+    for leaf in leaf_nodes:
+        if leaf.x>=dblp_min and leaf.x<=dblp_max:
+            leaves_in_z.append(leaf)
+
+    #Get also all duplicate nodes
+    for leaf in leaves_in_z:
         if leaf.duplicates!=[]:
             for duplicate in leaf.duplicates:
-                leaves_in_y.append(x_Node(duplicate[1],duplicate,True))
+                leaves_in_z.append(x_Node(duplicate[1],duplicate,True))
 
-    return leaves_in_y
+    return leaves_in_z
 
 # Main function
 if __name__ == '__main__':
@@ -340,7 +345,6 @@ if __name__ == '__main__':
     Range2D(root) #create all trees for every node on 2nd dimension
 
 
-
     # User query
     print('Scientists Range Search')
     left_l = input('Please enter the left end of the surnames letter range: ')
@@ -357,52 +361,13 @@ if __name__ == '__main__':
     canonical_nodes_y=root.get_canonical_subtree(Leaves_in_Range)
 
     for node in canonical_nodes_y:
-        trees_in_z=get_awards_range(node.y_tree,awards_th)
-        print("After Awards Search we have:\n")
-        for i in trees_in_z:
-            print(i.attributes)
-'''        for x in trees_in_z:
-            tree=x.y_tree
-            leaves_in_z=[]
-            leaf_nodes=tree.get_leaf_nodes()
-            if tree.isLeaf or len(leaf_nodes)==1:
-                scientist=x_Search(tree,left_db)
-                if scientist is not None:
-                    leaves_in_y.append(scientist)
-                    #probably we will find canonical here and search for z, but since it is already a leaf it is just the entry
-            else:
-                #find the first scientist with number of awards > awards_threshold
-                first=x_Search(tree,awards_th+1)
+        subtree2d=node.y_tree
+        Leaves_in_Range=get_awards_range(subtree2d,awards_th)
+        canonical_nodes_z = subtree2d.get_canonical_subtree(Leaves_in_Range)
+        for tree_node in canonical_nodes_z:
+            subtree3d=tree_node.y_tree
+            final_result=get_dblp_range(subtree3d,left_db,right_db)
+            
+            for leaf in final_result:
+                print(leaf.attributes)
 
-                if first is not None:
-                    index_of_first=leaf_nodes.index(first)
-                    #The last scientist that is included in the range query , will be the one with the maximun number of awards
-                    last=x_Search(tree,max(awards_int))
-                    if last is None:
-                        #we will get the all the leaves after first
-                        leaves_in_y=leaf_nodes[index_of_first:]
-                    else:
-                        index_of_last=leaf_nodes.index(last)
-                        #we will get all leaves between the indexes of the first and last scientist
-                        leaves_in_y=leaf_nodes[index_of_first:index_of_last]
-
-            #THIS UNROLLING MAY NOT BE NEEDED HERE
-            for leaf in leaves_in_y:
-                if leaf.duplicates!=[]:
-                    for duplicate in leaf.duplicates:
-                        leaves_in_y.append(x_Node(duplicate[1],duplicate,True))
-
-
-'''
-'''    with open("outpout.txt", 'w') as file:
-        # Save the current standard output (usually the console)
-        original_stdout = sys.stdout
-
-        # Redirect standard output to the file
-        sys.stdout = file
-
-        # Now, use your custom printing method
-        print_bst_structure(root.y_tree.y_tree)
-
-        sys.stdout = original_stdout
-        '''
