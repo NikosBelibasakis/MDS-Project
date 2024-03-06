@@ -81,7 +81,6 @@ def RangeSearchKD(node, depth, left_l,right_l,awards_th,left_db,right_db):
 
 
 
-
 # Main function
 if __name__ == '__main__':
 
@@ -137,11 +136,12 @@ if __name__ == '__main__':
     ScientistsInRange = []
     RangeSearchKD(root,0,left_l,right_l,awards_th,left_db,right_db)
 
-    # This part will be deleted
+
     print('')
-    print('Range searching finished. Results:')
+    print('Range search finished. Results:')
     print('')
 
+    # Print the scientists in range
     for s in ScientistsInRange:
         print(s)
 
@@ -166,7 +166,22 @@ if __name__ == '__main__':
         ScientistsInRange_edu.append(attributes_array_ed[temp])
 
 
-    LSH_alg(ScientistsInRange_edu)
+    # Execute the LSH algorithm
+    ScientistsInRange_Final = LSH_alg(ScientistsInRange_edu)
+    print('-------------------------------------------------------------------------------')
+    print('Returned scientists in the query range: ')
+
+    for pair in ScientistsInRange_Final:
+        print('-------------------------------------------------------------------------------')
+        print(ScientistsInRange_edu[pair[0]])
+        print(ScientistsInRange_edu[pair[1]])
+
+
+
+
+
+
+
 
 
 

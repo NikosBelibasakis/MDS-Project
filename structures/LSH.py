@@ -1,7 +1,9 @@
-#version 2
+#version 3
 
 import json
 import random
+from itertools import combinations
+from sklearn.metrics import jaccard_score
 
 
 #This function creates the sets of shingles
@@ -98,10 +100,10 @@ def LSH_alg(array):
         #We add in the matrix the vector of the current set of shingles (document/string)
         matrix.append(vector)
 
-    print('')
-    print('The input matrix for the MinHashing: ')
-    for m in matrix:
-        print(m)
+
+
+
+
 
     #This is the signatures matrix, where the signatures are the its columns
     temp_sign_matrix = []
@@ -122,10 +124,10 @@ def LSH_alg(array):
         #Add the row in the signatures matrix
         temp_sign_matrix.append(temp_sign_vector)
 
-    print('------------------------------')
-    print('Signatures matrix: ')
-    for m in temp_sign_matrix:
-        print(m)
+
+
+
+
 
     # This is the signatures matrix, where the signatures are its rows
     signatures_matrix = []
@@ -137,10 +139,95 @@ def LSH_alg(array):
             temp_vector.append(vector[i])
         signatures_matrix.append(temp_vector)
 
-    print('-------------------------------')
-    print('Signatures: ')
-    for signature in signatures_matrix:
-        print(signature)
+
+
+
+
+
+    # This array contains all the candidate pairs that the LSH returned
+    candidate_pairs_final = []
+
+    # We create 10 bands. Each band will have 2 values from each signature
+    for b in range(10):
+
+     band_array = []
+
+     for signature in signatures_matrix:
+        signature_values_in_band = []
+        signature_values_in_band.append(signature[2*b])
+        signature_values_in_band.append(signature[(2*b)+1])
+        band_array.append(signature_values_in_band)
+
+    # Find the candidate pairs by hashing the values of the band into buckets
+     buckets = [[i for i, x in enumerate(band_array) if x == pair] for pair in band_array]
+
+    # Remove the duplicate buckets
+     buckets2 = []
+     for pair in buckets:
+        if pair not in buckets2:
+            buckets2.append(pair)
+
+    # Remove the buckets with only one element
+     buckets_final = [pair for pair in buckets2 if len(pair) > 1]
+
+
+
+
+
+
+    #This array contains all the candidate pairs that got into the same bucket
+     candidate_pairs = []
+
+
+     for bucket in buckets_final:
+
+        if len(bucket) > 2:
+
+            pairs = combinations(bucket, 2)
+
+            for pair in pairs:
+                candidate_pairs.append(list(pair))
+
+        elif len(bucket) == 2:
+            candidate_pairs.append(bucket)
+
+    #We update the candidate_pairs_final array with the candidate pairs that this band's hashing returned
+     candidate_pairs_final.extend(candidate_pairs)
+
+
+    #We remove the duplicates from the candidate_pairs_final array
+    candidate_pairs_final_unique = []
+
+    for pair in candidate_pairs_final:
+        if pair not in candidate_pairs_final_unique:
+            candidate_pairs_final_unique.append(pair)
+
+
+
+
+
+    #We ask for the similarity percentage from the user
+    print('')
+    t = float(input("Please insert the similarity percentage for the scientists' education: "))
+
+    # We will fill this array with the pairs that have an acceptable similarity
+    Pairs_in_range = []
+    # We check every candidate pair
+    for pair in candidate_pairs_final_unique:
+        A = matrix[pair[0]]
+        B = matrix[pair[1]]
+
+        # Calculate the Jaccard similarity between the two vectors of the pair
+        j = jaccard_score(A, B)
+
+        if (j >= t):
+            Pairs_in_range.append(pair)
+
+    return Pairs_in_range
+
+
+
+
 
 
 

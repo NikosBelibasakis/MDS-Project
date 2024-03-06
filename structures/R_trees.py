@@ -1,7 +1,7 @@
 #version 2
 import json
 import rtree
-
+from LSH import LSH_alg
 
 
 # Main function
@@ -77,20 +77,56 @@ if __name__ == '__main__':
     range_search  =  list(idx.intersection((left_l_uni,awards_th + 1, left_db, right_l_uni, float('inf'), right_db), objects=True))
 
     #This array contains the scientists whose attributes are included in the query range
-    Scientists_in_range = []
+    ScientistsInRange_set = []
 
     #Fill the 'Scientists_in_range' array
     for rs_result in range_search:
-       Scientists_in_range.append(rs_result.object)
+       ScientistsInRange_set.append(rs_result.object)
+
+    print('')
+    print('Range search finished. Results:')
+    print('')
 
 
-    #This part will be deleted
-    print('----------------------------------------------------------------')
-    print('Scientists in range: ')
+    ScientistsInRange = []
 
-    #Print the scientists in range
-    for s in Scientists_in_range:
+    # Insert the returned scientists in the array
+    for s in ScientistsInRange_set:
+        ScientistsInRange.append(list(s))
+
+
+    for s in ScientistsInRange:
         print(s)
+
+    # We get the education for the scientists in range
+    counter = 0;  # counter used for the attributes insertion in the attributes_array_ed.
+    attributes_array_ed = []
+
+    for s in surnames:
+        temp_list = [surnames[counter], awards_int[counter], dblp_int[counter], education[counter]]
+        attributes_array_ed.append(temp_list)
+        counter = counter + 1
+
+    # This array contains the scientists in range with their education included
+    ScientistsInRange_edu = []
+
+    for s in ScientistsInRange:
+        temp = attributes_array.index(s)
+        ScientistsInRange_edu.append(attributes_array_ed[temp])
+
+    # Execute the LSH algorithm
+    ScientistsInRange_Final = LSH_alg(ScientistsInRange_edu)
+    print('-------------------------------------------------------------------------------')
+    print('Returned scientists in the query range: ')
+
+    for pair in ScientistsInRange_Final:
+        print('-------------------------------------------------------------------------------')
+        print(ScientistsInRange_edu[pair[0]])
+        print(ScientistsInRange_edu[pair[1]])
+
+
+
+
 
 
 
