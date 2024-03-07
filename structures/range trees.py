@@ -1,4 +1,6 @@
 from general_functions import get_info
+from search import get_searching_values
+from LSH import LSH_alg
 
 
 class x_Node:
@@ -315,6 +317,29 @@ def get_dblp_range(tree,dblp_min,dblp_max):
 
     return leaves_in_z
 
+def Range_Search(surnames,letters,awards_th,dblp_range):
+    [left_l,right_l]= letters
+    [left_db,right_db]=dblp_range
+    
+    Leaves_in_Range = get_surname_range(surnames,left_l,right_l)
+    canonical_nodes_y=root.get_canonical_subtree(Leaves_in_Range)
+
+    final_result=[]
+    for node in canonical_nodes_y:
+        subtree2d=node.y_tree
+        Leaves_in_Range=get_awards_range(subtree2d,awards_th)
+        canonical_nodes_z = subtree2d.get_canonical_subtree(Leaves_in_Range)
+        for tree_node in canonical_nodes_z:
+            subtree3d=tree_node.y_tree
+            final_result.extend(get_dblp_range(subtree3d,left_db,right_db))
+
+    Scientist_array=[]
+    for scientist in final_result:
+        Scientist_array.append(scientist.attributes+[scientist.education])
+            
+    return Scientist_array
+
+
 # Main function
 if __name__ == '__main__':
 
@@ -341,30 +366,16 @@ if __name__ == '__main__':
 
 
     # User query
-    print('Scientists Range Search')
-    left_l = input('Please enter the left end of the surnames letter range: ')
-    right_l = input('Please enter the right end of the surnames letter range: ')
-    awards_th = input('Please enter the threshold for the number of the awards: ')
-    awards_th = int(awards_th)
-    left_db = input('Please enter the left end of the DBLP record range: ')
-    left_db = int(left_db)
-    right_db = input('Please enter the right end of the DBLP record range: ')
-    right_db = int(right_db)
+    letters,award_threshold,dblp_range=get_searching_values()
 
+    scientist_range=Range_Search(surnames,letters,award_threshold,dblp_range)
+    
+    Final_scientists=LSH_alg(scientist_range)
 
-    Leaves_in_Range = get_surname_range(surnames,left_l,right_l)
-    canonical_nodes_y=root.get_canonical_subtree(Leaves_in_Range)
+    print('-------------------------------------------------------------------------------')
+    print('Returned scientists in the query range: ')
 
-    for node in canonical_nodes_y:
-        subtree2d=node.y_tree
-        Leaves_in_Range=get_awards_range(subtree2d,awards_th)
-        canonical_nodes_z = subtree2d.get_canonical_subtree(Leaves_in_Range)
-        for tree_node in canonical_nodes_z:
-            subtree3d=tree_node.y_tree
-            final_result=get_dblp_range(subtree3d,left_db,right_db)
-            
-            for leaf in final_result:
-                print(leaf.attributes)
-                print("Education\n",leaf.education)
-
-
+    for pair in Final_scientists:
+        print('-------------------------------------------------------------------------------')
+        print(scientist_range[pair[0]])
+        print(scientist_range[pair[1]])

@@ -1,4 +1,3 @@
-from quad_trees import OctreeSearch
 
 #this function checks if the input for the letter is in the correct form
 def check_letter_inputs(letter):
@@ -84,13 +83,19 @@ Now, that we have defined all the required functions for obtaining user-defined 
 we will use them for identifying scientists whose names fall alphabetically within the 
 specified range, the number of awards they have received are greater than the threshold,
 and the number of publications should also be within the user-defined range. This will 
-be accomplished using the corresponding search function for each structure.
+be accomplished using the corresponding search function for each structure. 
+So, in each tree structure we will the call the function bellow.
 """
+#function that encapsulates all above functions
+def get_searching_values():
 
-letters=get_letters()
-awards=get_awards()
-dblp_range=get_dblp()
+    letters=get_letters()
+    awards=get_awards()
+    dblp_range=get_dblp()
 
+    return letters,awards,dblp_range
+
+"""
 x=OctreeSearch(letters,awards,dblp_range) #this function is defined in quad_trees.py 
 
 #this commands probably will get deleted later
@@ -99,7 +104,7 @@ for i in range(len(x)):
      print(x[i])
 
 
-"""
+
 EXAMPLE SEARCH
 x=OctreeSearch(['z','z'],0,[4,118])
 
