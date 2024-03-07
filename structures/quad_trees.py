@@ -1,4 +1,4 @@
-import json
+from general_functions import get_info
 
 """
 At this point we will define  Octrees 
@@ -160,31 +160,6 @@ Here we will describe some functions that are going to help
 with the indexing of the surnames
 """
 
-#This function assings an number (like an id) for every surname, so as to have only integers in the tree structure
-def assign_index_surname(data):
-    
-    # Extract surnames from the data
-    surnames = [scientist['surname'] for scientist in data]
-
-    #needed initializations for our processes
-    surname_numbers = [] #here we will store lists of [surname, id]
-    current_number = 0   #this will define the id
-    previous_surname=''
-
-    # Assign a unique number to each unique surname
-    for i, surname in enumerate(surnames):
-        if surname!=previous_surname: #check for duplicate surnames
-            #we assume that our surnames are in alphabetical order
-            #so duplicate surnames will only be one after the other
-            current_number += 1
-            surname_numbers.append([surname,current_number]) #store surname and id couple
-        else :
-            surname_numbers.append([surname,current_number]) #keep the same value for duplicate surnames
-        previous_surname=surname #update the previous surname as the current one for the next iteration
-
-    return surname_numbers
-
-
 #It generates a dictionary that witholds the ranges of the ids for each first letter that surnames have
 def letter_id_range(surnames):
     #surnames : list created by assign_index_surname()
@@ -234,20 +209,12 @@ we will define the general functions that connects everything together
 
 #Function for the creation of the Octree with the data about computer scientists we collected 
 def create_octree():
-    # Get data from the JSON file
-    with open('../scientist_info.json', 'r', encoding="utf-8") as file:
-        data = json.load(file)
-
-    # Sort the data based on the "surname" key so that they are from A to Z
-    sorted_data = sorted(data, key=lambda x: x.get("surname", ""))
-    surnames=assign_index_surname(sorted_data) #get the id for every surname
+    
+    #get all the info 
+    surnames,awards,dblp_record,education=get_info(quads=True)
 
     #variables containing our x,y,z indexes (Point)
     surname_ids=[id[1] for id in surnames] #x index
-    awards = [int(scientist['awards']) for scientist in sorted_data] #y index
-    dblp_record = [int(scientist['dblp_record']) for scientist in sorted_data] #z index
-    #variable containing the data each leaf node will have 
-    education = [scientist['education'] for scientist in sorted_data]
 
     # Extract min and max values --- they will be the boundaries
     top_boundary=Point3D( min(surname_ids), min(awards) , min(dblp_record) )

@@ -1,4 +1,4 @@
-import json
+from general_functions import get_info
 
 
 class x_Node:
@@ -318,30 +318,13 @@ def get_dblp_range(tree,dblp_min,dblp_max):
 # Main function
 if __name__ == '__main__':
 
-    # Get the data from the JSON file
-    with open('../scientist_info.json', 'r', encoding="utf-8") as file:
-        data = json.load(file)
+    #get all the info 
+    surnames,awards,dblp,education=get_info()
 
-    # fetch the surnames
-    surnames = [scientist['surname'] for scientist in data]
-
-
-    # fetch the number of awards
-    awards = [scientist['awards'] for scientist in data]
-    awards_int = [int(aw) for aw in awards]
-
-    # fetch the dblp record
-    dblp = [scientist['dblp_record'] for scientist in data]
-    dblp_int = [int(db) for db in dblp]
-
-    # fetch the education
-    education = [scientist['education'] for scientist in data]
-
-    counter = 0;  # counter used for the attributes insertion in the attributes_array.
     attributes_array = []
 
     for i in range(len(surnames)):
-        temp_list = [surnames[i], awards_int[i], dblp_int[i],education[i]]
+        temp_list = [surnames[i], awards[i], dblp[i],education[i]]
         attributes_array.append(temp_list)
 
     sorted_attributes = sort_from_middle(attributes_array,dimension=0)

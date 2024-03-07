@@ -1,6 +1,6 @@
 # version 3
-import json
 from LSH import LSH_alg
+from general_functions import get_info
 
 
 class Node:
@@ -84,25 +84,8 @@ def RangeSearchKD(node, depth, left_l,right_l,awards_th,left_db,right_db):
 # Main function
 if __name__ == '__main__':
 
-    # Get the data from the JSON file
-    with open('../scientist_info.json', 'r', encoding="utf-8") as file:
-        data = json.load(file)
-    # Sort the data based on the "surname" key
-    sorted_data = sorted(data, key=lambda x: x.get("surname", ""))
-
-    # fetch the surnames
-    surnames = [scientist['surname'] for scientist in data]
-
-    # fetch the number of awards
-    awards = [scientist['awards'] for scientist in data]
-    awards_int = [int(aw) for aw in awards]
-
-    # fetch the dblp record
-    dblp = [scientist['dblp_record'] for scientist in data]
-    dblp_int = [int(db) for db in dblp]
-
-    # fetch the education
-    education = [scientist['education'] for scientist in data]
+        #get all the info 
+    surnames,awards_int,dblp_int,education=get_info()
 
     counter = 0;  # counter used for the attributes insertion in the attributes_array.
     attributes_array = []

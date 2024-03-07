@@ -1,36 +1,19 @@
-#version 2
-import json
 import rtree
 from LSH import LSH_alg
+from general_functions import get_info
 
 
 # Main function
 if __name__ == '__main__':
 
-    # Get the data from the JSON file
-    with open('../scientist_info.json', 'r', encoding="utf-8") as file:
-        data = json.load(file)
-
-    # fetch the surnames
-    surnames = [scientist['surname'] for scientist in data]
-
-
-    # fetch the number of awards
-    awards = [scientist['awards'] for scientist in data]
-    awards_int = [int(aw) for aw in awards]
-
-    # fetch the dblp record
-    dblp = [scientist['dblp_record'] for scientist in data]
-    dblp_int = [int(db) for db in dblp]
-
-    # fetch the education
-    education = [scientist['education'] for scientist in data]
+    #get all the info 
+    surnames,awards,dblp,education=get_info()
 
     counter = 0;  # counter used for the attributes insertion in the attributes_array.
     attributes_array = []
 
     for s in surnames:
-        temp_list = [surnames[counter], awards_int[counter], dblp_int[counter]]
+        temp_list = [surnames[counter], awards[counter], dblp[counter]]
         attributes_array.append(temp_list)
         counter = counter + 1
 
@@ -45,14 +28,14 @@ if __name__ == '__main__':
         surname = attributes_array[i][0]
         f_letter = attributes_array[i][0][0]
         f_letter_uni = ord(f_letter) - 64
-        awards = attributes_array[i][1]
+        awards_int = attributes_array[i][1]
         dblp_record = attributes_array[i][2]
 
         #Create the bounding box
-        bbox = (f_letter_uni, awards, dblp_record,f_letter_uni, awards, dblp_record)
+        bbox = (f_letter_uni, awards_int, dblp_record,f_letter_uni, awards_int, dblp_record)
 
         #Insert the node/scientist
-        idx.insert(i,bbox, obj = (surname,awards,dblp_record))
+        idx.insert(i,bbox, obj = (surname,awards_int,dblp_record))
 
         i = i + 1
 
@@ -103,7 +86,7 @@ if __name__ == '__main__':
     attributes_array_ed = []
 
     for s in surnames:
-        temp_list = [surnames[counter], awards_int[counter], dblp_int[counter], education[counter]]
+        temp_list = [surnames[counter], awards[counter], dblp[counter], education[counter]]
         attributes_array_ed.append(temp_list)
         counter = counter + 1
 
