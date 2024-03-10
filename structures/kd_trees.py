@@ -1,6 +1,7 @@
 # version 3
 from LSH import LSH_alg
 from general_functions import get_info
+from search import get_searching_values
 
 
 class Node:
@@ -104,25 +105,14 @@ if __name__ == '__main__':
         InsertScientist(root, attr, 0)
 
     #User query
-    print('Scientists Range Search')
-    left_l = input('Please enter the left end of the surnames letter range: ')
-    right_l = input('Please enter the right end of the surnames letter range: ')
-    awards_th = input('Please enter the threshold for the number of the awards: ')
-    awards_th = int(awards_th)
-    left_db = input('Please enter the left end of the DBLP record range: ')
-    left_db = int(left_db)
-    right_db = input('Please enter the right end of the DBLP record range: ')
-    right_db = int(right_db)
+    letters,awards_th,dblp= get_searching_values()
 
 
     # This array contains all the scientists whose attributes are included in the given range
     ScientistsInRange = []
-    RangeSearchKD(root,0,left_l,right_l,awards_th,left_db,right_db)
+    RangeSearchKD(root,0,letters[0],letters[1],awards_th,dblp[0],dblp[1])
 
-
-    print('')
-    print('Range search finished. Results:')
-    print('')
+    print('\nRange search finished. Results:\n')
 
     # Print the scientists in range
     for s in ScientistsInRange:

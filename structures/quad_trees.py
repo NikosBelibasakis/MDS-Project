@@ -1,4 +1,6 @@
 from general_functions import get_info
+from search import get_searching_values
+from LSH import LSH_alg
 
 """
 At this point we will define  Octrees 
@@ -27,7 +29,7 @@ class Point3D:
         return self.x >= other.x and self.y >= other.y and self.z >= other.z
 
     def __str__(self): #string represantion of point
-        return f"Point3D(surname={self.x}, awards={self.y}, DBLP record={self.z})"
+        return f"surname={self.x}, awards={self.y}, DBLP record={self.z})"
 
 #DEFINING THE NODES OF OUR TREE STRUCTURE (It contains the position(3 indexes) and data )
 class OctreeNode:
@@ -233,12 +235,15 @@ def create_octree():
     # because we will need to transform surnames back to their original form
     return octree , surnames
 
-#Function that we will use for the searching in our tree
-def OctreeSearch(letters,awards,dblp_records):
+# Main function
+if __name__ == '__main__':
     #we will need to have a tree , to search on it
     octree,surnames=create_octree() 
     #we get the dictionary for the ranges of each letter 
     letter_ranges=letter_id_range(surnames)
+
+    #function for getting user input
+    letters,awards,dblp_records= get_searching_values()
 
     range_start=letter_ranges.get(letters[0])[0]    #the surname id we will start the searching 
     range_finish=letter_ranges.get(letters[1])[1]   #the surname id we will stop the searching
@@ -254,6 +259,21 @@ def OctreeSearch(letters,awards,dblp_records):
         string_surname=get_surname(id_surname,surnames)
         scientists[i].position.x=string_surname
     
-    #return the scientist we found 
-    return scientists
+    #Put in a list the scientist we found 
+    ScientistsRange=[]
+    for scientist in scientists:
+        point=scientist.position
+        ScientistsRange.append([point.x, point.y, point.z, scientist.education])
+        print(point)
 
+    print("\nRange search finished!\n")
+
+    # Execute the LSH algorithm
+    ScientistsInRange_Final = LSH_alg(ScientistsRange)
+    print('-------------------------------------------------------------------------------')
+    print('Returned scientists in the query range: ')
+
+    for pair in ScientistsInRange_Final:
+        print('-------------------------------------------------------------------------------')
+        print(ScientistsRange[pair[0]])
+        print(ScientistsRange[pair[1]])

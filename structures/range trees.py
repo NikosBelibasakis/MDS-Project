@@ -335,8 +335,10 @@ def Range_Search(surnames,letters,awards_th,dblp_range):
 
     Scientist_array=[]
     for scientist in final_result:
+        print(scientist.attributes)
         Scientist_array.append(scientist.attributes+[scientist.education])
-            
+    
+    print("\nRange Search finished!\n")
     return Scientist_array
 
 
