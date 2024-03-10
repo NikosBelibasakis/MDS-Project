@@ -1,3 +1,4 @@
+import time
 import rtree
 from LSH import LSH_alg
 from general_functions import get_info
@@ -48,6 +49,7 @@ if __name__ == '__main__':
     left_l_uni = ord(letter[0]) - 64
     right_l_uni = ord(letter[1]) - 64
 
+    start_time = time.time()  # Record the start time
 
     #Range search on the R-tree
     range_search  =  list(idx.intersection((left_l_uni,awards_th + 1, dblp_range[0], right_l_uni, float('inf'), dblp_range[1]), objects=True))
@@ -58,6 +60,9 @@ if __name__ == '__main__':
     #Fill the 'Scientists_in_range' array
     for rs_result in range_search:
        ScientistsInRange_set.append(rs_result.object)
+
+    end_time = time.time()  # Record the end time
+    search_time = end_time - start_time  # Calculate the total time for the search
 
     print('')
     print('Range search finished. Results:')
@@ -73,6 +78,8 @@ if __name__ == '__main__':
 
     for s in ScientistsInRange:
         print(s)
+
+    print(f"\nTotal search time: {search_time} seconds\n")
 
     # We get the education for the scientists in range
     counter = 0;  # counter used for the attributes insertion in the attributes_array_ed.

@@ -1,3 +1,4 @@
+import time
 from general_functions import get_info
 from search import get_searching_values
 from LSH import LSH_alg
@@ -250,23 +251,28 @@ if __name__ == '__main__':
 
     range_letters=[range_start,range_finish] #range for the alphabetical search of scientists 
 
+    start_time = time.time()  # Record the start time
+
     #use the regular range search created in the definition of the Octree
     scientists=octree.search_in_range(range_letters,awards,dblp_records) 
 
-    for i in range(len(scientists)):
-        #changing surname id to the original string surname
-        id_surname=scientists[i].position.x
-        string_surname=get_surname(id_surname,surnames)
-        scientists[i].position.x=string_surname
-    
-    #Put in a list the scientist we found 
+    end_time = time.time()  # Record the end time
+    search_time = end_time - start_time  # Calculate the total time for the search
+
     ScientistsRange=[]
     for scientist in scientists:
+        #changing surname id to the original string surname
+        id_surname=scientist.position.x
+        string_surname=get_surname(id_surname,surnames)
+        scientist.position.x=string_surname
+
+        #Put in a list the scientist we found 
         point=scientist.position
         ScientistsRange.append([point.x, point.y, point.z, scientist.education])
         print(point)
-
     print("\nRange search finished!\n")
+    
+    print(f"\nTotal search time: {search_time} seconds\n")
 
     if len( ScientistsRange)>1:
         # Execute the LSH algorithm

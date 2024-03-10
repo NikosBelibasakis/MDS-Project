@@ -1,4 +1,5 @@
 # version 3
+import time
 from LSH import LSH_alg
 from general_functions import get_info
 from search import get_searching_values
@@ -107,10 +108,14 @@ if __name__ == '__main__':
     #User query
     letters,awards_th,dblp= get_searching_values()
 
+    start_time = time.time()  # Record the start time
 
     # This array contains all the scientists whose attributes are included in the given range
     ScientistsInRange = []
     RangeSearchKD(root,0,letters[0],letters[1],awards_th,dblp[0],dblp[1])
+
+    end_time = time.time()  # Record the end time
+    search_time = end_time - start_time  # Calculate the total time for the search
 
     print('\nRange search finished. Results:\n')
 
@@ -118,8 +123,7 @@ if __name__ == '__main__':
     for s in ScientistsInRange:
         print(s)
 
-
-
+    print(f"\nTotal search time: {search_time} seconds\n")
 
     #We get the education for the scientists in range
     counter = 0;  # counter used for the attributes insertion in the attributes_array_ed.

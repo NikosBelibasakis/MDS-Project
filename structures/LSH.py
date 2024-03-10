@@ -1,6 +1,7 @@
 #version 3
 import random
 from itertools import combinations
+import time
 from sklearn.metrics import jaccard_score
 
 
@@ -51,6 +52,8 @@ def createSigVal(array):
 
 
 def LSH_alg(array):
+
+    LSH_start_time = time.time()  # Record the start time
 
     # This array contains all the scientists whose attributes are included in the given range
     Scientists = array
@@ -206,7 +209,11 @@ def LSH_alg(array):
 
     #We ask for the similarity percentage from the user
     print('')
+    input_start_time=time.time() #get the time it takes to take the input
     t = float(input("Please insert the similarity percentage for the scientists' education: "))
+    
+    input_end_time=time.time()
+    input_time=input_end_time-input_start_time #total time it took the user to insert the percentage
 
     # We will fill this array with the pairs that have an acceptable similarity
     Pairs_in_range = []
@@ -220,6 +227,11 @@ def LSH_alg(array):
 
         if (j >= t):
             Pairs_in_range.append(pair)
+
+    LSH_end_time = time.time()  # Record the end time
+    LSH_time = LSH_end_time - LSH_start_time  # Calculate the total time for the LSH
+    LSH_time= LSH_time - input_time #subtract now for total LSH time , the time it took for the user to insert an input
+    print(f"(Calculations done in total LSH time: {LSH_time} seconds)\n")
 
     return Pairs_in_range
 

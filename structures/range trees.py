@@ -1,3 +1,4 @@
+import time
 from general_functions import get_info
 from search import get_searching_values
 from LSH import LSH_alg
@@ -333,12 +334,17 @@ def Range_Search(surnames,letters,awards_th,dblp_range):
             subtree3d=tree_node.y_tree
             final_result.extend(get_dblp_range(subtree3d,left_db,right_db))
 
+    end_time = time.time()  # Record the end time
+    search_time = end_time - start_time  # Calculate the total time for the search
+
     Scientist_array=[]
     for scientist in final_result:
         print(scientist.attributes)
         Scientist_array.append(scientist.attributes+[scientist.education])
     
-    print("\nRange Search finished!\n")
+    print("\nRange Search finished!")
+    print(f"\nTotal search time: {search_time} seconds\n")
+
     return Scientist_array
 
 
@@ -370,8 +376,12 @@ if __name__ == '__main__':
     # User query
     letters,award_threshold,dblp_range=get_searching_values()
 
+    start_time = time.time()  # Record the start time
+
     scientist_range=Range_Search(surnames,letters,award_threshold,dblp_range)
-    
+
+    #the end time is in Range Search function
+
     if len(scientist_range)>1:
         Final_scientists=LSH_alg(scientist_range)
 
