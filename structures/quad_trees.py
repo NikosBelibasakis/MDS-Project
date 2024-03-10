@@ -268,12 +268,17 @@ if __name__ == '__main__':
 
     print("\nRange search finished!\n")
 
-    # Execute the LSH algorithm
-    ScientistsInRange_Final = LSH_alg(ScientistsRange)
-    print('-------------------------------------------------------------------------------')
-    print('Returned scientists in the query range: ')
-
-    for pair in ScientistsInRange_Final:
+    if len( ScientistsRange)>1:
+        # Execute the LSH algorithm
+        ScientistsInRange_Final = LSH_alg(ScientistsRange)
         print('-------------------------------------------------------------------------------')
-        print(ScientistsRange[pair[0]])
-        print(ScientistsRange[pair[1]])
+        print('Returned scientists in the query range: ')
+
+        for pair in ScientistsInRange_Final:
+            print('-------------------------------------------------------------------------------')
+            print(ScientistsRange[pair[0]])
+            print(ScientistsRange[pair[1]])
+    else:
+         print("\n\nWe have only one result. LSH was not executed!\n")
+         print("RESULTS:\n")
+         print(ScientistsRange)

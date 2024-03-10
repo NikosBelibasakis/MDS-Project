@@ -6,8 +6,8 @@ def check_letter_inputs(letter):
         if len(letter)!=1 :
             letter=input("Hmm.. You entered more than one character please enter just one :\n")
             letter=check_letter_inputs(letter)
-        if not letter.isalpha():
-            print("We could not process that , it was not a letter!")
+        if not (letter.isalpha() and 'A' <= letter <= 'Z'):
+            print("We could not process that , it was not an english letter!")
             letter=input("Please enter a letter: \n")
             letter=check_letter_inputs(letter)
         else:
@@ -95,17 +95,3 @@ def get_searching_values():
 
     return letters,awards,dblp_range
 
-"""
-x=OctreeSearch(letters,awards,dblp_range) #this function is defined in quad_trees.py 
-
-#this commands probably will get deleted later
-print('\n\nThe results from our searching are: \n\n')
-for i in range(len(x)):
-     print(x[i])
-
-
-
-EXAMPLE SEARCH
-x=OctreeSearch(['z','z'],0,[4,118])
-
-"""

@@ -372,12 +372,17 @@ if __name__ == '__main__':
 
     scientist_range=Range_Search(surnames,letters,award_threshold,dblp_range)
     
-    Final_scientists=LSH_alg(scientist_range)
+    if len(scientist_range)>1:
+        Final_scientists=LSH_alg(scientist_range)
 
-    print('-------------------------------------------------------------------------------')
-    print('Returned scientists in the query range: ')
-
-    for pair in Final_scientists:
         print('-------------------------------------------------------------------------------')
-        print(scientist_range[pair[0]])
-        print(scientist_range[pair[1]])
+        print('Returned scientists in the query range: ')
+
+        for pair in Final_scientists:
+            print('-------------------------------------------------------------------------------')
+            print(scientist_range[pair[0]])
+            print(scientist_range[pair[1]])
+    else:
+        print("\n\nWe have only one result. LSH was not executed!\n")
+        print("RESULTS:\n")
+        print(scientist_range)

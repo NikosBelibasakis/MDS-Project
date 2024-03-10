@@ -1,6 +1,4 @@
 #version 3
-
-import json
 import random
 from itertools import combinations
 from sklearn.metrics import jaccard_score

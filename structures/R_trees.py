@@ -90,13 +90,17 @@ if __name__ == '__main__':
         temp = attributes_array.index(s)
         ScientistsInRange_edu.append(attributes_array_ed[temp])
 
-    # Execute the LSH algorithm
-    ScientistsInRange_Final = LSH_alg(ScientistsInRange_edu)
-    print('-------------------------------------------------------------------------------')
-    print('Returned scientists in the query range: ')
-
-    for pair in ScientistsInRange_Final:
+    if len(ScientistsInRange_edu)>1:
+        # Execute the LSH algorithm
+        ScientistsInRange_Final = LSH_alg(ScientistsInRange_edu)
         print('-------------------------------------------------------------------------------')
-        print(ScientistsInRange_edu[pair[0]])
-        print(ScientistsInRange_edu[pair[1]])
+        print('Returned scientists in the query range: ')
 
+        for pair in ScientistsInRange_Final:
+            print('-------------------------------------------------------------------------------')
+            print(ScientistsInRange_edu[pair[0]])
+            print(ScientistsInRange_edu[pair[1]])
+    else:
+        print("\n\nWe have only one result. LSH was not executed!\n")
+        print("RESULTS:\n")
+        print(ScientistsInRange_edu)
