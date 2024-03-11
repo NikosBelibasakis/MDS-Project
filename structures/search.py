@@ -6,7 +6,7 @@ def check_letter_inputs(letter):
         if len(letter)!=1 :
             letter=input("Hmm.. You entered more than one character please enter just one :\n")
             letter=check_letter_inputs(letter)
-        if not (letter.isalpha() and 'A' <= letter <= 'Z'):
+        if not (letter.isalpha() and 'A' <= letter.upper() <= 'Z'):
             print("We could not process that , it was not an english letter!")
             letter=input("Please enter a letter: \n")
             letter=check_letter_inputs(letter)

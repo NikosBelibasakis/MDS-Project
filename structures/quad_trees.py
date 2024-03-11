@@ -29,6 +29,12 @@ class Point3D:
     def __ge__(self, other): #greater then or equal to
         return self.x >= other.x and self.y >= other.y and self.z >= other.z
 
+    def __lt__(self, other): #less than 
+        return self.x < other.x or self.y < other.y or self.z < other.z
+
+    def __gt__(self, other): #greater than
+        return self.x > other.x or self.y > other.y or self.z > other.z
+
     def __str__(self): #string represantion of point
         return f"surname={self.x}, awards={self.y}, DBLP record={self.z})"
 
@@ -72,45 +78,63 @@ class Octree:
             #subdivide the cube, in other words define one of the 8 children
             self.children[child_index] = Octree(boundaries[0],boundaries[1])
         self.children[child_index].insert(node) #try to insert the node to the child (recursion)
-
-    #define the search function for an exact match
-    def search(self, p): 
-        if not self.top_boundary <= p <= self.bottom_boundary:
-            #the node does not exist in this tree
-            return None
-
+    
+    #function for getting leaves
+    def get_leaves(self):
         if self.n is not None:
             #we have arrived to a leaf node , so we have the info we need
-            return self.n
+            return [self.n]
         
-        #find in which child we should continue searching (which subdivided cube in 3d space)
-        child_index = self.get_child(p)[0]
-        if self.children[child_index] is None:
-            return None
-        return self.children[child_index].search(p)
+        leaves=[]
+        for child in self.children:
+             if child:
+                  leaves.extend(child.get_leaves())
+        return leaves
 
     #function for searching with index ranges, it returns many leaf nodes 
-    def search_in_range(self,letters_id,award_threshold,records):
-        #letters_id : is a list containing the id of the first surname with a letter and the last (x index)
-        #award_threshold: the value of awards (y index) we are looking for should be greater than the threshold 
-        #records: is a list containing the minimum and maximum number of dblp records we will be looking for (z index)
+    def search_in_range(self,octree,letters_id,award_threshold,records):
         min_award=award_threshold+1 #the minimum value for awards
-        letters_difference=letters_id[1]-letters_id[0] 
-        awards_difference= self.bottom_boundary.y-min_award
-        records_difference=records[1]-records[0]
 
-        scientist_list=[]
+        #since we have floats in our boundaries
+        #because of the exact divisions of our space in 8 subspaces
+        epsilon=0.5 #error in our data
+        e=Point3D(1,1,1)
 
-        for i in range(letters_difference+1):           #iterate through the number of all the different ids
-            for j in range(awards_difference+1):        #iterate through the number of all the different awards
-                for k in range(records_difference+1):   #iterate through the number of all the different dblp records
-                    #create a point for each iteration and search that point
-                    point=Point3D(letters_id[0]+i,min_award+j,records[0]+k)
-                    scientist=self.search(point)
-                    if scientist is not None:
-                        #if point exists in tree , it answers our searching question so we store it in a list
-                        scientist_list.append(scientist)
-        return scientist_list
+        first_point=Point3D(letters_id[0],min_award,records[0])
+        last_point=Point3D(letters_id[1],octree.bottom_boundary.y,records[1])
+
+        if not octree.top_boundary <= first_point <= octree.bottom_boundary:
+            #the node does not exist in this tree
+            print("There is no scientist within this range!\n")
+            return None
+        elif not octree.top_boundary <= last_point <= octree.bottom_boundary:
+            #the maximum values we are looking for exceed the ones we have
+            #only the z value can exceed , so we change it with the current bottom boundary
+            last_point=Point3D(letters_id[1],octree.bottom_boundary.y,octree.bottom_boundary.z)
+
+        scientists=[]
+        difference=abs(self.top_boundary-self.bottom_boundary)
+        if difference<=e and self.bottom_boundary>first_point:
+            scientists.extend(self.get_leaves())
+        if self.top_boundary>= first_point and self.bottom_boundary<=last_point:
+            #we need to get the leaves of this node tree, since it is in range
+            if self.n is not None:
+                #this is a leaf node , so we have the info we need
+                scientists.append(self.n)
+            else:
+                scientists.extend(self.get_leaves())
+        elif self.bottom_boundary<first_point or self.top_boundary>last_point:
+            #this tree nodes are not in range so we "prune" this branches
+            return None
+        else:
+            #the subtree is not all in the range , but some of it's subtrees are in the range
+            for child in self.children:
+                 if child:
+                    child_result = child.search_in_range(octree, letters_id, award_threshold, records)
+                    if child_result is not None:
+                        scientists.extend(child_result)
+
+        return scientists
 
 
     #general function of the tree that helps as find in which child we have to go (used for searching and for inserting)
@@ -254,7 +278,7 @@ if __name__ == '__main__':
     start_time = time.time()  # Record the start time
 
     #use the regular range search created in the definition of the Octree
-    scientists=octree.search_in_range(range_letters,awards,dblp_records) 
+    scientists=octree.search_in_range(octree,range_letters,awards,dblp_records) 
 
     end_time = time.time()  # Record the end time
     search_time = end_time - start_time  # Calculate the total time for the search
