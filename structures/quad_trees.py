@@ -76,7 +76,7 @@ class Octree:
     #define the search function for an exact match
     def search(self, p): 
         if not self.top_boundary <= p <= self.bottom_boundary:
-            #the node doea not exist in this tree
+            #the node does not exist in this tree
             return None
 
         if self.n is not None:
