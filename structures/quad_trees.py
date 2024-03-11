@@ -95,14 +95,10 @@ class Octree:
     def search_in_range(self,octree,letters_id,award_threshold,records):
         min_award=award_threshold+1 #the minimum value for awards
 
-        #since we have floats in our boundaries
-        #because of the exact divisions of our space in 8 subspaces
-        epsilon=0.5 #error in our data
-        e=Point3D(1,1,1)
-
         first_point=Point3D(letters_id[0],min_award,records[0])
         last_point=Point3D(letters_id[1],octree.bottom_boundary.y,records[1])
 
+        #Just to get the correct boundaries of the range search
         if not octree.top_boundary <= first_point <= octree.bottom_boundary:
             #the node does not exist in this tree
             print("There is no scientist within this range!\n")
@@ -112,10 +108,17 @@ class Octree:
             #only the z value can exceed , so we change it with the current bottom boundary
             last_point=Point3D(letters_id[1],octree.bottom_boundary.y,octree.bottom_boundary.z)
 
+        #Start getting scientists in our range
         scientists=[]
+        #since we have floats in our boundaries
+        #because of the exact divisions of our space in 8 subspaces
         difference=abs(self.top_boundary-self.bottom_boundary)
-        if difference<=e and self.bottom_boundary>first_point:
+        if difference<=Point3D(1,1,1) and self.bottom_boundary>first_point:
+            #if the difference is less that a 1x1x1 space and 
+            #the bottom boundary is greater than the first point
+            #then probably in that space we have a scientist we are looking for
             scientists.extend(self.get_leaves())
+
         if self.top_boundary>= first_point and self.bottom_boundary<=last_point:
             #we need to get the leaves of this node tree, since it is in range
             if self.n is not None:
