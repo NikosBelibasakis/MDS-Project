@@ -1,4 +1,7 @@
-import json
+import time
+from general_functions import get_info
+from search import get_searching_values
+from LSH import LSH_alg
 
 """
 At this point we will define  Octrees 
@@ -26,8 +29,14 @@ class Point3D:
     def __ge__(self, other): #greater then or equal to
         return self.x >= other.x and self.y >= other.y and self.z >= other.z
 
+    def __lt__(self, other): #less than 
+        return self.x < other.x or self.y < other.y or self.z < other.z
+
+    def __gt__(self, other): #greater than
+        return self.x > other.x or self.y > other.y or self.z > other.z
+
     def __str__(self): #string represantion of point
-        return f"Point3D(surname={self.x}, awards={self.y}, DBLP record={self.z})"
+        return f"surname={self.x}, awards={self.y}, DBLP record={self.z})"
 
 #DEFINING THE NODES OF OUR TREE STRUCTURE (It contains the position(3 indexes) and data )
 class OctreeNode:
@@ -69,44 +78,66 @@ class Octree:
             #subdivide the cube, in other words define one of the 8 children
             self.children[child_index] = Octree(boundaries[0],boundaries[1])
         self.children[child_index].insert(node) #try to insert the node to the child (recursion)
-
-    #define the search function for an exact match
-    def search(self, p): 
-        if not self.top_boundary <= p <= self.bottom_boundary:
-            #the node doea not exist in this tree
-            return None
-
+    
+    #function for getting leaves
+    def get_leaves(self):
         if self.n is not None:
             #we have arrived to a leaf node , so we have the info we need
-            return self.n
+            return [self.n]
         
-        #find in which child we should continue searching (which subdivided cube in 3d space)
-        child_index = self.get_child(p)[0]
-        if self.children[child_index] is None:
-            return None
-        return self.children[child_index].search(p)
+        leaves=[]
+        for child in self.children:
+             if child:
+                  leaves.extend(child.get_leaves())
+        return leaves
 
     #function for searching with index ranges, it returns many leaf nodes 
-    def search_in_range(self,letters_id,award_threshold,records):
-        #letters_id : is a list containing the id of the first surname with a letter and the last (x index)
-        #award_threshold: is the minimum value of awards (y index) we are looking for 
-        #records: is a list containing the minimum and maximum number of dblp records we will be looking for (z index)
-        letters_difference=letters_id[1]-letters_id[0] 
-        awards_difference= self.bottom_boundary.y-award_threshold
-        records_difference=records[1]-records[0]
+    def search_in_range(self,octree,letters_id,award_threshold,records):
+        min_award=award_threshold+1 #the minimum value for awards
 
-        scientist_list=[]
+        first_point=Point3D(letters_id[0],min_award,records[0])
+        last_point=Point3D(letters_id[1],octree.bottom_boundary.y,records[1])
 
-        for i in range(letters_difference+1):           #iterate through the number of all the different ids
-            for j in range(awards_difference+1):        #iterate through the number of all the different awards
-                for k in range(records_difference+1):   #iterate through the number of all the different dblp records
-                    #create a point for each iteration and search that point
-                    point=Point3D(letters_id[0]+i,award_threshold+j,records[0]+k)
-                    scientist=self.search(point)
-                    if scientist is not None:
-                        #if point exists in tree , it answers our searching question so we store it in a list
-                        scientist_list.append(scientist)
-        return scientist_list
+        #Just to get the correct boundaries of the range search
+        if not octree.top_boundary <= first_point <= octree.bottom_boundary:
+            #the node does not exist in this tree
+            print("There is no scientist within this range!\n")
+            return None
+        elif not octree.top_boundary <= last_point <= octree.bottom_boundary:
+            #the maximum values we are looking for exceed the ones we have
+            #only the z value can exceed , so we change it with the current bottom boundary
+            last_point=Point3D(letters_id[1],octree.bottom_boundary.y,octree.bottom_boundary.z)
+
+        #Start getting scientists in our range
+        scientists=[]
+        #since we have floats in our boundaries
+        #because of the exact divisions of our space in 8 subspaces
+        difference=abs(self.top_boundary-self.bottom_boundary)
+        if difference<=Point3D(1,1,1) and self.bottom_boundary>first_point:
+            #if the difference is less that a 1x1x1 space and 
+            #the bottom boundary is greater than the first point
+            #then probably in that space we have a scientist we are looking for
+            scientists.extend(self.get_leaves())
+
+        if self.top_boundary>= first_point and self.bottom_boundary<=last_point:
+            #we need to get the leaves of this node tree, since it is in range
+            if self.n is not None:
+                #this is a leaf node , so we have the info we need
+                scientists.append(self.n)
+            else:
+                scientists.extend(self.get_leaves())
+        elif self.bottom_boundary<first_point or self.top_boundary>last_point:
+            #this tree nodes are not in range so we "prune" this branches
+            return None
+        else:
+            #the subtree is not all in the range , but some of it's subtrees are in the range
+            for child in self.children:
+                 if child:
+                    child_result = child.search_in_range(octree, letters_id, award_threshold, records)
+                    if child_result is not None:
+                        scientists.extend(child_result)
+
+        return scientists
 
 
     #general function of the tree that helps as find in which child we have to go (used for searching and for inserting)
@@ -159,31 +190,6 @@ Here we will describe some functions that are going to help
 with the indexing of the surnames
 """
 
-#This function assings an number (like an id) for every surname, so as to have only integers in the tree structure
-def assign_index_surname(data):
-    
-    # Extract surnames from the data
-    surnames = [scientist['surname'] for scientist in data]
-
-    #needed initializations for our processes
-    surname_numbers = [] #here we will store lists of [surname, id]
-    current_number = 0   #this will define the id
-    previous_surname=''
-
-    # Assign a unique number to each unique surname
-    for i, surname in enumerate(surnames):
-        if surname!=previous_surname: #check for duplicate surnames
-            #we assume that our surnames are in alphabetical order
-            #so duplicate surnames will only be one after the other
-            current_number += 1
-            surname_numbers.append([surname,current_number]) #store surname and id couple
-        else :
-            surname_numbers.append([surname,current_number]) #keep the same value for duplicate surnames
-        previous_surname=surname #update the previous surname as the current one for the next iteration
-
-    return surname_numbers
-
-
 #It generates a dictionary that witholds the ranges of the ids for each first letter that surnames have
 def letter_id_range(surnames):
     #surnames : list created by assign_index_surname()
@@ -233,20 +239,12 @@ we will define the general functions that connects everything together
 
 #Function for the creation of the Octree with the data about computer scientists we collected 
 def create_octree():
-    # Get data from the JSON file
-    with open('../scientist_info.json', 'r', encoding="utf-8") as file:
-        data = json.load(file)
-
-    # Sort the data based on the "surname" key so that they are from A to Z
-    sorted_data = sorted(data, key=lambda x: x.get("surname", ""))
-    surnames=assign_index_surname(sorted_data) #get the id for every surname
+    
+    #get all the info 
+    surnames,awards,dblp_record,education=get_info(quads=True)
 
     #variables containing our x,y,z indexes (Point)
     surname_ids=[id[1] for id in surnames] #x index
-    awards = [int(scientist['awards']) for scientist in sorted_data] #y index
-    dblp_record = [int(scientist['dblp_record']) for scientist in sorted_data] #z index
-    #variable containing the data each leaf node will have 
-    education = [scientist['education'] for scientist in sorted_data]
 
     # Extract min and max values --- they will be the boundaries
     top_boundary=Point3D( min(surname_ids), min(awards) , min(dblp_record) )
@@ -265,27 +263,55 @@ def create_octree():
     # because we will need to transform surnames back to their original form
     return octree , surnames
 
-#Function that we will use for the searching in our tree
-def OctreeSearch(letters,awards,dblp_records):
+# Main function
+if __name__ == '__main__':
     #we will need to have a tree , to search on it
     octree,surnames=create_octree() 
     #we get the dictionary for the ranges of each letter 
     letter_ranges=letter_id_range(surnames)
+
+    #function for getting user input
+    letters,awards,dblp_records= get_searching_values()
 
     range_start=letter_ranges.get(letters[0])[0]    #the surname id we will start the searching 
     range_finish=letter_ranges.get(letters[1])[1]   #the surname id we will stop the searching
 
     range_letters=[range_start,range_finish] #range for the alphabetical search of scientists 
 
+    start_time = time.time()  # Record the start time
+
     #use the regular range search created in the definition of the Octree
-    scientists=octree.search_in_range(range_letters,awards,dblp_records) 
+    scientists=octree.search_in_range(octree,range_letters,awards,dblp_records) 
 
-    for i in range(len(scientists)):
+    end_time = time.time()  # Record the end time
+    search_time = end_time - start_time  # Calculate the total time for the search
+
+    ScientistsRange=[]
+    for scientist in scientists:
         #changing surname id to the original string surname
-        id_surname=scientists[i].position.x
+        id_surname=scientist.position.x
         string_surname=get_surname(id_surname,surnames)
-        scientists[i].position.x=string_surname
-    
-    #return the scientist we found 
-    return scientists
+        scientist.position.x=string_surname
 
+        #Put in a list the scientist we found 
+        point=scientist.position
+        ScientistsRange.append([point.x, point.y, point.z, scientist.education])
+        print(point)
+    print("\nRange search finished!\n")
+    
+    print(f"\nTotal search time: {search_time} seconds\n")
+
+    if len( ScientistsRange)>1:
+        # Execute the LSH algorithm
+        ScientistsInRange_Final = LSH_alg(ScientistsRange)
+        print('-------------------------------------------------------------------------------')
+        print('Returned scientists in the query range: ')
+
+        for pair in ScientistsInRange_Final:
+            print('-------------------------------------------------------------------------------')
+            print(ScientistsRange[pair[0]])
+            print(ScientistsRange[pair[1]])
+    else:
+         print("\n\nWe have only one result. LSH was not executed!\n")
+         print("RESULTS:\n")
+         print(ScientistsRange)

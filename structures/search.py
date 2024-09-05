@@ -1,4 +1,3 @@
-from quad_trees import OctreeSearch
 
 #this function checks if the input for the letter is in the correct form
 def check_letter_inputs(letter):
@@ -7,8 +6,8 @@ def check_letter_inputs(letter):
         if len(letter)!=1 :
             letter=input("Hmm.. You entered more than one character please enter just one :\n")
             letter=check_letter_inputs(letter)
-        if not letter.isalpha():
-            print("We could not process that , it was not a letter!")
+        if not (letter.isalpha() and 'A' <= letter.upper() <= 'Z'):
+            print("We could not process that , it was not an english letter!")
             letter=input("Please enter a letter: \n")
             letter=check_letter_inputs(letter)
         else:
@@ -70,7 +69,7 @@ def get_dblp():
     end=input("Great! Enter the maximum number of records the scientist may have :\n")
     end=check_digit(end)
     
-    start,end=compare(start,end,state=0)
+    start,end=compare(int(start),int(end),state=0)
     
     return [int(start),int(end)]
 
@@ -84,23 +83,15 @@ Now, that we have defined all the required functions for obtaining user-defined 
 we will use them for identifying scientists whose names fall alphabetically within the 
 specified range, the number of awards they have received are greater than the threshold,
 and the number of publications should also be within the user-defined range. This will 
-be accomplished using the corresponding search function for each structure.
+be accomplished using the corresponding search function for each structure. 
+So, in each tree structure we will the call the function bellow.
 """
+#function that encapsulates all above functions
+def get_searching_values():
 
-letters=get_letters()
-awards=get_awards()
-dblp_range=get_dblp()
+    letters=get_letters()
+    awards=get_awards()
+    dblp_range=get_dblp()
 
-x=OctreeSearch(letters,awards,dblp_range) #this function is defined in quad_trees.py 
+    return letters,awards,dblp_range
 
-#this commands probably will get deleted later
-print('\n\nThe results from our searching are: \n\n')
-for i in range(len(x)):
-     print(x[i])
-
-
-"""
-EXAMPLE SEARCH
-x=OctreeSearch(['z','z'],0,[4,118])
-
-"""
