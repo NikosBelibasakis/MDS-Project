@@ -6,7 +6,7 @@ Octrees are the equivalent of quad trees
 in three dimensional space
 """
 
-#DEFINING THE POINT IN SPACE (The indexes of its scientists)
+#DEFINING THE POINT IN SPACE (The indeces of each scientist)
 class Point3D:
     def __init__(self, x, y, z):
         self.x = x  #surname id number

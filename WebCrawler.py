@@ -253,7 +253,7 @@ def extract_education(soup):
                     education_found = True
                     break
 
-    if not education_found:
+    if not education_found: #THIS NEEDS TO CHANGE , IT GIVES "\n\n" first p is empty class="mw-empty-elt"
         # Get the first and second <p> tags on the page
         paragraphs = soup.find_all('p')
         for p in paragraphs[:2]:
