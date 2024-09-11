@@ -33,33 +33,33 @@ class x_Node:
                         leaves.extend(n.get_leaf_nodes())
         return leaves
 
-    def get_canonical_subtree(node, leaf_array):
+    def get_canonical_subtree(node, first , last):
         canonical=[]
         #check if leaf array is not empty
-        if leaf_array:
+        if first and last:
             #we are going to do the same thing we did in searching
-            if node is not None and node.isLeaf and node in leaf_array:
+            if node is not None and node.isLeaf and node.x>=first.x and node.x<=last.x:
                 canonical.append(node)
                 
             #If the node is not a leaf
             if node is not None and not node.isLeaf:
-                if node.x < leaf_array[0].x:
+                if node.x < first.x:
                     if node.right is not None:
                         #Check if the right child of the node is in range
-                        canonical.extend(node.right.get_canonical_subtree(leaf_array))
-                elif node.x >= leaf_array[0].x and node.x <=leaf_array[-1].x :
+                        canonical.extend(node.right.get_canonical_subtree(first,last))
+                elif node.x >= first.x and node.x <=last.x :
                     #Look for the leafs of this node that is in range
                     node_leaves=node.get_leaf_nodes()
-                    if all(leaf in leaf_array for leaf in node_leaves):
+                    if all(leaf.x>=first.x and leaf.x<=last.x for leaf in node_leaves):
                         canonical.append(node)
                     else:
                         children=[node.left, node.right]
                         for child in children:
                             if child is not None:
-                                canonical.extend(child.get_canonical_subtree(leaf_array))
+                                canonical.extend(child.get_canonical_subtree(first,last))
                 else: # node.x>leaf_array[-1].x:
                     if node.left is not None:
-                        canonical.extend(node.left.get_canonical_subtree(leaf_array))
+                        canonical.extend(node.left.get_canonical_subtree(first,last))
         
         return canonical
     
@@ -262,13 +262,16 @@ def get_surname_range(surnames,left_l,right_l):
         if (s[0] == right_l):
             last_surname = s
             break
-
+    
+    #I NEED TO CHECK FOR IF THE LETTERS DONT EXIST IN THE TREE , MAYBE LOOK FOR A LETTER AFTER AND A LETTER BEFORE!!!
 
     #We execute the range search with the 'first_surname' and the 'last_surname' as the inputs
     left_end = x_Search(root,first_surname)
     right_end = x_Search(root,last_surname)
-
-
+    
+    return left_end ,right_end
+'''
+    in the above code , deleted this section
     #Find the position of the leftomost leaf of the query range, in the leaves array
     pos = 0
     for l in sorted_Leaves_array:
@@ -288,19 +291,21 @@ def get_surname_range(surnames,left_l,right_l):
 
     #This array contains the leaves that are included in the query range
     Leaves_in_Range = sorted_Leaves_array[thesi_l:thesi_r+1]
-
-    return Leaves_in_Range
+'''
 
 
 def get_awards_range(tree,awards_threshold):
-    leaves_in_y=[]
+    first=None
+    last=None
     leaf_nodes=tree.get_leaf_nodes()
     #check if the tree has only one leaf node or is a leaf node
     for leaf in leaf_nodes:
         if leaf.x>awards_threshold:
-            leaves_in_y.append(leaf)
+            if first is None:  # This will only set the first time the condition is met
+                first = leaf
+            last = leaf  # This will keep updating, in the end we'll just keep the last value of leaf where we accessed the loop
 
-    return leaves_in_y
+    return first,last
 
 def get_dblp_range(tree,dblp_min,dblp_max):
     leaves_in_z=[]
@@ -322,14 +327,14 @@ def Range_Search(surnames,letters,awards_th,dblp_range):
     [left_l,right_l]= letters
     [left_db,right_db]=dblp_range
     
-    Leaves_in_Range = get_surname_range(surnames,left_l,right_l)
-    canonical_nodes_y=root.get_canonical_subtree(Leaves_in_Range)
+    first,last = get_surname_range(surnames,left_l,right_l)
+    canonical_nodes_y=root.get_canonical_subtree(first,last)
 
     final_result=[]
     for node in canonical_nodes_y:
         subtree2d=node.y_tree
-        Leaves_in_Range=get_awards_range(subtree2d,awards_th)
-        canonical_nodes_z = subtree2d.get_canonical_subtree(Leaves_in_Range)
+        first_award,last_award=get_awards_range(subtree2d,awards_th)
+        canonical_nodes_z = subtree2d.get_canonical_subtree(first_award,last_award)
         for tree_node in canonical_nodes_z:
             subtree3d=tree_node.y_tree
             final_result.extend(get_dblp_range(subtree3d,left_db,right_db))
