@@ -49,3 +49,31 @@ def assign_index_surname(data):
         previous_surname=surname #update the previous surname as the current one for the next iteration
 
     return surname_numbers
+
+
+#Some printing methods in case we need them 
+
+#printing method for only two children (left and right)
+def print_tree_in_order(node, file, level=0):
+    if node is not None:
+        print_tree_in_order(node.left, file, level + 1)  # Visit left subtree
+        file.write('  ' * level + f'Node: {node.x}\n')  # Write current node with indentation
+        print_tree_in_order(node.right, file, level + 1)  # Visit right subtree
+
+#printing method for more than one child
+def print_tree(node, file, level=0):
+    if node is not None:
+        print('  ' * level + f'Node: {node.value}')  # Print the current node
+        for child in node.children:
+            print_tree(child, file, level + 1)  # Recursively print each child
+
+#EXAMPLE USAGE 
+'''
+
+from general_functions import print_tree_in_order
+
+# Open a file and write the tree to it
+with open('tree_output.txt', 'w') as file:
+    print_tree_in_order(root,file)
+
+'''
