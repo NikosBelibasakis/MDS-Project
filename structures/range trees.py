@@ -261,7 +261,8 @@ def get_surname_range(surnames,left_l,right_l):
             last_surname = s
             break
     
-    #I NEED TO CHECK FOR IF THE LETTERS DONT EXIST IN THE TREE , MAYBE LOOK FOR A LETTER AFTER AND A LETTER BEFORE!!!
+    #I NEED TO CHECK FOR IF THE LETTERS DONT EXIST IN THE TREE , MAYBE LOOK FOR A LETTER AFTER (for left_l) AND A LETTER BEFORE (for right_l)
+    #But since our dataset currently contains all letters of the alphabet as the first letter of a surname, we will update this in the future
 
     #We execute the range search with the 'first_surname' and the 'last_surname' as the inputs
     left_end = x_Search(root,first_surname)
