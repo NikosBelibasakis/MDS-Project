@@ -53,19 +53,13 @@ def assign_index_surname(data):
 
 #Some printing methods in case we need them 
 
-#printing method for only two children (left and right)
+#printing method for only two children (left and right) so for kd trees and range trees only
 def print_tree_in_order(node, file, level=0):
     if node is not None:
         print_tree_in_order(node.left, file, level + 1)  # Visit left subtree
-        file.write('  ' * level + f'Node: {node.x}\n')  # Write current node with indentation
+        file.write('  ' * level + f'Node: {node.attributes}\n')  # Write current node with indentation (instead of node.x use node.attributes for kd trees)
         print_tree_in_order(node.right, file, level + 1)  # Visit right subtree
 
-#printing method for more than one child
-def print_tree(node, file, level=0):
-    if node is not None:
-        print('  ' * level + f'Node: {node.value}')  # Print the current node
-        for child in node.children:
-            print_tree(child, file, level + 1)  # Recursively print each child
 
 #EXAMPLE USAGE 
 '''
