@@ -106,12 +106,8 @@ def x_InsertScientist(node, x , attributes, education):
     if node is None:
 
         node = x_Node(x, attributes, False, education)
-
         #set the leaf-node
         node.left = x_Node(x, attributes, True, education)
-
-        #Add the leaf node to the leaves array
-        Leaves_array.append(node.left)
 
         return node
 
@@ -133,11 +129,7 @@ def x_InsertScientist(node, x , attributes, education):
             # set the leaf-node for the node we want to insert
             node.left = x_Node(x, attributes, True, education)
 
-            # Add the leaf node to the leaves array
-            Leaves_array.append(node.left)
-
             return node
-
 
         elif x == node.x:
 
@@ -157,8 +149,14 @@ def x_InsertScientist(node, x , attributes, education):
             node.duplicates=duplicate
             node.left.duplicates=duplicate
 
-            # Add the leaf node to the leaves array
-            Leaves_array.append(node.left)
+            return node
+        
+        else: #x>node.x
+
+            node_temp = node
+            node = x_Node(x,  attributes, False, education)
+            node.left = node_temp
+            node.right = x_Node(x, attributes, True, education)
 
             return node
 
@@ -344,13 +342,7 @@ if __name__ == '__main__':
 
     sorted_attributes = sort_from_middle(attributes_array,dimension=0)
     
-   #This array contains all the leaf nodes
-    Leaves_array = []
-
     root = create_range_tree1D(sorted_attributes,dimension=0)
-
-    # This array contains all the leaf nodes, sorted (just like the way the leaf nodes are in the tree)
-    sorted_Leaves_array = sorted(Leaves_array, key=lambda x: x.x)
 
     Range2D(root) #create all trees for every node on 2nd dimension
 
