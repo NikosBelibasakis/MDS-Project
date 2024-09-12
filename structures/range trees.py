@@ -270,29 +270,6 @@ def get_surname_range(surnames,left_l,right_l):
     right_end = x_Search(root,last_surname)
     
     return left_end ,right_end
-'''
-    in the above code , deleted this section
-    #Find the position of the leftomost leaf of the query range, in the leaves array
-    pos = 0
-    for l in sorted_Leaves_array:
-        if (left_end.attributes == l.attributes):
-            thesi_l = pos
-            break
-        pos = pos + 1
-
-
-    # Find the position of the rightomost leaf of the query range, in the leaves array
-    pos = 0
-    for l in sorted_Leaves_array:
-        if (right_end.attributes == l.attributes):
-            thesi_r = pos
-            break
-        pos = pos + 1
-
-    #This array contains the leaves that are included in the query range
-    Leaves_in_Range = sorted_Leaves_array[thesi_l:thesi_r+1]
-'''
-
 
 def get_awards_range(tree,awards_threshold):
     first=None
