@@ -108,6 +108,6 @@ if __name__ == '__main__':
             print(ScientistsInRange_edu[pair[0]])
             print(ScientistsInRange_edu[pair[1]])
     else:
-        print("\n\nWe have only one result. LSH was not executed!\n")
+        print("\n\nWe have only one or zero results. LSH was not executed!\n")
         print("RESULTS:\n")
         print(ScientistsInRange_edu)
