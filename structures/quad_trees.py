@@ -287,16 +287,17 @@ if __name__ == '__main__':
     search_time = end_time - start_time  # Calculate the total time for the search
 
     ScientistsRange=[]
-    for scientist in scientists:
-        #changing surname id to the original string surname
-        id_surname=scientist.position.x
-        string_surname=get_surname(id_surname,surnames)
-        scientist.position.x=string_surname
+    if scientists:
+        for scientist in scientists:
+            #changing surname id to the original string surname
+            id_surname=scientist.position.x
+            string_surname=get_surname(id_surname,surnames)
+            scientist.position.x=string_surname
 
-        #Put in a list the scientist we found 
-        point=scientist.position
-        ScientistsRange.append([point.x, point.y, point.z, scientist.education])
-        print(point)
+            #Put in a list the scientist we found 
+            point=scientist.position
+            ScientistsRange.append([point.x, point.y, point.z, scientist.education])
+            print(point)
     print("\nRange search finished!\n")
     
     print(f"\nTotal search time: {search_time} seconds\n")
