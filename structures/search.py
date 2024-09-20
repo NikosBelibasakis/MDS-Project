@@ -63,7 +63,7 @@ def get_awards():
 #this input gets the range of dblp records from the input
 def get_dblp():
 
-    print("Now, lets see how many dblp records the scientist ypur looking for has. Give us a range.")
+    print("Now, lets see how many dblp records the scientist your looking for has. Give us a range.")
     start=input("Enter the least number of records the scientist may have :\n")
     start=check_digit(start)
     end=input("Great! Enter the maximum number of records the scientist may have :\n")
