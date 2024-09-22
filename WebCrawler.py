@@ -203,13 +203,12 @@ def extract_education(soup):
     education_found = False
     headlines = soup.find_all('h2', class_='')  # Get all the headlines of the page
     for headline in headlines:
-        span_tag = headline.find('span', class_='mw-headline')
-        title=span_tag.get_text().lower()
+        title = headline.get("id").lower()
         if "education" in title:
             # If "education" is found in the headline
             next_tag = headline.find_next('h2')  # Find the next h2 tag after the headline
             # Collect text from <p> and <ul> elements until the next <h2> tag
-            elements = headline.find_next_siblings(['p', 'ul'])
+            elements = headline.find_all_next(['p', 'ul'])
             for element in elements:
                 # Concatenate the text of <p> and <ul> elements until the next <h2> tag
                 if element.name == 'p':
@@ -253,10 +252,13 @@ def extract_education(soup):
                     education_found = True
                     break
 
-    if not education_found: #THIS NEEDS TO CHANGE , IT GIVES "\n\n" first p is empty class="mw-empty-elt"
+    if not education_found:
         # Get the first and second <p> tags on the page
         paragraphs = soup.find_all('p')
         for p in paragraphs[:2]:
+            # Skip empty <p> tags or those with class 'mw-empty-elt'
+            if not p.get_text(strip=True):
+                continue
             next_tag = p.find_next('h2')
             education += p.get_text() + "\n"
             if p.find_next('h2') == next_tag:
@@ -304,7 +306,7 @@ async def main():
             else:
                 a_tag_text = None
 
-        del href_obj[688:]   #delete the hrefs that don't refer to computer scientists
+        del href_obj[695:]   #delete the hrefs that don't refer to computer scientists
 
         #we store the links of the computer scientists' pages in the "links" list
         links = ["https://en.wikipedia.org" + str(h) for h in href_obj]
@@ -316,65 +318,77 @@ async def main():
         scientist_info_list = await asyncio.gather(*tasks)
 
         #Changing some elements in the surname list, because some surnames have peculiarities
-        scientist_info_list[24]['surname'] = 'Bachman'
-        scientist_info_list[26]['surname'] = 'Backus'
-        scientist_info_list[33]['surname'] = 'Bauer'
-        scientist_info_list[44]['surname'] = 'Blaauw'
+        scientist_info_list[25]['surname'] = 'Bachman'
+        scientist_info_list[27]['surname'] = 'Backus'
+        scientist_info_list[34]['surname'] = 'Bauer'
+        scientist_info_list[45]['surname'] = 'Blaauw'
+        scientist_info_list[55]['surname'] = 'Boole'
+        scientist_info_list[60]['surname'] = 'Botvinnik'
         scientist_info_list[62]['surname'] = 'Bourne'
         scientist_info_list[63]['surname'] = 'Bouwman'
+        scientist_info_list[68]['surname'] = 'Bresenham'
         scientist_info_list[71]['surname'] = 'Brinch Hansen'
         scientist_info_list[73]['surname'] = 'Brooks'
-        scientist_info_list[77]['surname'] = 'Caballero Gil'
-        scientist_info_list[84]['surname'] = 'Carmack'
-        scientist_info_list[96]['surname'] = 'Clarke'
-        scientist_info_list[98]['surname'] = 'Codd'
-        scientist_info_list[110]['surname'] = 'Corbató'
-        scientist_info_list[142]['surname'] = 'Dix'
-        scientist_info_list[146]['surname'] = 'Draper'
-        scientist_info_list[154]['surname'] = 'Eckert'
-        scientist_info_list[158]['surname'] = 'Emerson'
-        scientist_info_list[181]['surname'] = 'Ford' #Ford Jr. 
-        scientist_info_list[180]['surname'] = 'Forbus'
-        scientist_info_list[201]['surname'] = 'Gates'
-        scientist_info_list[204]['surname'] = 'Geschke'
-        scientist_info_list[257]['surname'] = 'Hehner'
-        scientist_info_list[288]['surname'] = 'Ingalls'
-        scientist_info_list[335]['surname'] = 'Kruskal'
-        scientist_info_list[405]['surname'] = 'Moore'
-        scientist_info_list[475]['surname'] = 'Pieraccini'
-        scientist_info_list[511]['surname'] = 'Royce'
-        scientist_info_list[568]['surname'] = 'Steele'
+        scientist_info_list[73]['surname'] = 'Burstall'
+        scientist_info_list[78]['surname'] = 'Caballero Gil'
+        scientist_info_list[85]['surname'] = 'Carmack'
+        scientist_info_list[97]['surname'] = 'Clarke'
+        scientist_info_list[99]['surname'] = 'Codd'
+        scientist_info_list[111]['surname'] = 'Corbató'
+        scientist_info_list[144]['surname'] = 'Dix'
+        scientist_info_list[148]['surname'] = 'Draper'
+        scientist_info_list[156]['surname'] = 'Eckert'
+        scientist_info_list[160]['surname'] = 'Emerson'
+        scientist_info_list[183]['surname'] = 'Ford' #Ford Jr. 
+        scientist_info_list[182]['surname'] = 'Forbus'
+        scientist_info_list[203]['surname'] = 'Gates'
+        scientist_info_list[206]['surname'] = 'Geschke'
+        scientist_info_list[221]['surname'] = 'Goldsmith'
+        scientist_info_list[260]['surname'] = 'Hehner'
+        scientist_info_list[290]['surname'] = 'Ingalls'
+        scientist_info_list[335]['surname'] = 'Koster'
+        scientist_info_list[339]['surname'] = 'Kruskal'
+        scientist_info_list[410]['surname'] = 'Moore'
+        scientist_info_list[465]['surname'] = 'Patil'
+        scientist_info_list[480]['surname'] = 'Pieraccini'
+        scientist_info_list[486]['surname'] = 'Popplewell'
+        scientist_info_list[514]['surname'] = 'Ross'
+        scientist_info_list[517]['surname'] = 'Royce'
+        scientist_info_list[575]['surname'] = 'Steele'
 
          #Setting the number of awards for some scientists, because we could not fetch the number from their wikipedia page with the web crawler
 
         scientist_info_list[50]['awards'] = 12
-        scientist_info_list[58]['awards'] = 8
-        scientist_info_list[92]['awards'] = 7
-        scientist_info_list[145]['awards'] = 5
-        scientist_info_list[191]['awards'] = 9
-        scientist_info_list[238]['awards'] = 2
-        scientist_info_list[268]['awards'] = 7
-        scientist_info_list[286]['awards'] = 3
-        scientist_info_list[313]['awards'] = 6
-        scientist_info_list[370]['awards'] = 2
-        scientist_info_list[387]['awards'] = 3
-        scientist_info_list[393]['awards'] = 10
-        scientist_info_list[400]['awards'] = 7
-        scientist_info_list[422]['awards'] = 2
-        scientist_info_list[434]['awards'] = 1
-        scientist_info_list[441]['awards'] = 7
-        scientist_info_list[486]['awards'] = 11
-        scientist_info_list[488]['awards'] = 5
-        scientist_info_list[501]['awards'] = 5
-        scientist_info_list[514]['awards'] = 3
-        scientist_info_list[516]['awards'] = 1
-        scientist_info_list[545]['awards'] = 10
-        scientist_info_list[577]['awards'] = 5
-        scientist_info_list[586]['awards'] = 4
-        scientist_info_list[607]['awards'] = 13
-        scientist_info_list[609]['awards'] = 8
-        scientist_info_list[636]['awards'] = 2
-        scientist_info_list[669]['awards'] = 1
+        scientist_info_list[58]['awards'] = 9
+        scientist_info_list[93]['awards'] = 7
+        scientist_info_list[147]['awards'] = 5
+        scientist_info_list[193]['awards'] = 9
+        scientist_info_list[240]['awards'] = 2
+        scientist_info_list[269]['awards'] = 12
+        scientist_info_list[271]['awards'] = 7
+        scientist_info_list[288]['awards'] = 3
+        scientist_info_list[317]['awards'] = 6
+        scientist_info_list[374]['awards'] = 2
+        scientist_info_list[392]['awards'] = 4
+        scientist_info_list[398]['awards'] = 10
+        scientist_info_list[401]['awards'] = 9
+        scientist_info_list[405]['awards'] = 8
+        scientist_info_list[427]['awards'] = 2
+        scientist_info_list[439]['awards'] = 1
+        scientist_info_list[446]['awards'] = 7
+        scientist_info_list[492]['awards'] = 11
+        scientist_info_list[494]['awards'] = 5
+        scientist_info_list[502]['awards'] = 1
+        scientist_info_list[507]['awards'] = 5
+        scientist_info_list[520]['awards'] = 3
+        scientist_info_list[522]['awards'] = 1
+        scientist_info_list[552]['awards'] = 10
+        scientist_info_list[584]['awards'] = 5
+        scientist_info_list[593]['awards'] = 4
+        scientist_info_list[614]['awards'] = 14
+        scientist_info_list[616]['awards'] = 8
+        scientist_info_list[643]['awards'] = 2
+        scientist_info_list[676]['awards'] = 1
 
         # Saving scientist info to JSON file
         with open("scientist_info.json", "w", encoding='utf-8') as outfile:
