@@ -19,6 +19,8 @@ if __name__ == '__main__':
         attributes_array.append(temp_list)
         counter = counter + 1
 
+    creation_time=time.time()
+
     #Create the R-tree
     p = rtree.index.Property(dimension = 3)
     idx = rtree.index.Index(properties = p)
@@ -41,6 +43,8 @@ if __name__ == '__main__':
 
         i = i + 1
 
+    creation_time_end=time.time()-creation_time
+    print(f"\nTotal construction time: {creation_time_end} seconds\n")
 
     # User query
     letter,awards_th,dblp_range = get_searching_values()

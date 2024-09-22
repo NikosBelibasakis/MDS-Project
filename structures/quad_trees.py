@@ -266,7 +266,14 @@ def create_octree():
 # Main function
 if __name__ == '__main__':
     #we will need to have a tree , to search on it
+    
+    creation_time=time.time()
+
     octree,surnames=create_octree() 
+    
+    creation_time_end=time.time()-creation_time
+    print(f"\nTotal construction time: {creation_time_end} seconds\n")
+
     #we get the dictionary for the ranges of each letter 
     letter_ranges=letter_id_range(surnames)
 

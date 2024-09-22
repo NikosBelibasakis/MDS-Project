@@ -343,10 +343,14 @@ if __name__ == '__main__':
 
     sorted_attributes = sort_from_middle(attributes_array,dimension=0)
     
+    creation_time=time.time()
+
     root = create_range_tree1D(sorted_attributes,dimension=0)
 
     Range2D(root) #create all trees for every node on 2nd dimension
 
+    creation_time_end=time.time()-creation_time
+    print(f"\nTotal construction time: {creation_time_end} seconds\n")
 
     # User query
     letters,award_threshold,dblp_range=get_searching_values()

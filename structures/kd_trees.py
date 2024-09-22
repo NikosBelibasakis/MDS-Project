@@ -97,6 +97,7 @@ if __name__ == '__main__':
         attributes_array.append(temp_list)
         counter = counter + 1
 
+    creation_time=time.time() # Record the start time of the creation of the tree
     # Insert the first scientist in the tree and set this object as the root node
     root = None
     root = InsertScientist(root, attributes_array[0], 0)
@@ -104,6 +105,9 @@ if __name__ == '__main__':
     # Insert the other scientists in the tree
     for attr in attributes_array[1:]:
         InsertScientist(root, attr, 0)
+
+    creation_time_end=time.time()-creation_time
+    print(f"\nTotal construction time: {creation_time_end} seconds\n")
 
     #User query
     letters,awards_th,dblp= get_searching_values()
